@@ -1,0 +1,14 @@
+app-core {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+}
+
+router-outlet {
+  position: relative;
+  z-index: 1;
+  margin-top: 200px;
+}

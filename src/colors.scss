@@ -1,0 +1,26 @@
+// Cor Primária
+$color-primary: #2475ff;
+$color-primary-hover: darken($color-primary, 10%);
+$color-primary-border: darken($color-primary, 20%);
+$color-primary-light-1: lighten($color-primary, 10%);
+$color-primary-light-2: lighten($color-primary, 20%);
+$color-primary-dark-1: darken($color-primary, 10%);
+$color-primary-dark-2: darken($color-primary, 20%);
+
+// Cor Secundária
+$color-secondary: #dbdbdb;
+$color-secondary-hover: darken($color-secondary, 10%);
+$color-secondary-border: darken($color-secondary, 20%);
+$color-secondary-light-1: lighten($color-secondary, 10%);
+$color-secondary-light-2: lighten($color-secondary, 20%);
+$color-secondary-dark-1: darken($color-secondary, 10%);
+$color-secondary-dark-2: darken($color-secondary, 20%);
+
+// Cor de Suporte
+$color-support: #000000;
+$color-support-hover: lighten($color-support, 60%);
+$color-support-border: lighten($color-support, 20%);
+$color-support-light-1: lighten($color-support, 20%);
+$color-support-light-2: lighten($color-support, 40%);
+$color-support-dark-1: $color-support; // Repete a cor original pois não tem mais escuro que #000000
+$color-support-dark-2: $color-support; // Repete a cor original pois não tem mais escuro que #000000

@@ -1,0 +1,73 @@
+@import "colors.scss";
+
+body {
+  display: flex;
+  justify-content: center; /* Centraliza o header horizontalmente */
+  align-items: center; /* Centraliza o header verticalmente */
+  height: 100vh; /* Faz o body ocupar toda a altura da tela */
+  margin: 0; /* Remove margens padrão */
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  background-color: $color-primary-light-1;
+  padding: 10px 20px;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  img {
+    width: 60px;
+    height: auto;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espaçamento entre os links de navegação */
+  padding: 0;
+  margin: 0;
+  li {
+    a {
+      color: $color-secondary; /* Cor do texto dos links */
+      text-decoration: none;
+      font-weight: bold;
+      &:hover {
+        color: $color-secondary-hover;
+      }
+    }
+  }
+}
+
+.cta {
+  background-color: $color-secondary;
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  color: $color-support;
+}
+
+.cta a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cta:hover {
+  background-color: $color-secondary-hover;
+}
