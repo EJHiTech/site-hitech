@@ -1,0 +1,76 @@
+@import "colors.scss";
+
+footer {
+  background-color: $color-primary-dark-1; // Cor de fundo principal do rodapé
+  color: $color-secondary; // Cor do texto
+
+  padding: 20px 0;
+  text-align: center;
+
+  .footer-container {
+    @media screen and (min-width: 1000px) {
+      display: grid;
+      grid-template-columns: 20% 50% 20%;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-info,
+    .footer-contact {
+      margin: 10px;
+    }
+
+    h4 {
+      margin-bottom: 10px;
+      color: $color-secondary-light-1; // Cor do título
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: $color-secondary; // Cor do texto normal
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .social-content {
+      align-items: start;
+    }
+
+    a {
+      display: flex;
+      align-items: start;
+      margin-bottom: 10px;
+      color: $color-secondary-light-2;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-primary-light-1;
+      }
+
+      .social-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        transition: transform 0.4s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid $color-primary-dark-2; // Cor da borda superior do rodapé
+    padding-top: 10px;
+    font-size: 0.8rem;
+    color: $color-secondary-dark-1; // Cor do texto de direitos reservados
+  }
+}

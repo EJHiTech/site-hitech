@@ -61,6 +61,9 @@ nav {
   border: none;
   cursor: pointer;
   color: $color-support;
+  img {
+    max-width: 40px;
+  }
 }
 
 .cta a {
