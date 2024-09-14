@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { PublishTaskService } from 'shared/publish-task.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,13 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private publishTaskService: PublishTaskService
+  ) {}
+
+  form!: FormGroup;
 
   ngOnInit(): void {
     this.startTypingEffect();
@@ -22,6 +30,14 @@ export class HomeComponent implements OnInit {
           }
         }
       }
+    });
+
+    this.form = this.formBuilder.group({
+      name: [null],
+      email: [null],
+      phone: [null],
+      city: [null],
+      description: [null],
     });
   }
 
@@ -86,5 +102,20 @@ export class HomeComponent implements OnInit {
     };
 
     type();
+  }
+
+  publishTask() {
+    const form = this.form.value;
+
+    const payload = {
+      name: `NOVO CONTATO - ${form.name}`,
+      priority: 2,
+      // dscription: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
+      markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
+    };
+
+    this.publishTaskService
+      .publishTask(payload)
+      .subscribe((res) => console.log(res));
   }
 }

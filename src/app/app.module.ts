@@ -9,6 +9,10 @@ import { ContactComponent } from './contact/contact.component';
 import { ServicesComponent } from './services/services.component';
 import { CoreComponent } from './core/core.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PublishTaskService } from 'shared/publish-task.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     ContactComponent,
     ServicesComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CommonModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PublishTaskService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

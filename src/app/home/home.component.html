@@ -42,10 +42,12 @@
 
   <section class="contact">
     <h2>Fale Conosco</h2>
-    <form>
-      <input type="text" placeholder="Nome" />
-      <input type="email" placeholder="Email" />
-      <textarea placeholder="Mensagem"></textarea>
+    <form [formGroup]="form" (ngSubmit)="publishTask()">
+      <input type="text" placeholder="Nome" formControlName="name"/>
+      <input type="email" placeholder="Email" formControlName="email"/>
+      <input type="tel" placeholder="Telefone" formControlName="phone"/>
+      <input type="text" placeholder="Cidade" formControlName="city"/>
+      <textarea placeholder="Mensagem" formControlName="description"></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
