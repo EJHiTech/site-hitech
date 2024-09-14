@@ -2,10 +2,10 @@
 
 body {
   display: flex;
-  justify-content: center; /* Centraliza o header horizontalmente */
-  align-items: center; /* Centraliza o header verticalmente */
-  height: 100vh; /* Faz o body ocupar toda a altura da tela */
-  margin: 0; /* Remove margens padrão */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 header {
@@ -23,10 +23,11 @@ nav {
   background-color: $color-primary-light-1;
   padding: 10px 20px;
   border-radius: 100px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
+  padding: 10px;
   img {
     width: 60px;
     height: auto;
@@ -39,12 +40,12 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px; /* Espaçamento entre os links de navegação */
+  gap: 20px;
   padding: 0;
   margin: 0;
   li {
     a {
-      color: $color-secondary; /* Cor do texto dos links */
+      color: $color-secondary;
       text-decoration: none;
       font-weight: bold;
       &:hover {

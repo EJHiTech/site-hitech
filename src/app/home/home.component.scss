@@ -36,7 +36,7 @@ section {
   }
 }
 
-.hero {
+#hero {
   position: relative;
   background-image: url("assets/main-background.webp");
   background-size: cover;
@@ -87,7 +87,7 @@ section {
   }
 }
 
-.services {
+#services {
   background-color: $color-primary-light-1;
   display: flex;
   justify-content: space-around;
