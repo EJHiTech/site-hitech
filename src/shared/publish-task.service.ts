@@ -4,14 +4,12 @@ import { Observable } from 'rxjs';
 import { environment } from '../environments/env.prod';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PublishTaskService {
-
   private apiUrl = environment.urlSource;
   private headers = new HttpHeaders({
-    'Authorization': environment.clickupApiToken,
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   });
 
   constructor(private http: HttpClient) {}

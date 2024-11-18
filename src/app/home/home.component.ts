@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit {
       name: `NOVO CONTATO - ${form.name}`,
       priority: 2,
       // description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
-      markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
+      markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE: ${form.city},\n DESCRIÇÃO: ${form.description}`,
     };
 
     this.publishTaskService
