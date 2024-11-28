@@ -1,47 +1,63 @@
 <div class="scroll-container">
   <section id="hero">
+    <br>
+    <br>
+    <br>
+    <br>
     <h1 id="typed-text"></h1>
-    <p>Estamos aqui para impulsionar seu negócio com soluções de impacto.</p>
+    
+    <p>Meu nome é Cecília Fischer Moreira.<br> Sou estudante do segundo período de Sistemas de Informaçào da UTFPR.</p>
   </section>
 
   <section id="about">
-    <h2>Sobre Nós</h2>
-    <p>
-      Somos uma equipe de estudantes dedicados a fornecer serviços de alta
-      qualidade para nossos clientes.
-    </p>
-    <img src="assets/logo.svg" style="max-width: 400px" alt="Sobre nós" />
+    <div class="content">
+      <h2>Sobre Mim</h2><br>
+      <p>
+        Sou de Joinville, Santa Catarina, tenho 18 anos e faço aniversário no dia 31 de março. Escolhi cursar Bacharelado em Sistemas de Informação porque sempre tive interesse por matemática e pela diversidade de caminhos e oportunidades que essa área oferece. 
+        Gosto da ideia de poder explorar diferentes ramos sem me limitar a uma única especialização.
+      </p>
+    </div>
+    <div class="container">
+      <img src="/assets/bsi.jpg" alt="Imagem Cecília">
+      <img src="/assets/mundial.png" alt="Imagem BSI">
+      <img src="/assets/cecilia.jpg" alt="Imagem Mundial">
+    </div>
   </section>
 
   <section id="services">
-    <h2>Nossos Serviços</h2>
+    <h2>Minhas experiências</h2>
     <div class="service">
-      <h3>Consultoria Empresarial</h3>
+      <h3>Formada em Inglês e Espanhol pela Influx</h3>
       <p>
-        Desenvolvemos estratégias para o crescimento e sucesso do seu negócio.
+        Concluí o curso de inglês em 2019, participei de dois anos de conversação e iniciei o aprendizado de espanhol. 
+        Acredito que aprender novas línguas é sempre uma experiência enriquecedora e abre muitas portas,
+         tanto profissionais quanto pessoais
       </p>
     </div>
     <div class="service">
-      <h3>Desenvolvimento de Software</h3>
+      <h3>Dancei no mundial de HipHop em Phoenix</h3>
       <p>
-        Criamos soluções personalizadas para suas necessidades tecnológicas.
+        Quando eu tinha 13 anos dencei no mundial de danças urbanas, em Phoenix,Arizona. Sempre estive envolvida com a dança, 
+        participando de muitas competições nacionais e internacionais.
       </p>
     </div>
     <div class="service">
-      <h3>Marketing Digital</h3>
+      <h3>Criei em 2024 um projeto para ONG Acalento</h3>
       <p>
-        Aumente sua presença online com nossas estratégias de marketing digital.
+       Essa é uma ONG o qual não possuía um site para administrar os patrocinadores, voluntários e crianças participantes.
+        Esse projeto incluiu o desenvolvimento de inscricões dos voluntários, 
+        cadastro de crianças, registro de doações, agendamentos de atividade humanitárias, entre outras coisas...
       </p>
     </div>
   </section>
 
   <section class="cta-section">
-    <h2>Pronto para começar?</h2>
+    <h2>Alguma dúvida?</h2>
     <button class="cta-button">Entre em contato</button>
   </section>
 
   <section class="contact">
-    <h2>Fale Conosco</h2>
+    <h2>Fale Comigo</h2>
     <form [formGroup]="form" (ngSubmit)="publishTask()">
       <input type="text" placeholder="Nome" formControlName="name"/>
       <input type="email" placeholder="Email" formControlName="email"/>

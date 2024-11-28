@@ -20,22 +20,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 400px;
-  background-color: $color-primary-light-1;
+  background-color:#c57a81;
   padding: 10px 20px;
   border-radius: 100px;
-  box-shadow: 0 4px 20px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px 10px (#fad3c4);
 }
 
-.logo {
-  padding: 10px;
-  img {
-    width: 60px;
-    height: auto;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-}
+
 
 .nav-links {
   list-style: none;
@@ -45,23 +36,24 @@ nav {
   margin: 0;
   li {
     a {
-      color: $color-secondary;
+      color: #fad3c4;
       text-decoration: none;
       font-weight: bold;
+      font-family: serif ;
       &:hover {
-        color: $color-secondary-hover;
+        color: #fad3c4;
       }
     }
   }
 }
 
 .cta {
-  background-color: $color-secondary;
+  background-color: #fad3c4;
   padding: 5px 15px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  color: $color-support;
+  color:#c57a81;
   img {
     max-width: 40px;
   }
@@ -73,5 +65,5 @@ nav {
 }
 
 .cta:hover {
-  background-color: $color-secondary-hover;
+  background-color:pink;
 }
