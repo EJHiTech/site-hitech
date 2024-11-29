@@ -1,8 +1,5 @@
 @import "colors.scss";
 
-
-
-
 section {
   padding: 100px 20px;
   display: flex;
@@ -54,7 +51,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:#c57a81 (
+    background-color:#e85234 (
       0,
       0,
       0,
@@ -71,8 +68,8 @@ section {
     position: relative;
     z-index: 2;
     font-size: 36px;
-    font-family:Courier New, monospace;
-    color: #c57a81; /* Ajuste conforme a necessidade de contraste */
+    font-family:'';
+    color: #e85234; /* Ajuste conforme a necessidade de contraste */
     margin-left: 200px;
   }
 }
@@ -84,19 +81,20 @@ section {
 #about {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #c57a81;
+  background-color: #e85234;
   padding: 20px;
   h2 {
     font-family: serif;
-    color: #fad3c4;
+    font-weight: bold;
+    color:white;
     margin-bottom: 10px;
 
   }
 
   p {
-    font-family: "Courier New", monospace;
-    color: #fad3c4;
-    font-size: medium;
+    font-family: 'Didot', serif;
+    color:white;
+    font-size: large;
     margin-bottom: 1%;
   }
 
@@ -118,14 +116,14 @@ section {
 }
 
 #services {
-  background-color: #fad3c4;
+  background-color: #f2eee9;
   display: flex;
   justify-content: space-around;
   gap: 20px;
   flex-wrap: wrap;
    h2{
     font-family: serif;
-    color:#c57a81;
+    color:#e85234;
    }
 
   .service {
@@ -142,27 +140,27 @@ section {
   
 
     h3 {
-      color: #c57a81;
+      color: #f9b8af;
       margin-bottom: 10px;
-      font-family: American Typewriter, serif;
+      font-family:  serif;
     }
 
     p {
       color: $color-support;
-      font-family:'Courier New', monospace;
+      font-family:'Didot', serif;;
     }
   }
 }
 
 .cta-section {
-  background-color:#c57a81;
+  background-color:#f9b8af;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
   font-family: serif;
 
   .cta-button {
-    background-color:#fad3c4 ;
+    background-color:#f2d7d3 ;
     color: #fff;
     padding: 15px 30px;
     border-radius: 50px;
@@ -170,7 +168,7 @@ section {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Didot', serif;;
 
     &:hover {
       background-color: $color-secondary-hover;
@@ -179,10 +177,10 @@ section {
 }
 
 .contact {
-  background-color:#fad3c4;
+  background-color:#f2eee9;
   h2{
     font-family: serif;
-    color:#c57a81;
+    color:#e85234;
   }
   form {
     display: flex;
@@ -195,14 +193,14 @@ section {
     textarea {
       padding: 15px;
       border-radius: 5px;
-      border: 2px solid #c57a81;
+      border: 2px solid #e85234;
       font-size: 1rem;
       color: $color-support;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Didot', serif;;
     }
 
     button {
-      background-color: #c57a81;
+      background-color: #e85234;
       color: #fff;
       padding: 15px;
       border-radius: 5px;
@@ -211,7 +209,7 @@ section {
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #c57a81;
+        background-color: #f2d7d3;
       }
     }
   }

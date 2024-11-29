@@ -1,8 +1,8 @@
 @import "colors.scss";
 
 footer {
-  background-color: #c57a81; // Cor de fundo principal do rodapé
-  color: #fad3c4; // Cor do texto
+  background-color: #e85234; // Cor de fundo principal do rodapé
+  color: white; // Cor do texto
 
   padding: 20px 0;
   text-align: center;
@@ -23,15 +23,15 @@ footer {
 
     h4 {
       margin-bottom: 10px;
-      color: #fad3c4; // Cor do título
+      color: white; // Cor do título
       font-family: serif;
     }
 
     p {
       margin: 5px 0;
       font-size: 0.9rem;
-      color:#fad3c4; // Cor do texto normal
-      font-family: 'Courier New', Courier, monospace;
+      color:white; // Cor do texto normal
+      font-family: 'Didot',serif;
     }
   }
 
@@ -48,7 +48,7 @@ footer {
       display: flex;
       align-items: start;
       margin-bottom: 10px;
-      color: #c57a81;
+      color: #f2d7d3;
       text-decoration: none;
       transition: color 0.3s;
 
@@ -70,9 +70,9 @@ footer {
   }
 
   .footer-bottom {
-    border-top: 1px solid #fad3c4; // Cor da borda superior do rodapé
+    border-top: 1px solid white; // Cor da borda superior do rodapé
     padding-top: 10px;
     font-size: 0.8rem;
-    color: #fad3c4; // Cor do texto de direitos reservados
+    color: white; // Cor do texto de direitos reservados
   }
 }
