@@ -11,8 +11,8 @@ import { CoreComponent } from './core/core.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PublishTaskService } from 'shared/publish-task.service';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ContentService } from './services/content.service';  // Importando o ContentService
 
 @NgModule({
   declarations: [
@@ -25,13 +25,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  // Não precisa do CommonModule, já está incluso no BrowserModule
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule,
-    HttpClientModule,
+    HttpClientModule,  // Módulo para fazer requisições HTTP
   ],
-  providers: [PublishTaskService],
+  providers: [
+    PublishTaskService,
+    ContentService,  // Adicionando o ContentService aos provedores
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

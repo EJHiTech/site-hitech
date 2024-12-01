@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PublishTaskService } from 'shared/publish-task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ContentService } from '@app/services/content.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  content: any = {}
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private publishTaskService: PublishTaskService
+    private publishTaskService: PublishTaskService,
+    private contentService: ContentService
   ) {}
 
   form!: FormGroup;
@@ -20,6 +23,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.startTypingEffect();
 
+    // Se inscreve no conteúdo compartilhado pelo serviço
+    this.contentService.content$.subscribe((data) => {
+      this.content = data.home || {}; // Acessa o conteúdo específico para a página 'home'
+    });
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const fragment = this.router.parseUrl(this.router.url).fragment;
