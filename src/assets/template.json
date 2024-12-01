@@ -1,0 +1,20 @@
+{
+    "home": {
+      "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
+      "description": "Essa é a descrição da página inicial do site.",
+      "sectionTitle": "Título da Seção 1",
+      "sectionContent": "Conteúdo da seção 1."
+    },
+    "about": {
+      "title": "Sobre Nós",
+      "description": "Saiba mais sobre nós nesta página.",
+      "sectionTitle": "Título da Seção Sobre",
+      "sectionContent": "Conteúdo da seção sobre."
+    },
+    "footer": {
+      "title": "Fale Conosco",
+      "description": "Entre em contato conosco.",
+      "sectionTitle": "Endereço",
+      "sectionContent": "Rua Exemplo, 123, Bairro Teste."
+    }
+  }
