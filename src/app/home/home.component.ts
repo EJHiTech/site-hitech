@@ -71,9 +71,9 @@ export class HomeComponent implements OnInit {
   startTypingEffect(): void {
     const typedText = document.getElementById('typed-text');
     const texts = [
-      'Bem-vindo à HÏ TECH',
+      'Bem-vindo!',
       'Inovação e Sucesso',
-      'Sua Solução Ideal',
+      'Qualidade e Segurança',
     ];
     let index = 0;
     let charIndex = 0;

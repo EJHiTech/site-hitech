@@ -3,7 +3,7 @@
 .scroll-container {
   width: 100%;
   font-family: "Overpass", sans-serif;
-  color: $color-support;
+  color: $color-secondary-dark-2;
 }
 
 section {
@@ -17,10 +17,10 @@ section {
 #typed-text {
   font-size: 3rem;
   font-weight: bold;
-  color: $color-secondary;
-  border-right: 2px solid $color-primary; /* Simula o cursor piscando */
+  color: $color-support-dark-1;
+  border-right: 2px solid $color-support-dark-2; /* Simula o cursor piscando */
   white-space: nowrap;
-  overflow: hidden; /* Esconde o texto enquanto é digitado */
+  overflow: hidden; /* Esconde o texto enquanto  digitado */
   display: inline-block;
 }
 
@@ -29,7 +29,7 @@ section {
     border-color: transparent;
   }
   50% {
-    border-color: $color-primary;
+    border-color: $color-support-dark-2;
   }
   100% {
     border-color: transparent;
@@ -43,7 +43,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; /* Ajuste conforme necessário */
+  height: 100vh; /* Ajuste conforme necess rio */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,42 +57,60 @@ section {
     width: 100%;
     height: 100%;
     background-color: rgba(
-      0,
-      0,
-      0,
+      255,
+      255,
+      255,
       0.5
-    ); /* Ajuste a opacidade conforme necessário */
+    ); /* Ajuste a opacidade conforme necess rio */
     filter: grayscale(100%);
     pointer-events: none; /* Bloqueia cliques na imagem */
     z-index: 1;
   }
-  /* Conteúdo dentro da hero section */
+  /* Conteudo dentro da hero section */
   h1,
   p {
     content: "";
     position: relative;
     z-index: 2;
     font-size: 36px;
-    color: #fff; /* Ajuste conforme a necessidade de contraste */
+    color: $color-support-dark-1; /* Ajuste conforme a necessidade de contraste */
   }
 }
 
-.about {
-  background-color: $color-secondary-light-2;
+#about {
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: #333;
+    flex: 1;
+    text-align: left;
+  }
+
+  p {
+    color: #333;
+    flex: 1;
+    text-align: left;
+  }
+
   img {
-    width: 80%;
+    width: 40%;
     border-radius: 10px;
-    margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
+
+
 #services {
-  background-color: $color-primary-light-1;
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
+  background-color: $color-support-light-1;
+  text-align: center; /* Mant m o t tulo alinhado no centro */
 
   .service {
     background-color: #fff;
@@ -115,10 +133,18 @@ section {
       color: $color-support;
     }
   }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
 
 .cta-section {
-  background-color: $color-primary-dark-1;
+  background-color: $color-support-dark-1;
   color: #fff;
   padding: 80px 20px;
   text-align: center;
@@ -140,7 +166,7 @@ section {
 }
 
 .contact {
-  background-color: $color-secondary-light-1;
+  background-color: $color-support-light-1;
 
   form {
     display: flex;
@@ -153,7 +179,7 @@ section {
     textarea {
       padding: 15px;
       border-radius: 5px;
-      border: 2px solid $color-primary-light-1;
+      border: 2px solid $color-support-light-1;
       font-size: 1rem;
       color: $color-support;
     }
@@ -173,3 +199,4 @@ section {
     }
   }
 }
+
