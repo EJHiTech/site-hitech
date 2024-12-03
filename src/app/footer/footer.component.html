@@ -1,24 +1,21 @@
 <footer>
   <div class="footer-container">
     <div class="footer-contact">
-      <p>{{ "Email: contato@hitech.org.br" }}</p>
-      <p>Telefone: (41) 99850-5198</p>
+      <p>{{ content.info1 }}</p>
+      <p>{{ content.info2 }}</p>
     </div>
 
     <div class="footer-info">
-      <h4>Hï Tech</h4>
-      <p>
-        Endereço: Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP
-        80230-901
-      </p>
-      <p>CNPJ: 00.000.000/0000-00</p>
+      <h4>{{ content.divTitle1 }}</h4>
+      <p>{{ content.info3 }}</p>
+      <p>{{ content.info4 }}</p>
     </div>
 
     <div class="footer-social">
       <div class="social-content">
-        <a href="https://www.linkedin.com/company/hïtech/" target="_blank">
+        <a href="https://www.linkedin.com/company/hÃ¯tech/" target="_blank">
           <img src="assets/linkedin.webp" alt="LinkedIn" class="social-icon" />
-          LinkedIn
+          {{ content.link1 }}
         </a>
         <a href="https://www.instagram.com/hitech.ej/" target="_blank">
           <img
@@ -26,12 +23,12 @@
             alt="Instagram"
             class="social-icon"
           />
-          Instagram
+          {{ content.link2 }}
         </a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024 Hï Tech. Todos os direitos reservados.</p>
+    <p>&copy; {{ content.footerBottom }} </p>
   </div>
 </footer>
