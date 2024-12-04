@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PublishTaskService } from 'shared/publish-task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ContentService } from '@app/services/content.service';
+import { templateTextService } from '@app/services/templateText.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +10,13 @@ import { ContentService } from '@app/services/content.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  content: any = {}
+  templateText: any = {}
+  texts: string[] = []; // Textos para o efeito de digitação
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private publishTaskService: PublishTaskService,
-    private contentService: ContentService
+    private templateTextService: templateTextService
   ) {}
 
   form!: FormGroup;
@@ -24,8 +25,10 @@ export class HomeComponent implements OnInit {
     this.startTypingEffect();
 
     // Se inscreve no conteúdo compartilhado pelo serviço
-    this.contentService.content$.subscribe((data) => {
-    this.content = data.home || {}; // Acessa o conteúdo específico para a página 'home'
+    this.templateTextService.templateText$.subscribe((data) => {
+    this.templateText = data.home || {}; // Acessa o conteúdo específico para a página 'home'
+    this.texts = this.templateText.typingTexts || []; // Carrega os textos de digitação
+    this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
     });
 
     this.router.events.subscribe((event) => {
@@ -78,18 +81,12 @@ export class HomeComponent implements OnInit {
 
   startTypingEffect(): void {
     const typedText = document.getElementById('typed-text');
-    const texts = [
-      'Bem-vindo à HÏ TECH',
-      'Inovação e Sucesso',
-      'Sua Solução Ideal',
-    ];
     let index = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let currentText = '';
 
     const type = () => {
-      if (!typedText) return;
+      if (!typedText || this.texts.length === 0) return;
 
       if (isDeleting) {
         charIndex--;
@@ -97,16 +94,16 @@ export class HomeComponent implements OnInit {
         charIndex++;
       }
 
-      typedText.textContent = texts[index].substring(0, charIndex);
+      typedText.textContent = this.texts[index]?.substring(0, charIndex) || '';
 
-      if (!isDeleting && charIndex === texts[index].length) {
-        setTimeout(() => (isDeleting = true), 1000); // Pausa ao fim da digitação completa
+      if (!isDeleting && charIndex === this.texts[index].length) {
+        setTimeout(() => (isDeleting = true), 1000);
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        index = (index + 1) % texts.length; // Muda para a próxima frase
+        index = (index + 1) % this.texts.length;
       }
 
-      setTimeout(type, isDeleting ? 50 : 100); // Velocidade de exclusão e digitação
+      setTimeout(type, isDeleting ? 50 : 100);
     };
 
     type();
@@ -121,6 +118,7 @@ export class HomeComponent implements OnInit {
       // description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
       markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE: ${form.city},\n DESCRIÇÃO: ${form.description}`,
     };
+
 
     this.publishTaskService
       .publishTask(payload)
