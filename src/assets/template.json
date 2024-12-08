@@ -25,13 +25,13 @@
   "footer": {
     "title": "Fale Conosco",
     "description": "Entre em contato conosco.",
-    "info1": "Email: contato@hitech.org.br",
-    "info2": "Telefone: (41) 99850-5198",
+    "email": "Email: contato@hitech.org.br",
+    "telefone": "Telefone: (41) 99850-5198",
     "divTitle1": "Hï Tech",
-    "info3": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
-    "info4": "CNPJ: 00.000.000/0000-00",
-    "link1": "LinkedIn",
-    "link2": "Instagram",
+    "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
+    "cnpj": "CNPJ: 58.322.883/0001-36",
+    "linkLinkedin": "LinkedIn",
+    "linkInstagram": "Instagram",
     "footerBottom": "2024 Hï Tech. Todos os direitos reservados."
 
   }
