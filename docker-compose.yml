@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  site-hitech:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80" # Porta 8000 no host mapeada para porta 80 no container
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
