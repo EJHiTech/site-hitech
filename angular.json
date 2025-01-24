@@ -66,6 +66,13 @@
               ],
               "outputHashing": "all",
               "baseHref": "/"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "outputHashing": "none",
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"
