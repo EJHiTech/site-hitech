@@ -138,14 +138,14 @@ section {
       border-radius: 5px;
       border: 3px solid $color-primary;
       font-size: 1rem;
-      color: $color-secondary-light-2;
+      color: #fff;
       width: 100%;
       box-sizing: border-box;
 
       &:focus {
         background-color: $color-primary-dark-2 ;
         outline: none;
-        border-color: #FFF;
+        border-color: $color-secondary-light-2;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
       }
     }
