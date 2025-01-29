@@ -3,13 +3,23 @@
     <h1 id="typed-text"></h1>
     <p>{{templateText.title}}</p>
   </section>
-
-  <section id="about">
+  <section id="about-contact">
+    <img src="assets/logoAzulClaro.svg" style="max-width: 400px" alt="Sobre nós" />
+    <article id = "about">
     <h2>{{templateText.subtitle}}</h2>
     <p>{{templateText.description}}</p>
-    <img src="assets/logo.svg" style="max-width: 400px" alt="Sobre nós" />
+    </article>
+    <article id = "contact">
+    <h2>Fale Conosco</h2>
+    <form [formGroup]="form" (ngSubmit)="publishTask()">
+      <input type="text" placeholder="Nome" formControlName="name"/>
+      <input type="email" placeholder="Email" formControlName="email"/>
+      <input type="tel" placeholder="Telefone" formControlName="phone"/>
+      <textarea placeholder="Mensagem" formControlName="description"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </article>
   </section>
-
   <section id="services">
     <h2>{{templateText.sectionTitle}}</h2>
     <div class="service">
@@ -31,15 +41,4 @@
     <button class="cta-button">Entre em contato</button>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Fale Conosco</h2>
-    <form [formGroup]="form" (ngSubmit)="publishTask()">
-      <input type="text" placeholder="Nome" formControlName="name"/>
-      <input type="email" placeholder="Email" formControlName="email"/>
-      <input type="tel" placeholder="Telefone" formControlName="phone"/>
-      <input type="text" placeholder="Cidade" formControlName="city"/>
-      <textarea placeholder="Mensagem" formControlName="description"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-</div>
+
