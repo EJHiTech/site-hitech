@@ -14,6 +14,7 @@
     <form [formGroup]="form" (ngSubmit)="publishTask()">
       <input type="text" placeholder="Nome" formControlName="name"/>
       <input type="email" placeholder="Email" formControlName="email"/>
+      <input type="tel" placeholder="Telefone" formControlName="phone"/>
       <textarea placeholder="Mensagem" formControlName="description"></textarea>
       <button type="submit">Enviar</button>
     </form>
