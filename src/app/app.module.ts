@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PublishTaskService } from 'shared/publish-task.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,14 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
+    BrowserAnimationsModule, // Necessário para o toast funcionar
+    ToastrModule.forRoot({
+      timeOut: 4000, // Tempo maior para ficar visível
+      positionClass: 'toast-bottom-left', // Melhor posição
+      preventDuplicates: true, // Evita mensagens repetidas
+      progressBar: true, // Mostra barra de progresso
+      progressAnimation: 'increasing', // Animação legal na barra
+    }),
   ],
   providers: [PublishTaskService],
   bootstrap: [AppComponent],
