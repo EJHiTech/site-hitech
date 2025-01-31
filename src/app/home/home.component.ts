@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { PublishTaskService } from 'shared/publish-task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private publishTaskService: PublishTaskService,
-    private templateTextService: templateTextService
+    private templateTextService: templateTextService,
+    private toastr: ToastrService
   ) {}
 
   form!: FormGroup;
@@ -118,10 +120,24 @@ export class HomeComponent implements OnInit {
       // description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
       markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n DESCRIÇÃO: ${form.description}`,
     };
-
-
-    this.publishTaskService
-      .publishTask(payload)
-      .subscribe((res) => console.log(res));
+    this.publishTaskService.publishTask(payload).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.toastr.success(
+          'Seu formulário foi enviado com sucesso! 🎉',
+          'Sucesso!',
+          {}
+        );
+      },
+      error: (err) => {
+        console.error(err);
+        this.toastr.error(
+          'Ops! Algo deu errado. Tente novamente.',
+          'Erro!',
+          { }
+        );
+      },
+    });
+    this.form.reset();
   }
 }
