@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit {
         this.toastr.success(
           'Seu formulário foi enviado com sucesso! 🎉',
           'Sucesso!',
-          { timeOut: 5000, progressBar: true }
+          {}
         );
       },
       error: (err) => {
@@ -134,13 +134,10 @@ export class HomeComponent implements OnInit {
         this.toastr.error(
           'Ops! Algo deu errado. Tente novamente.',
           'Erro!',
-          { timeOut: 5000, progressBar: true }
+          { }
         );
       },
     });
-    this.publishTaskService
-      .publishTask(payload)
-      .subscribe((res) => console.log(res));
-    
+    this.form.reset();
   }
 }

@@ -32,13 +32,13 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule, // Necessário para o toast funcionar
+    BrowserAnimationsModule, 
     ToastrModule.forRoot({
-      timeOut: 4000, // Tempo maior para ficar visível
-      positionClass: 'toast-bottom-left', // Melhor posição
-      preventDuplicates: true, // Evita mensagens repetidas
-      progressBar: true, // Mostra barra de progresso
-      progressAnimation: 'increasing', // Animação legal na barra
+      timeOut: 4000, 
+      positionClass: 'toast-bottom-left', 
+      preventDuplicates: true, 
+      progressBar: true,
+      progressAnimation: 'increasing',
     }),
   ],
   providers: [PublishTaskService],
