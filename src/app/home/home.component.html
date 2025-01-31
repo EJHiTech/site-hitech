@@ -4,7 +4,9 @@
     <p>{{templateText.title}}</p>
   </section>
   <section id="about-contact">
-    <img src="assets/logoAzulClaro.svg" style="max-width: 400px" alt="Sobre nós" />
+    <img [src]="templateText.ImagemSecaoSobreNosContato.src" 
+     [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
+     [alt]="templateText.ImagemSecaoSobreNosContato.alt" />
     <article id = "about">
     <h2>{{templateText.subtitle}}</h2>
     <p>{{templateText.description}}</p>
