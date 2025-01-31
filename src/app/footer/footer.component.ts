@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { templateTextService } from '../services/templateText.service'; // Certifique-se de que o caminho está correto
+import { templateTextService } from '../services/templateText.service'; 
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     // Se inscreve no conteúdo compartilhado pelo serviço
     this.templateTextService.templateText$.subscribe((data) => {
-      this.templateText = data.footer ||{}; // Acessa o conteúdo específico para a página 'home'
+      this.templateText = data.footer ||{}; // Acessa o conteúdo específico para a página 'footer'
       });
   }
 }

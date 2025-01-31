@@ -1,5 +1,24 @@
 {
+
+  "core":{
+    "LogoEmpresa": {
+      "src": "assets/logo_branca.svg",
+      "alt": "Logo da empresa Hï Tech"
+    }
+
+  },
+
+
   "home": {
+
+    "ImagemSecaoSobreNosContato": {
+      "src": "assets/logoAzulClaro.svg",
+      "style": {
+        "max-width": "400px"
+      },
+      "alt": "Logo da Hï Tech em azul claro"
+    },
+
     "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
     "subtitle": "Sobre Nós",
     "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
