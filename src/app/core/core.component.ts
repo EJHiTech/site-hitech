@@ -17,9 +17,8 @@ export class CoreComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    // Se inscreve no conteúdo compartilhado pelo serviço
     this.templateTextService.templateText$.subscribe((data) => {
-    this.templateText = data.core ||{}; // Acessa o conteúdo específico para a página 'core'
+    this.templateText = data.core ||{};
 
 });
 

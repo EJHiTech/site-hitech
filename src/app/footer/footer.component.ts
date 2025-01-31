@@ -12,9 +12,8 @@ export class FooterComponent implements OnInit {
   constructor(private templateTextService: templateTextService) { }
 
   ngOnInit(): void {
-    // Se inscreve no conteúdo compartilhado pelo serviço
     this.templateTextService.templateText$.subscribe((data) => {
-      this.templateText = data.footer ||{}; // Acessa o conteúdo específico para a página 'footer'
+      this.templateText = data.footer ||{}; 
       });
   }
 }
