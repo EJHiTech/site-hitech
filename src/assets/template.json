@@ -33,6 +33,14 @@
         }
       ]
     },
+    "Costumers": {
+      "sectionTitle": "Clientes",
+      "list": []
+    },
+    "Partners": {
+      "sectionTitle": "Parceiros",
+      "list": []
+    },
 
     "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
     "subtitle": "Sobre Nós",
