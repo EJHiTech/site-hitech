@@ -28,10 +28,8 @@
     </article>
     <div id="toast-container"></div>
   </section>
-  <section
-    id="services"
-  >
-    <img [src]="templateText.Services.bgImage" alt="binarios">
+  <section id="services">
+    <img [src]="templateText.Services.bgImage" alt="binarios" />
     <h2>{{ templateText.Services.sectionTitle }}</h2>
     <div class="service-list">
       <div class="service" *ngFor="let service of services">
@@ -40,9 +38,27 @@
       </div>
     </div>
   </section>
-
+  <section *ngIf="costumers.length || partners.length" id="customersPartners">
+    <div *ngIf="costumers.length" id="customers">
+      <h3>{{ templateText.Costumers.sectionTitle }}</h3>
+      <div class="list">
+        <div class="item" *ngFor="let costumer of costumers">
+          <img [src]="costumer.img" />
+        </div>
+      </div>
+    </div>
+    <div *ngIf="partners.length" id="partners">
+      <h3>{{ templateText.Partners.sectionTitle }}</h3>
+      <div class="list">
+        <div class="item" *ngFor="let partner of partners">
+          <img [src]="partner.img" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 
   <section class="cta-section">
     <h2>Pronto para começar?</h2>
     <button class="cta-button">Entre em contato</button>
-  </section>
+  </section> -->
 </div>
