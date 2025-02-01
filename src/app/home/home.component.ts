@@ -5,14 +5,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
 import { ToastrService } from 'ngx-toastr';
 
+interface CompanyServices {
+  title: string;
+  description: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  templateText: any = {}
+  templateText: any = {};
   texts: string[] = []; // Textos para o efeito de digitação
+  services: CompanyServices[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -28,9 +33,10 @@ export class HomeComponent implements OnInit {
 
     // Se inscreve no conteúdo compartilhado pelo serviço
     this.templateTextService.templateText$.subscribe((data) => {
-    this.templateText = data.home || {}; // Acessa o conteúdo específico para a página 'home'
-    this.texts = this.templateText.typingTexts || []; // Carrega os textos de digitação
-    this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
+      this.templateText = data.home || {}; // Acessa o conteúdo específico para a página 'home'
+      this.texts = this.templateText.typingTexts || []; // Carrega os textos de digitação
+      this.services = this.templateText.Services.list;
+      this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
     });
 
     this.router.events.subscribe((event) => {
@@ -125,17 +131,12 @@ export class HomeComponent implements OnInit {
         console.log(res);
         this.toastr.success(
           'Seu formulário foi enviado com sucesso! 🎉',
-          'Sucesso!',
-          {}
+          'Sucesso!'
         );
       },
       error: (err) => {
         console.error(err);
-        this.toastr.error(
-          'Ops! Algo deu errado. Tente novamente.',
-          'Erro!',
-          { }
-        );
+        this.toastr.error('Ops! Algo deu errado. Tente novamente.', 'Erro!');
       },
     });
     this.form.reset();
