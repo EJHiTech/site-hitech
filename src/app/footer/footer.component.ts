@@ -8,6 +8,7 @@ import { templateTextService } from '../services/templateText.service';
 })
 export class FooterComponent implements OnInit {
   templateText: any = {}
+  currentYear = new Date().getFullYear();
 
   constructor(private templateTextService: templateTextService) { }
 
