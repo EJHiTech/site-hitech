@@ -50,6 +50,7 @@ nav {
       font-weight: bold;
       &:hover {
         color: $color-secondary-hover;
+        cursor: pointer;
       }
     }
   }
