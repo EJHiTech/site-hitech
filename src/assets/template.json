@@ -5,7 +5,6 @@
       "alt": "Logo da empresa Hï Tech"
     }
   },
-
   "home": {
     "ImagemSecaoSobreNosContato": {
       "src": "assets/logoAzulClaro.svg",
@@ -14,7 +13,6 @@
       },
       "alt": "Logo da Hï Tech em azul claro"
     },
-
     "Services": {
       "sectionTitle": "Nossos Serviços",
       "bgImage": "assets/binarios.png",
@@ -33,7 +31,14 @@
         }
       ]
     },
-
+    "Costumers": {
+      "sectionTitle": "Clientes",
+      "list": []
+    },
+    "Partners": {
+      "sectionTitle": "Parceiros",
+      "list": []
+    },
     "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
     "subtitle": "Sobre Nós",
     "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
@@ -62,7 +67,6 @@
         "icon": "assets/instagram.webp"
       }
     ],
-
     "title": "Fale Conosco",
     "description": "Entre em contato conosco.",
     "email": "Email: contato@hitech.org.br",

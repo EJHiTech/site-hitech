@@ -5,9 +5,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
 import { ToastrService } from 'ngx-toastr';
 
+// Estas interfaces remetem aos tipos de preenchimento da seção de clientes e parceiros no template.json
 interface CompanyServices {
   title: string;
   description: string;
+}
+interface CostumersAndPartners {
+  img: string;
 }
 @Component({
   selector: 'app-home',
@@ -18,6 +22,8 @@ export class HomeComponent implements OnInit {
   templateText: any = {};
   texts: string[] = []; // Textos para o efeito de digitação
   services: CompanyServices[] = [];
+  costumers: CostumersAndPartners[] = [];
+  partners: CostumersAndPartners[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -36,6 +42,8 @@ export class HomeComponent implements OnInit {
       this.templateText = data.home || {}; // Acessa o conteúdo específico para a página 'home'
       this.texts = this.templateText.typingTexts || []; // Carrega os textos de digitação
       this.services = this.templateText.Services.list;
+      this.costumers = this.templateText.Costumers.list;
+      this.partners = this.templateText.Partners.list;
       this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
     });
 
