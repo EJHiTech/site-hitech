@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
 import { ToastrService } from 'ngx-toastr';
 
+// Estas interfaces remetem aos tipos de preenchimento da seção de clientes e parceiros no template.json
 interface CompanyServices {
   title: string;
   description: string;
