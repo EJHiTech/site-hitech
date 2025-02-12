@@ -20,10 +20,12 @@ section {
   font-size: 3rem;
   font-weight: bold;
   color: $color-secondary;
-  border-right: 2px solid $color-primary;
-  white-space: nowrap;
   overflow: hidden;
   display: inline-block;
+  @media only screen and (min-width: 500px) {
+    white-space: nowrap;
+    border-right: 2px solid $color-primary;
+  }
 }
 
 @keyframes blink-caret {
@@ -98,8 +100,10 @@ section {
     margin-left: 60px;
     margin-top: 20px;
     max-width: 400px;
-    @media only screen and (max-width: 500px) {
-      margin-right: 50px;
+    @media only screen and (max-width: 500px) { 
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   #about {
