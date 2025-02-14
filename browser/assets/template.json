@@ -1,0 +1,79 @@
+{
+  "core": {
+    "LogoEmpresa": {
+      "src": "assets/logo_branca.svg",
+      "alt": "Logo da empresa Hï Tech"
+    }
+  },
+  "home": {
+    "ImagemSecaoSobreNosContato": {
+      "src": "assets/logoAzulClaro.svg",
+      "style": {
+        "max-width": "400px"
+      },
+      "alt": "Logo da Hï Tech em azul claro"
+    },
+    "Services": {
+      "sectionTitle": "Nossos Serviços",
+      "bgImage": "assets/binarios.png",
+      "list": [
+        {
+          "title": "Consultoria Empresarial",
+          "description": "Desenvolvemos estratégias para o crescimento e sucesso do seu negócio."
+        },
+        {
+          "title": "Desenvolvimento de Software",
+          "description": "Criamos soluções personalizadas para suas necessidades tecnológicas."
+        },
+        {
+          "title": "Marketing Digital",
+          "description": "Aumente sua presença online com nossas estratégias de marketing digital."
+        }
+      ]
+    },
+    "Costumers": {
+      "sectionTitle": "Clientes",
+      "list": []
+    },
+    "Partners": {
+      "sectionTitle": "Parceiros",
+      "list": []
+    },
+    "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
+    "subtitle": "Sobre Nós",
+    "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
+    "typingTexts": [
+      "Bem-vindo à HÏ TECH",
+      "Inovação e Sucesso",
+      "Sua Solução Ideal"
+    ]
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "description": "Saiba mais sobre nós nesta página.",
+    "sectionTitle": "Título da Seção Sobre",
+    "sectionContent": "Conteúdo da seção sobre."
+  },
+  "footer": {
+    "RedesSociais": [
+      {
+        "nome": "LinkedIn",
+        "url": "https://www.linkedin.com/company/hïtech/",
+        "icon": "assets/linkedin.webp"
+      },
+      {
+        "nome": "Instagram",
+        "url": "https://www.instagram.com/hitech.ej/",
+        "icon": "assets/instagram.webp"
+      }
+    ],
+    "title": "Fale Conosco",
+    "description": "Entre em contato conosco.",
+    "email": "Email: contato@hitech.org.br",
+    "telefone": "Telefone: (41) 99850-5198",
+    "divTitle1": "Hï Tech",
+    "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
+    "cnpj": "CNPJ: 58.322.883/0001-36",
+    "footerBottom": "Hï Tech. Todos os direitos reservados."
+  }
+}
