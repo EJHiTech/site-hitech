@@ -13,22 +13,16 @@
 
     <div class="footer-social">
       <div class="social-content">
-        <a href="https://www.linkedin.com/company/hïtech/" target="_blank">
-          <img src="assets/linkedin.webp" alt="LinkedIn" class="social-icon" />
-          {{templateText.linkLinkedin }}
-        </a>
-        <a href="https://www.instagram.com/hitech.ej/" target="_blank">
-          <img
-            src="assets/instagram.webp"
-            alt="Instagram"
-            class="social-icon"
-          />
-          {{templateText.linkInstagram }}
+        <a *ngFor="let rede of templateText.RedesSociais" 
+     [href]="rede.url" 
+     target="_blank">
+    <img [src]="rede.icon" [alt]="rede.nome" class="social-icon" />
+          {{ rede.nome }}
         </a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; {{templateText.footerBottom }} </p>
+    <p>&copy; {{ currentYear }} {{templateText.footerBottom }} </p>
   </div>
 </footer>
