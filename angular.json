@@ -72,7 +72,8 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/"
+              "baseHref": "/",
+              "index": "src/index.html"
             },
             "development": {
               "optimization": false,
