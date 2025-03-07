@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
-import { environment } from '../../environments/env.prod';
+import { Component, OnInit } from '@angular/core';
+import { templateTextService } from '../services/templateText.service';
 
 @Component({
   selector: 'app-whatsapp-button',
   templateUrl: './whatsapp-button.component.html',
   styleUrls: ['./whatsapp-button.component.scss']
 })
-export class WhatsappButtonComponent {
-  whatsappNumber = environment.whatsappNumber;
-  whatsappText = environment.whatsappText;
-  whatsappIconPath = environment.whatsappIconPath;
+export class WhatsappButtonComponent implements OnInit {
+  templateText: any = {};
 
-  constructor() {
+  constructor(private templateTextService: templateTextService) {}
+
+  ngOnInit() {
+    this.templateTextService.templateText$.subscribe(data => {
+      this.templateText = data;
+    });
   }
 }
