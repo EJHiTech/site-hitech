@@ -1,29 +1,35 @@
 <div class="scroll-container">
   <section id="hero">
     <h1 id="typed-text"></h1>
-    <p>{{templateText.title}}</p>
+    <p>{{ templateText.title }}</p>
   </section>
   <section id="about-contact">
-    <img src="assets/logoAzulClaro.svg" style="max-width: 400px" alt="Sobre nós" />
-    <article id = "about">
-    <h2>{{templateText.subtitle}}</h2>
-    <p>{{templateText.description}}</p>
+    <img
+      [src]="templateText.ImagemSecaoSobreNosContato.src"
+      [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
+      [alt]="templateText.ImagemSecaoSobreNosContato.alt"
+    />
+    <article id="about">
+      <h2>{{ templateText.subtitle }}</h2>
+      <p>{{ templateText.description }}</p>
     </article>
-    <article id = "contact">
-    <h2>Fale Conosco</h2>
-    <form [formGroup]="form" (ngSubmit)="publishTask()">
-      <input type="text" placeholder="Nome" formControlName="name"/>
-      <input type="email" placeholder="Email" formControlName="email"/>
-      <input type="tel" placeholder="Telefone" formControlName="phone"/>
-      <textarea placeholder="Mensagem" formControlName="description"></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </article>
-  <div id="toast-container"></div>
+    <article id="contact">
+      <h2>Fale Conosco</h2>
+      <form [formGroup]="form" (ngSubmit)="publishTask()">
+        <input type="text" placeholder="Nome" formControlName="name" />
+        <input type="email" placeholder="Email" formControlName="email" />
+        <input type="tel" placeholder="Telefone" formControlName="phone" />
+        <textarea
+          placeholder="Mensagem"
+          formControlName="description"
+        ></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </article>
+    <div id="toast-container"></div>
   </section>
   <section class="cta-section">
     <h2>Pronto para começar?</h2>
     <button class="cta-button">Entre em contato</button>
-  </section>
-
-
+  </section> -->
+</div>

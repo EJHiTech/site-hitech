@@ -2,6 +2,7 @@
 
 .scroll-container {
   width: 100%;
+  min-width: 400px;
   font-family: "Overpass", sans-serif;
   color: $color-support;
 }
@@ -9,19 +10,23 @@
 section {
   padding: 100px 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 20px;
 }
 
 #typed-text {
   font-size: 3rem;
   font-weight: bold;
   color: $color-secondary;
-  border-right: 2px solid $color-primary; /* Simula o cursor piscando */
-  white-space: nowrap;
-  overflow: hidden; /* Esconde o texto enquanto é digitado */
+  overflow: hidden;
   display: inline-block;
+  @media only screen and (min-width: 500px) {
+    white-space: nowrap;
+    border-right: 2px solid $color-primary;
+  }
 }
 
 @keyframes blink-caret {
@@ -43,7 +48,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; /* Ajuste conforme necessário */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,14 +61,9 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Ajuste a opacidade conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5);
     filter: grayscale(100%);
-    pointer-events: none; /* Bloqueia cliques na imagem */
+    pointer-events: none;
     z-index: 1;
   }
   /* Conteúdo dentro da hero section */
@@ -73,110 +73,126 @@ section {
     position: relative;
     z-index: 2;
     font-size: 36px;
-    color: #fff; /* Ajuste conforme a necessidade de contraste */
+    color: #fff;
   }
 }
 
-
-/* SOBRE E CONTATO */
 #about-contact {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 60px 20px;
   text-align: center;
   color: $color-primary-light-2;
   background-color: $color-support-light-1;
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.8;
-    max-width: 600px; 
-  }
+  flex-wrap: wrap;
 
   img {
     margin-left: 60px;
     margin-top: 20px;
-    max-width: 400px; /* Limita tamanho da imagem */
-  }
-  #about{
-    text-align: justify;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-
-#contact {
-  margin: auto;
-  margin-top: 40px;
-  background-color: $color-support-light-1; /* Fundo do formulário */
-  padding: 40px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 600px; /* Limita a largura do formulário */
-
-  h2 {
-    font-size: 2rem;
-    color: $color-primary-light-2;
-    margin-bottom: 20px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    max-width: 400px;
     width: 100%;
+  }
 
-    input,
-    textarea {
-      background-color: $color-support-light-3;
-      padding: 15px;
-      border-radius: 5px;
-      border: 3px solid $color-primary;
-      font-size: 1rem;
-      color: #fff;
+  #about {
+    text-align: justify;
+    width: min(100%, 300px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    #about {
+      margin-top: 40px;
+      h2, p {
+        text-align: center;
+      }
+    }
+
+    img {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  #contact {
+    margin: auto;
+    margin-top: 40px;
+    background-color: $color-support-light-1;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+
+    h2 {
+      font-size: 2rem;
+      color: $color-primary-light-2;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
       width: 100%;
-      box-sizing: border-box;
 
-      &::placeholder{
-        color:$color-secondary-light-2;
+      input,
+      textarea {
+        background-color: $color-support-light-3;
+        padding: 15px;
+        border-radius: 5px;
+        border: 3px solid $color-primary;
+        font-size: 1rem;
+        color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+
+        &::placeholder {
+          color: $color-secondary-light-2;
+        }
+
+        &:focus {
+          background-color: $color-primary-dark-2;
+          outline: none;
+          border-color: $color-secondary-light-2;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
       }
 
-      &:focus {
-        background-color: $color-primary-dark-2 ;
-        outline: none;
-        border-color: $color-secondary-light-2;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      textarea {
+        resize: none;
+        height: 120px;
       }
-    }
 
-    textarea {
-      resize: none;
-      height: 120px;
-    }
+      button {
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
 
-    button {
-      padding: 15px;
-      border-radius: 5px;
-      border: none;
-      background-color: #007bff;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #0056b3;
+        &:hover {
+          background-color: #0056b3;
+        }
       }
     }
   }
-}
 }
 
 .cta-section {
@@ -200,6 +216,3 @@ section {
     }
   }
 }
-
-
-

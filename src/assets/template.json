@@ -1,5 +1,44 @@
 {
+  "core": {
+    "LogoEmpresa": {
+      "src": "assets/logo_branca.svg",
+      "alt": "Logo da empresa Hï Tech"
+    }
+  },
   "home": {
+    "ImagemSecaoSobreNosContato": {
+      "src": "assets/logoAzulClaro.svg",
+      "style": {
+        "max-width": "400px"
+      },
+      "alt": "Logo da Hï Tech em azul claro"
+    },
+    "Services": {
+      "sectionTitle": "Nossos Serviços",
+      "bgImage": "assets/binarios.png",
+      "list": [
+        {
+          "title": "Consultoria Empresarial",
+          "description": "Desenvolvemos estratégias para o crescimento e sucesso do seu negócio."
+        },
+        {
+          "title": "Desenvolvimento de Software",
+          "description": "Criamos soluções personalizadas para suas necessidades tecnológicas."
+        },
+        {
+          "title": "Marketing Digital",
+          "description": "Aumente sua presença online com nossas estratégias de marketing digital."
+        }
+      ]
+    },
+    "Costumers": {
+      "sectionTitle": "Clientes",
+      "list": []
+    },
+    "Partners": {
+      "sectionTitle": "Parceiros",
+      "list": []
+    },
     "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
     "subtitle": "Sobre Nós",
     "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
@@ -25,6 +64,18 @@
     "sectionContent": "Conteúdo da seção sobre."
   },
   "footer": {
+    "RedesSociais": [
+      {
+        "nome": "LinkedIn",
+        "url": "https://www.linkedin.com/company/hïtech/",
+        "icon": "assets/linkedin.webp"
+      },
+      {
+        "nome": "Instagram",
+        "url": "https://www.instagram.com/hitech.ej/",
+        "icon": "assets/instagram.webp"
+      }
+    ],
     "title": "Fale Conosco",
     "description": "Entre em contato conosco.",
     "email": "Email: contato@hitech.org.br",
