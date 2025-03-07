@@ -179,38 +179,6 @@ section {
 }
 }
 
-
-
-#services {
-  background-color: $color-primary-light-1;
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
-
-  .service {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-10px);
-    }
-
-    h3 {
-      color: $color-primary;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: $color-support;
-    }
-  }
-}
-
 .cta-section {
   background-color: $color-primary-dark-1;
   color: #fff;
