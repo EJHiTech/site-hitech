@@ -18,7 +18,7 @@
       <form [formGroup]="form" (ngSubmit)="publishTask()">
         <input type="text" placeholder="Nome" formControlName="name" />
         <input type="email" placeholder="Email" formControlName="email" />
-        <input type="tel" placeholder="Telefone" formControlName="phone" />
+        <input type="tel" placeholder="Telefone" formControlName="phone" mask="(00) 00000-0000" />
         <textarea
           placeholder="Mensagem"
           formControlName="description"
