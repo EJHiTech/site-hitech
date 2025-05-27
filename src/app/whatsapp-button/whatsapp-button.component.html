@@ -1,6 +1,6 @@
 <div class="whatsapp-section">
-  <a href="https://wa.me/5541998505198" target="_blank" class="whatsapp-icon">
+  <a [href]="templateText.whatsapp?.whatsappNumberLink" target="_blank" class="whatsapp-icon">
     <span class="whatsapp-text">{{templateText.whatsapp?.whatsappText}}</span>
-    <img src="assets/whatsappLogo.svg" alt="WhatsApp" />
+    <img [src]="templateText.whatsapp?.whatsappLogoPath" alt="WhatsApp" />
   </a>
 </div>

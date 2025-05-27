@@ -36,6 +36,8 @@
 
   },
   "whatsapp":{
-    "whatsappText": "Entre em contato"
+    "whatsappNumberLink": "https://wa.me/5541998505198",
+    "whatsappText": "Entre em contato",
+    "whatsappLogoPath": "assets/whatsappLogo.svg"
   }
 }
