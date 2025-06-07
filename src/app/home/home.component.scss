@@ -2,7 +2,6 @@
 
 .scroll-container {
   width: 100%;
-  min-width: 400px;
   font-family: "Overpass", sans-serif;
   color: $color-support;
 }
@@ -21,12 +20,10 @@ section {
   font-size: 3rem;
   font-weight: bold;
   color: $color-secondary;
+  border-right: 2px solid $color-primary;
+  white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  @media only screen and (min-width: 500px) {
-    white-space: nowrap;
-    border-right: 2px solid $color-primary;
-  }
 }
 
 @keyframes blink-caret {
@@ -77,54 +74,36 @@ section {
   }
 }
 
+/* SOBRE E CONTATO */
 #about-contact {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   padding: 60px 20px;
   text-align: center;
   color: $color-primary-light-2;
   background-color: $color-support-light-1;
-  flex-wrap: wrap;
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 600px;
+  }
 
   img {
     margin-left: 60px;
     margin-top: 20px;
     max-width: 400px;
-    width: 100%;
   }
-
   #about {
     text-align: justify;
-    width: min(100%, 300px);
     margin: auto;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-  }
-
-  @media only screen and (max-width: 950px) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    #about {
-      margin-top: 40px;
-      h2, p {
-        text-align: center;
-      }
-    }
-
-    img {
-      margin-left: 0;
-      margin-right: 0;
-    }
   }
 
   #contact {
@@ -160,7 +139,8 @@ section {
         box-sizing: border-box;
 
         &::placeholder {
-          color: $color-secondary-light-2;
+          color: rgba($color-secondary-light-2,0.4);
+          opacity: 1;
         }
 
         &:focus {

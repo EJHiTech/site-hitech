@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,9 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+    NgxMaskDirective,
+    NgxMaskPipe, 
     ToastrModule.forRoot({
       timeOut: 4000, 
       positionClass: 'toast-bottom-left', 
@@ -41,7 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressAnimation: 'increasing',
     }),
   ],
-  providers: [PublishTaskService],
+  providers: [PublishTaskService, provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

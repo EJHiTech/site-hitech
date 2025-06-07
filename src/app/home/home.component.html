@@ -16,11 +16,11 @@
     <article id="contact">
       <h2>Fale Conosco</h2>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
-        <input type="text" placeholder="Nome" formControlName="name" />
-        <input type="email" placeholder="Email" formControlName="email" />
-        <input type="tel" placeholder="Telefone" formControlName="phone" />
+        <input type="text" placeholder="Seu Nome Completo" formControlName="name" />
+        <input type="email" placeholder="SeuEmail@gmail.com.br" formControlName="email" />
+        <input type="tel" placeholder="(00) 0 0000-0000" formControlName="phone"  />
         <textarea
-          placeholder="Mensagem"
+          placeholder="Como podemos te ajudar ?"
           formControlName="description"
         ></textarea>
         <button type="submit">Enviar</button>

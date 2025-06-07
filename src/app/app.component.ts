@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
   constructor(private templateTextService: templateTextService) {}
 
   ngOnInit(): void {
-    this.templateTextService.loadtemplateText().subscribe(); // Carrega o conteúdo quando o componente é iniciado
+    this.templateTextService.loadtemplateText(); // Carrega o conteúdo quando o componente é iniciado
   }
 }

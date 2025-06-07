@@ -15,14 +15,19 @@ export class CoreComponent implements OnInit {
     private templateTextService: templateTextService,
 
   ) {}
-
+  
   ngOnInit(): void {
     this.templateTextService.templateText$.subscribe((data) => {
-      this.templateText = data.core;
-    });
-  }
+    this.templateText = data.core ||{};
+
+});
+
+}
 
   navigateToSection(route: string, fragment: string) {
     this.router.navigate([route], { fragment: fragment });
   }
+
+
+
 }

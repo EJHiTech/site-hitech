@@ -35,9 +35,12 @@ export class HomeComponent implements OnInit {
   form!: FormGroup;
 
   ngOnInit(): void {
+    this.startTypingEffect();
+
+    // Se inscreve no conteúdo compartilhado pelo serviço
     this.templateTextService.templateText$.subscribe((data) => {
-      this.templateText = data.home;
-      this.texts = this.templateText.typingTexts;
+      this.templateText = data.home || {}; // Acessa o conteúdo específico para a página 'home'
+      this.texts = this.templateText.typingTexts || []; // Carrega os textos de digitação
       this.services = this.templateText.Services.list;
       this.costumers = this.templateText.Costumers.list;
       this.partners = this.templateText.Partners.list;
@@ -67,7 +70,7 @@ export class HomeComponent implements OnInit {
 
   smoothScroll(target: HTMLElement) {
     const duration = 1000; // duração de 1000ms ou 1 segundo
-    const offset = 150; // Defina o deslocamento de 150 pixels
+    const offset = 150; // Defina o deslocamento de 250 pixels
     const targetPosition =
       target.getBoundingClientRect().top + window.pageYOffset - offset;
     const startPosition = window.pageYOffset;
