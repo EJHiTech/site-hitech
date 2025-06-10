@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { PublishTaskService } from 'shared/publish-task.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormGroupDirective } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -18,7 +18,7 @@ interface CostumersAndPartners {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   templateText: any = {};
   texts: string[] = []; // Textos para o efeito de digitação
   services: CompanyServices[] = [];
@@ -146,4 +146,22 @@ export class HomeComponent implements OnInit {
     });
     this.form.reset();
   }
+
+  ngAfterViewInit() : void {
+    const grid = document.querySelector<HTMLDivElement>(".grid");
+    const tile = document.querySelector<HTMLDivElement>(".tile");
+    if(!grid || !tile)
+      return;
+
+    const totalTiles = 50 * 50;
+
+    const fragment = document.createDocumentFragment();
+    for(let i = 0; i < totalTiles; i++) {
+      const newTile = tile.cloneNode();
+      fragment.appendChild(newTile);
+    }
+
+    grid.appendChild(fragment);
+  }
 }
+

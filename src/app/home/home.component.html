@@ -1,8 +1,21 @@
 <div class="scroll-container">
   <section id="hero">
     <h1 id="typed-text"></h1>
-    <p>{{ templateText.title }}</p>
+    <p style="max-width: 80%;">{{ templateText.title }}</p>
   </section>
+  <section id="services">
+    <h2>{{ templateText.Services.sectionTitle }}</h2>
+    <div class="service-list">
+      <div class="service" *ngFor="let service of services">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="tile"></div>
+    </div>
+  </section>
+
   <section id="about-contact">
     <img
       [src]="templateText.ImagemSecaoSobreNosContato.src"
@@ -14,7 +27,7 @@
       <p>{{ templateText.description }}</p>
     </article>
     <article id="contact">
-      <h2>Fale Conosco</h2>
+      <h2>Fale Comigo</h2>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
         <input type="text" placeholder="Nome" formControlName="name" />
         <input type="email" placeholder="Email" formControlName="email" />
@@ -27,16 +40,6 @@
       </form>
     </article>
     <div id="toast-container"></div>
-  </section>
-  <section id="services">
-    <img [src]="templateText.Services.bgImage" alt="binarios" />
-    <h2>{{ templateText.Services.sectionTitle }}</h2>
-    <div class="service-list">
-      <div class="service" *ngFor="let service of services">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-      </div>
-    </div>
   </section>
   <section *ngIf="costumers.length || partners.length" id="customersPartners">
     <div *ngIf="costumers.length" id="customers">

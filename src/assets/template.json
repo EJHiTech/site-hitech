@@ -1,33 +1,35 @@
 {
   "core": {
     "LogoEmpresa": {
-      "src": "assets/logo_branca.svg",
-      "alt": "Logo da empresa Hï Tech"
+      "src": "assets/ponto-de-mao.png",
+      "alt": "cursor de mão apontando"
     }
   },
   "home": {
     "ImagemSecaoSobreNosContato": {
-      "src": "assets/logoAzulClaro.svg",
+      "src": "assets/fotoInstitucional.jpg",
       "style": {
-        "max-width": "400px"
+        "max-width": "400px", 
+        "border-radius": "50%",
+        "border": "1px solid blueviolet"
       },
-      "alt": "Logo da Hï Tech em azul claro"
+      "alt": "Foto da Namie"
     },
     "Services": {
-      "sectionTitle": "Nossos Serviços",
+      "sectionTitle": "Minhas Experiências",
       "bgImage": "assets/binarios.png",
       "list": [
         {
-          "title": "Consultoria Empresarial",
-          "description": "Desenvolvemos estratégias para o crescimento e sucesso do seu negócio."
+          "title": "Habilidades Técnicas",
+          "description": "Possuo conhecimento nas linguagens de programação: C(intermediário), Java(intermediário). Além disso possuo experiência com o básico de Arduino."
         },
         {
-          "title": "Desenvolvimento de Software",
-          "description": "Criamos soluções personalizadas para suas necessidades tecnológicas."
+          "title": "Liderança e Trabalho em Equipe",
+          "description": "Atualmente sou assessora do presidente da Hï Tech, empresa júnior de tecnologia da UTFPR, atuando na gestão da empresa e no planejamento estratégico. Isso tem desenvolvido minha capacidade de liderança, trabalho em equipe e visão organizacional."
         },
         {
-          "title": "Marketing Digital",
-          "description": "Aumente sua presença online com nossas estratégias de marketing digital."
+          "title": "Hobbies",
+          "description": "Toco violão e guitarra já faz 8 anos e o principal estilo musical que eu curto é rock. Já participei como guitarra solo em várias apresentações e sou grande adepta ao fingerstyle."
         }
       ]
     },
@@ -39,18 +41,18 @@
       "sectionTitle": "Parceiros",
       "list": []
     },
-    "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
-    "subtitle": "Sobre Nós",
-    "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
+    "title": "Conheça minha tragetória no mundo da tecnologia e minha forma de construir soluções de impacto",
+    "subtitle": "Sobre Mim",
+    "description": "Meu nome é Namie Miquitera Yamada e sou estudante do 3° período de Sistemas de Informação na UTFPR. Adoro um desafio e um problema de lógica e escolhi esse curso pela sua versatilidade: ele permite transitar entre o mundo técnico e o estratégico, unindo desenvolvimento de software com visão de negócios e gestão.",
     "typingTexts": [
-      "Bem-vindo à HÏ TECH",
-      "Inovação e Sucesso",
-      "Sua Solução Ideal"
+      "Prazer, meu nome é Namie!",
+      "Bem-vindo ao meu portfólio",
+      "Tecnologia como ferramenta, não como fim"
     ]
   },
   "about": {
-    "title": "Sobre Nós",
-    "description": "Saiba mais sobre nós nesta página.",
+    "title": "Sobre Mim",
+    "description": "Saiba mais sobre mim nesta página.",
     "sectionTitle": "Título da Seção Sobre",
     "sectionContent": "Conteúdo da seção sobre."
   },
@@ -58,22 +60,20 @@
     "RedesSociais": [
       {
         "nome": "LinkedIn",
-        "url": "https://www.linkedin.com/company/hïtech/",
+        "url": "https://www.linkedin.com/in/namie-miquitera-yamada-99aaa2352/",
         "icon": "assets/linkedin.webp"
       },
       {
         "nome": "Instagram",
-        "url": "https://www.instagram.com/hitech.ej/",
+        "url": "https://www.instagram.com/namieym/",
         "icon": "assets/instagram.webp"
       }
     ],
-    "title": "Fale Conosco",
-    "description": "Entre em contato conosco.",
-    "email": "Email: contato@hitech.org.br",
-    "telefone": "Telefone: (41) 99850-5198",
-    "divTitle1": "Hï Tech",
-    "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
-    "cnpj": "CNPJ: 58.322.883/0001-36",
-    "footerBottom": "Hï Tech. Todos os direitos reservados."
+    "title": "Fale Comigo",
+    "description": "Entre em contato comigo.",
+    "email": "Email: namiemiya20@gmail.com",
+    "telefone": "Telefone: (41) 98408-8811",
+    "divTitle1": "Namie Yamada",
+    "footerBottom": "Namie Yamada. Todos os direitos reservados."
   }
 }
