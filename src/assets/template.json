@@ -75,5 +75,10 @@
     "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
     "cnpj": "CNPJ: 58.322.883/0001-36",
     "footerBottom": "Hï Tech. Todos os direitos reservados."
+  },
+  "whatsapp":{
+    "whatsappNumberLink": "https://wa.me/5541998505198",
+    "whatsappText": "Entre em contato",
+    "whatsappLogoPath": "assets/whatsappLogo.svg"
   }
 }

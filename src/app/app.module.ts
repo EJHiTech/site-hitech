@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     ContactComponent,
     ServicesComponent,
     FooterComponent,
+    WhatsappButtonComponent ,
   ],
   imports: [
     BrowserModule,
@@ -32,16 +34,18 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
     ToastrModule.forRoot({
-      timeOut: 4000, 
-      positionClass: 'toast-bottom-left', 
-      preventDuplicates: true, 
+      timeOut: 4000,
+      positionClass: 'toast-bottom-left',
+      preventDuplicates: true,
       progressBar: true,
       progressAnimation: 'increasing',
     }),
   ],
-  providers: [PublishTaskService],
+  providers: [PublishTaskService, provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

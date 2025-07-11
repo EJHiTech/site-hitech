@@ -8,10 +8,12 @@ import { templateTextService } from './services/templateText.service'; // Import
 })
 export class AppComponent implements OnInit {
   title = 'site-hitech';
+  loading = true;
 
   constructor(private templateTextService: templateTextService) {}
 
-  ngOnInit(): void {
-    this.templateTextService.loadtemplateText().subscribe(); // Carrega o conteúdo quando o componente é iniciado
+  async ngOnInit(): Promise<void> {
+    await this.templateTextService.loadtemplateText(); // Carrega o conteúdo quando o componente é iniciado
+    this.loading = false;
   }
 }

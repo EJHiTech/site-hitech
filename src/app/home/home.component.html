@@ -9,16 +9,13 @@
       [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
       [alt]="templateText.ImagemSecaoSobreNosContato.alt"
     />
-    <article id="about">
-      <h2>{{ templateText.subtitle }}</h2>
-      <p>{{ templateText.description }}</p>
-    </article>
+    <app-about title="{{templateText.subtitle}}" description="{{templateText.description}}"></app-about>
     <article id="contact">
       <h2>Fale Conosco</h2>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
         <input type="text" placeholder="Nome" formControlName="name" />
         <input type="email" placeholder="Email" formControlName="email" />
-        <input type="tel" placeholder="Telefone" formControlName="phone" />
+        <input type="tel" placeholder="Telefone" formControlName="phone" mask="(00) 00000-0000" />
         <textarea
           placeholder="Mensagem"
           formControlName="description"

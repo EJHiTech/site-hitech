@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, catchError, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +11,14 @@ export class templateTextService {
 
   constructor(private http: HttpClient) { }
 
-  loadtemplateText(): Observable<any> {
-    return this.http.get<any>('assets/template.json').pipe(
-      tap((data) => this.templateTextSubject.next(data)), // Atualiza o estado
-      catchError((error) => {
-        console.error('Erro ao carregar conteúdo', error);
-        this.templateTextSubject.next({});
-        return of({});
-      })
-    );
+  // Método para carregar o conteúdo do JSON
+  async loadtemplateText() {
+    try {
+      const data = await firstValueFrom(this.http.get<any>('/assets/template.json'));
+      this.templateTextSubject.next(data); // Atualiza o conteúdo
+    } catch (error) {
+      console.error('Erro ao carregar conteúdo', error);
+      this.templateTextSubject.next({}); // No caso de erro, mantemos um conteúdo vazio
+    }
   }
 }
