@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/site-hitech",
+            "outputPath": "dist/site-hitech/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -33,7 +33,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/LogoAzul.ico",
               "src/assets"
             ],
             "styles": [
@@ -56,7 +56,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "https://ejhitech.github.io/site-hitech/"
+              "baseHref": "/"
             },
             "docker": {
               "budgets": [
