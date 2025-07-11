@@ -9,10 +9,7 @@
       [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
       [alt]="templateText.ImagemSecaoSobreNosContato.alt"
     />
-    <article id="about">
-      <h2>{{ templateText.subtitle }}</h2>
-      <p>{{ templateText.description }}</p>
-    </article>
+    <app-about title="{{templateText.subtitle}}" description="{{templateText.description}}"></app-about>
     <article id="contact">
       <h2>Fale Conosco</h2>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
