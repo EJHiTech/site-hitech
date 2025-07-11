@@ -1,7 +1,8 @@
 <header>
   <nav>
     <div class="logo" (click)="navigateToSection('home', 'hero')">
-      <img src="assets/logo_branca.svg" alt="Logo da Empresa" />
+      <img [src]="templateText.LogoEmpresa.src" 
+      [alt]="templateText.LogoEmpresa.alt" />
     </div>
     <ul class="nav-links">
       <li><a (click)="navigateToSection('home', 'about')">Sobre Nós</a></li>
