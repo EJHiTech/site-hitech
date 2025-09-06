@@ -14,7 +14,7 @@ export class templateTextService {
   // Método para carregar o conteúdo do JSON
   async loadtemplateText() {
     try {
-      const data = await firstValueFrom(this.http.get<any>('/assets/template.json'));
+      const data = await firstValueFrom(this.http.get<any>('assets/template.json'));
       this.templateTextSubject.next(data); // Atualiza o conteúdo
     } catch (error) {
       console.error('Erro ao carregar conteúdo', error);
