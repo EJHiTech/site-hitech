@@ -14,13 +14,34 @@
       <h2>Fale Conosco</h2>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
         <input type="text" placeholder="Nome" formControlName="name" />
+        <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+          <small *ngIf="form.get('name')?.errors?.['required']">Nome é obrigatório.</small>
+          <small *ngIf="form.get('name')?.errors?.['minlength']">Nome muito curto.</small>
+        </div>
+
         <input type="email" placeholder="Email" formControlName="email" />
-        <input type="tel" placeholder="Telefone" formControlName="phone" mask="(00) 00000-0000" />
-        <textarea
-          placeholder="Mensagem"
-          formControlName="description"
-        ></textarea>
-        <button type="submit">Enviar</button>
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+          <small *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</small>
+          <small *ngIf="form.get('email')?.errors?.['email']">Email inválido.</small>
+        </div>
+
+        <input type="tel" placeholder="Telefone" mask="(00) 00000-0000" formControlName="phone" />
+        <div *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
+          <small *ngIf="form.get('phone')?.errors?.['required']">Telefone é obrigatório.</small>
+          <small *ngIf="form.get('phone')?.errors?.['pattern']">Formato inválido.</small>
+        </div>
+
+        <textarea placeholder="Mensagem" formControlName="description"></textarea>
+        <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+          <small *ngIf="form.get('description')?.errors?.['required']">Mensagem é obrigatória.</small>
+          <small *ngIf="form.get('description')?.errors?.['minlength']">Mensagem muito curta.</small>
+        </div>
+        <button type="submit" [disabled]="form.invalid || isLoading">
+          <ng-container *ngIf="!isLoading">Enviar</ng-container>
+          <ng-container *ngIf="isLoading">
+            <span class="spinner"></span> Enviando...
+          </ng-container>
+        </button>
       </form>
     </article>
     <div id="toast-container"></div>

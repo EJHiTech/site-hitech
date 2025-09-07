@@ -154,9 +154,32 @@ section {
         font-weight: bold;
         cursor: pointer;
         transition: background-color 0.3s ease;
-
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        
         &:hover {
           background-color: #0056b3;
+        }
+
+        &:disabled {
+          background-color: $color-secondary;
+          color: #aaa;
+          cursor: default;
+        }
+        .spinner {
+          width: 20px;
+          height: 20px;
+          border: 3px solid $color-primary;
+          border-top: 3px solid $color-secondary;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+  
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
       }
     }
@@ -264,24 +287,3 @@ section {
   }
 }
 
-.cta-section {
-  background-color: $color-primary-dark-1;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-
-  .cta-button {
-    background-color: $color-secondary;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 50px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $color-secondary-hover;
-    }
-  }
-}
