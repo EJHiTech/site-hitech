@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { PublishTaskService } from 'shared/publish-task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
+import { Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 // Estas interfaces remetem aos tipos de preenchimento da seção de clientes e parceiros no template.json
@@ -20,6 +21,7 @@ interface CostumersAndPartners {
 })
 export class HomeComponent implements OnInit {
   templateText: any = {};
+  isLoading = false;
   texts: string[] = []; // Textos para o efeito de digitação
   services: CompanyServices[] = [];
   costumers: CostumersAndPartners[] = [];
@@ -57,11 +59,11 @@ export class HomeComponent implements OnInit {
     });
 
     this.form = this.formBuilder.group({
-      name: [null],
-      email: [null],
-      phone: [null],
+      name: [null, [Validators.required, Validators.minLength(3)]],
+      email: [null, [Validators.required, Validators.email]],
+      phone: [null, [Validators.required, Validators.pattern(/^\d{11}$/)]],
       city: [null],
-      description: [null],
+      description: [null, [Validators.required, Validators.minLength(10)]],
     });
   }
 
@@ -123,6 +125,12 @@ export class HomeComponent implements OnInit {
   }
 
   publishTask() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    this.isLoading = true;
     const form = this.form.value;
 
     const payload = {
@@ -132,8 +140,7 @@ export class HomeComponent implements OnInit {
       markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n DESCRIÇÃO: ${form.description}`,
     };
     this.publishTaskService.publishTask(payload).subscribe({
-      next: (res) => {
-        console.log(res);
+      next: () => {
         this.toastr.success(
           'Seu formulário foi enviado com sucesso! 🎉',
           'Sucesso!'
@@ -143,6 +150,9 @@ export class HomeComponent implements OnInit {
         console.error(err);
         this.toastr.error('Ops! Algo deu errado. Tente novamente.', 'Erro!');
       },
+      complete: () => {
+        this.isLoading = false;
+      }
     });
     this.form.reset();
   }
