@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @import "colors.scss";
 
 * {
@@ -7,9 +7,19 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: "Overpass", sans-serif;
-  margin: none;
+  font-family: "Space Grotesk", "Overpass", sans-serif;
+  background-color: $color-support;
+  color: $color-secondary;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-image: radial-gradient(circle at top, rgba(124, 58, 237, 0.25), transparent 60%),
+    radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.2), transparent 40%);
+  background-attachment: fixed;
 }
 
 

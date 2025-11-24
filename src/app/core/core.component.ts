@@ -18,6 +18,9 @@ export class CoreComponent implements OnInit {
 
   ngOnInit(): void {
     this.templateTextService.templateText$.subscribe((data) => {
+      if (!data?.core) {
+        return;
+      }
       this.templateText = data.core;
     });
   }

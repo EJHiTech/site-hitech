@@ -1,16 +1,24 @@
+@import "colors.scss";
+
 #about {
-  text-align: justify;
+  text-align: left;
   margin: auto;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding-left: 24px;
+  border-left: 2px solid rgba(124, 58, 237, 0.4);
+
   h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
+    color: $color-secondary;
   }
 
   p {
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.7;
     max-width: 600px;
+    color: $color-secondary-dark-1;
   }
 }

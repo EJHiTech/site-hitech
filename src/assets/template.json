@@ -1,84 +1,178 @@
 {
   "core": {
     "LogoEmpresa": {
-      "src": "assets/logo_branca.svg",
-      "alt": "Logo da empresa Hï Tech"
-    }
+      "src": "assets/daniel-logo.svg",
+      "alt": "Monograma Daniel Zaki Sommer"
+    },
+    "resumeLink": "https://danisommer.github.io/"
   },
   "home": {
-    "ImagemSecaoSobreNosContato": {
-      "src": "assets/logoAzulClaro.svg",
-      "style": {
-        "max-width": "400px"
+    "heroEyebrow": "Elixir Developer · Curitiba, BR",
+    "primaryCta": {
+      "label": "Explorar Portfólio",
+      "link": "https://danisommer.github.io/"
+    },
+    "secondaryCta": {
+      "label": "LinkedIn",
+      "link": "https://www.linkedin.com/in/danisommer"
+    },
+    "heroMetrics": [
+      {
+        "value": "05+",
+        "label": "projetos pessoais"
       },
-      "alt": "Logo da Hï Tech em azul claro"
+      {
+        "value": "02",
+        "label": "times em produção"
+      },
+      {
+        "value": "06º",
+        "label": "semestre na UTFPR"
+      }
+    ],
+    "ImagemSecaoSobreNosContato": {
+      "src": "assets/daniel-portrait.svg",
+      "style": {
+        "max-width": "360px"
+      },
+      "alt": "Ilustração minimalista de Daniel Sommer"
     },
     "Services": {
-      "sectionTitle": "Nossos Serviços",
+      "sectionTitle": "Tecnologias & Projetos",
+      "sectionDescription": "Um olhar rápido sobre stacks e soluções que mais curto construir.",
       "bgImage": "assets/binarios.png",
       "list": [
         {
-          "title": "Consultoria Empresarial",
-          "description": "Desenvolvemos estratégias para o crescimento e sucesso do seu negócio."
+          "title": "Back-end em Elixir",
+          "description": "Sistemas resilientes para pagamentos, eventos assíncronos e observabilidade.",
+          "highlights": [
+            "Pipelines com Kafka/RedPanda e ClickHouse",
+            "Tracing distribuído e métricas customizadas",
+            "Integrações com gateways e antifraude"
+          ]
         },
         {
-          "title": "Desenvolvimento de Software",
-          "description": "Criamos soluções personalizadas para suas necessidades tecnológicas."
+          "title": "Java & Arquitetura Corporativa",
+          "description": "Experiência em SAP Hybris, Spring e integrações de grande porte.",
+          "highlights": [
+            "Integrações SCPI para e-commerces globais",
+            "Automação de fluxos logísticos",
+            "Mentoria para times em Java"
+          ]
         },
         {
-          "title": "Marketing Digital",
-          "description": "Aumente sua presença online com nossas estratégias de marketing digital."
+          "title": "Produtos na Hi Tech Consultoria",
+          "description": "Projetos reais na empresa júnior conectando academia e mercado.",
+          "highlights": [
+            "Discovery com clientes locais",
+            "Aplicações web responsivas",
+            "Suporte completo de dados à entrega"
+          ]
         }
       ]
     },
     "Costumers": {
-      "sectionTitle": "Clientes",
+      "sectionTitle": "",
       "list": []
     },
     "Partners": {
-      "sectionTitle": "Parceiros",
+      "sectionTitle": "",
       "list": []
     },
-    "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
-    "subtitle": "Sobre Nós",
-    "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
+    "title": "Construo experiências digitais conectando dados, pessoas e negócios.",
+    "subtitle": "Sobre mim",
+    "description": "Sou o Daniel, desenvolvedor apaixonado por backend e comunidades tech. Atuo com Elixir na Trio, curso Sistemas de Informação na UTFPR e participo da Hi Tech Consultoria, onde aplico o que aprendo com equipes multidisciplinares.",
     "typingTexts": [
-      "Bem-vindo à HÏ TECH",
-      "Inovação e Sucesso",
-      "Sua Solução Ideal"
-    ]
+      "Oi, eu sou o Daniel Sommer",
+      "Elixir Dev @ Trio",
+      "Sistemas de Informação · UTFPR"
+    ],
+    "highlights": [
+      "Experiência com Elixir, Phoenix, Postgres, Redis e ClickHouse",
+      "Background em Java, Docker, TypeScript e integrações SAP",
+      "Apaixonado por comunidades, educação e produtos com propósito"
+    ],
+    "spotlights": [
+      {
+        "meta": "Atual · Trio",
+        "title": "Pagamentos em tempo real",
+        "description": "Lidero camadas do backend focadas em resiliência e telemetria para transações financeiras."
+      },
+      {
+        "meta": "Hi Tech Consultoria",
+        "title": "Impacto em projetos da EJ",
+        "description": "Prototipo e entrego soluções para negócios locais enquanto mentoro novos devs."
+      },
+      {
+        "meta": "Side Projects",
+        "title": "Produtos para aprender",
+        "description": "Dashboards em tempo real, plataformas de votação e ferramentas de gestão de estoque."
+      }
+    ],
+    "journeyTitle": "Minha trajetória",
+    "journey": [
+      {
+        "period": "2025 · atual",
+        "role": "Elixir Developer",
+        "company": "Trio",
+        "summary": "Escalo sistemas de pagamento com Elixir, Kafka/RedPanda, Redis e ClickHouse.",
+        "tags": ["Elixir", "Kafka", "ClickHouse", "Redis"]
+      },
+      {
+        "period": "2025 · atual",
+        "role": "Developer",
+        "company": "Hi Tech Consultoria",
+        "summary": "Conecto aprendizado acadêmico a projetos reais dentro da empresa júnior da UTFPR.",
+        "tags": ["Consultoria", "Node", "Angular", "Mentoria"]
+      },
+      {
+        "period": "2024 · 2025",
+        "role": "Java Developer",
+        "company": "Meisters Solutions",
+        "summary": "Integrei plataformas de e-commerce globais usando Java, SAP Hybris e SCPI.",
+        "tags": ["Java", "Hybris", "SAP", "Docker"]
+      },
+      {
+        "period": "2024 · 2025",
+        "role": "Java Software Developer",
+        "company": "Digiu Digital",
+        "summary": "Construí features em Spring e liderei integrações mobile com React Native e PHP.",
+        "tags": ["Spring", "React Native", "SQL", "Docker"]
+      }
+    ],
+    "contactTitle": "Vamos conversar?",
+    "contactDescription": "Sou movido por boas histórias de produto. Me manda uma mensagem e te respondo rapidinho."
   },
   "about": {
-    "title": "Sobre Nós",
-    "description": "Saiba mais sobre nós nesta página.",
-    "sectionTitle": "Título da Seção Sobre",
-    "sectionContent": "Conteúdo da seção sobre."
+    "title": "Sobre mim",
+    "description": "Desenvolvedor Elixir na Trio, estudante de Sistemas de Informação na UTFPR e membro ativo da Hi Tech Consultoria."
   },
   "footer": {
     "RedesSociais": [
       {
         "nome": "LinkedIn",
-        "url": "https://www.linkedin.com/company/hïtech/",
+        "url": "https://www.linkedin.com/in/danisommer",
         "icon": "assets/linkedin.webp"
       },
       {
-        "nome": "Instagram",
-        "url": "https://www.instagram.com/hitech.ej/",
-        "icon": "assets/instagram.webp"
+        "nome": "GitHub",
+        "url": "https://github.com/danisommer",
+        "icon": "assets/github.svg"
       }
     ],
-    "title": "Fale Conosco",
-    "description": "Entre em contato conosco.",
-    "email": "Email: contato@hitech.org.br",
-    "telefone": "Telefone: (41) 99850-5198",
-    "divTitle1": "Hï Tech",
-    "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
-    "cnpj": "CNPJ: 58.322.883/0001-36",
-    "footerBottom": "Hï Tech. Todos os direitos reservados."
+    "title": "Vamos construir algo novo?",
+    "description": "Aberto a desafios em produtos digitais, pagamentos e comunidades tech.",
+    "email": "Email: danibee2005@gmail.com",
+    "telefone": "LinkedIn: linkedin.com/in/danisommer",
+    "divTitle1": "Daniel Zaki Sommer",
+    "endereco": "Curitiba · Paraná · Brasil",
+    "cnpj": "Disponível para backend, dados e mentoring",
+    "footerBottom": "Design & código por Daniel Sommer",
+    "resumeLink": "https://danisommer.github.io/"
   },
-  "whatsapp":{
-    "whatsappNumberLink": "https://wa.me/5541998505198",
-    "whatsappText": "Entre em contato",
+  "whatsapp": {
+    "whatsappNumberLink": "https://wa.me/5541999999999?text=Ol%C3%A1%20Daniel,%20vi%20seu%20portf%C3%B3lio!",
+    "whatsappText": "Falar com Daniel",
     "whatsappLogoPath": "assets/whatsappLogo.svg"
   }
 }

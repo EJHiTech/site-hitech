@@ -1,27 +1,32 @@
 // Cor Primária
-$color-primary: #2475ff;
-$color-primary-hover: darken($color-primary, 10%);
-$color-primary-border: darken($color-primary, 20%);
+$color-primary: #4c1d95;
+$color-primary-hover: lighten($color-primary, 5%);
+$color-primary-border: darken($color-primary, 15%);
 $color-primary-light-1: lighten($color-primary, 10%);
 $color-primary-light-2: lighten($color-primary, 20%);
 $color-primary-dark-1: darken($color-primary, 10%);
 $color-primary-dark-2: darken($color-primary, 20%);
 
 // Cor Secundária
-$color-secondary: #dbdbdb;
-$color-secondary-hover: darken($color-secondary, 10%);
-$color-secondary-border: darken($color-secondary, 20%);
-$color-secondary-light-1: lighten($color-secondary, 10%);
-$color-secondary-light-2: lighten($color-secondary, 20%);
+$color-secondary: #f5f3ff;
+$color-secondary-hover: darken($color-secondary, 5%);
+$color-secondary-border: darken($color-secondary, 15%);
+$color-secondary-light-1: lighten($color-secondary, 4%);
+$color-secondary-light-2: lighten($color-secondary, 8%);
 $color-secondary-dark-1: darken($color-secondary, 10%);
 $color-secondary-dark-2: darken($color-secondary, 20%);
 
 // Cor de Suporte
-$color-support: #000000;
-$color-support-hover: lighten($color-support, 60%);
-$color-support-border: lighten($color-support, 20%);
-$color-support-light-1: lighten($color-support, 10%);
-$color-support-light-2: lighten($color-support, 40%);
-$color-support-light-3:lighten($color-support, 20%);
-$color-support-dark-1: $color-support; // Repete a cor original pois não tem mais escuro que #000000
-$color-support-dark-2: $color-support; // Repete a cor original pois não tem mais escuro que #000000
+$color-support: #0f172a;
+$color-support-hover: lighten($color-support, 35%);
+$color-support-border: lighten($color-support, 10%);
+$color-support-light-1: lighten($color-support, 5%);
+$color-support-light-2: lighten($color-support, 25%);
+$color-support-light-3: lighten($color-support, 15%);
+$color-support-dark-1: darken($color-support, 5%);
+$color-support-dark-2: darken($color-support, 10%);
+
+// Cor de Acento
+$color-accent: #f97316;
+$color-accent-light: lighten($color-accent, 8%);
+$color-accent-dark: darken($color-accent, 10%);

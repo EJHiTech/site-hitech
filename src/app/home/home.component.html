@@ -1,17 +1,60 @@
 <div class="scroll-container">
   <section id="hero">
-    <h1 id="typed-text"></h1>
-    <p>{{ templateText.title }}</p>
+    <div class="hero-content">
+      <p class="hero-eyebrow">{{ templateText.heroEyebrow }}</p>
+      <h1 id="typed-text"></h1>
+      <p class="hero-description">{{ templateText.title }}</p>
+      <div class="hero-actions">
+        <a
+          class="primary"
+          *ngIf="templateText.primaryCta"
+          [href]="templateText.primaryCta.link"
+          target="_blank"
+          rel="noopener"
+          >{{ templateText.primaryCta.label }}</a
+        >
+        <a
+          class="ghost"
+          *ngIf="templateText.secondaryCta"
+          [href]="templateText.secondaryCta.link"
+          target="_blank"
+          rel="noopener"
+          >{{ templateText.secondaryCta.label }}</a
+        >
+      </div>
+      <div class="hero-stats" *ngIf="heroMetrics.length">
+        <div class="stat" *ngFor="let metric of heroMetrics">
+          <span class="value">{{ metric.value }}</span>
+          <span class="label">{{ metric.label }}</span>
+        </div>
+      </div>
+    </div>
   </section>
+
   <section id="about-contact">
-    <img
-      [src]="templateText.ImagemSecaoSobreNosContato.src"
-      [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
-      [alt]="templateText.ImagemSecaoSobreNosContato.alt"
-    />
-    <app-about title="{{templateText.subtitle}}" description="{{templateText.description}}"></app-about>
+    <div class="about-panel">
+      <img
+        [src]="templateText.ImagemSecaoSobreNosContato?.src"
+        [ngStyle]="templateText.ImagemSecaoSobreNosContato?.style"
+        [alt]="templateText.ImagemSecaoSobreNosContato?.alt"
+      />
+      <app-about [title]="templateText.subtitle" [description]="templateText.description"></app-about>
+      <ul class="highlight-list" *ngIf="templateText?.highlights?.length">
+        <li *ngFor="let highlight of templateText.highlights">{{ highlight }}</li>
+      </ul>
+    </div>
+
+    <div class="spotlights" *ngIf="spotlights.length">
+      <div class="spotlight-card" *ngFor="let spotlight of spotlights">
+        <p class="overline">{{ spotlight.meta }}</p>
+        <h3>{{ spotlight.title }}</h3>
+        <p>{{ spotlight.description }}</p>
+      </div>
+    </div>
+
     <article id="contact">
-      <h2>Fale Conosco</h2>
+      <h2>{{ templateText.contactTitle }}</h2>
+      <p class="contact-description">{{ templateText.contactDescription }}</p>
       <form [formGroup]="form" (ngSubmit)="publishTask()">
         <input type="text" placeholder="Nome" formControlName="name" />
         <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
@@ -46,37 +89,41 @@
     </article>
     <div id="toast-container"></div>
   </section>
+
+  <section id="journey" *ngIf="journey.length">
+    <h2>{{ templateText.journeyTitle }}</h2>
+    <div class="timeline">
+      <div class="timeline-card" *ngFor="let item of journey">
+        <span class="period">{{ item.period }}</span>
+        <h3>{{ item.role }}</h3>
+        <p class="company">{{ item.company }}</p>
+        <p>{{ item.summary }}</p>
+        <ul class="tags" *ngIf="item.tags?.length">
+          <li *ngFor="let tag of item.tags">{{ tag }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="services">
-    <img [src]="templateText.Services.bgImage" alt="binarios" />
-    <h2>{{ templateText.Services.sectionTitle }}</h2>
+    <img *ngIf="templateText.Services?.bgImage" [src]="templateText.Services.bgImage" alt="elementos decorativos" />
+    <div class="section-header">
+      <p class="eyebrow">Toolkit</p>
+      <h2>{{ templateText.Services?.sectionTitle }}</h2>
+      <p class="section-description" *ngIf="templateText.Services?.sectionDescription">
+        {{ templateText.Services.sectionDescription }}
+      </p>
+    </div>
     <div class="service-list">
       <div class="service" *ngFor="let service of services">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
+        <div class="service-heading">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+        <ul *ngIf="service.highlights?.length">
+          <li *ngFor="let highlight of service.highlights">{{ highlight }}</li>
+        </ul>
       </div>
     </div>
   </section>
-  <section *ngIf="costumers.length || partners.length" id="customersPartners">
-    <div *ngIf="costumers.length" id="customers">
-      <h3>{{ templateText.Costumers.sectionTitle }}</h3>
-      <div class="list">
-        <div class="item" *ngFor="let costumer of costumers">
-          <img [src]="costumer.img" />
-        </div>
-      </div>
-    </div>
-    <div *ngIf="partners.length" id="partners">
-      <h3>{{ templateText.Partners.sectionTitle }}</h3>
-      <div class="list">
-        <div class="item" *ngFor="let partner of partners">
-          <img [src]="partner.img" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 
-  <section class="cta-section">
-    <h2>Pronto para começar?</h2>
-    <button class="cta-button">Entre em contato</button>
-  </section> -->
 </div>

@@ -14,6 +14,9 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.templateTextService.templateText$.subscribe((data) => {
+      if (!data?.footer) {
+        return;
+      }
       this.templateText = data.footer ||{}; 
       });
   }

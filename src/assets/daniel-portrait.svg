@@ -1,0 +1,21 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Ilustração abstrata representando Daniel Sommer</title>
+  <desc>Retrato geométrico com degradê em tons de roxo e laranja.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#31145b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="420" height="420" rx="48" fill="url(#bg)" />
+  <circle cx="210" cy="140" r="70" fill="url(#accent)" opacity="0.8" />
+  <rect x="90" y="210" width="240" height="130" rx="65" fill="#18223b" />
+  <path d="M130 240c30 40 130 40 160 0" fill="none" stroke="#7c3aed" stroke-width="5" stroke-linecap="round" />
+  <circle cx="180" cy="140" r="8" fill="#f5f3ff" />
+  <circle cx="240" cy="140" r="8" fill="#f5f3ff" />
+  <path d="M180 180c15 18 45 18 60 0" fill="none" stroke="#f97316" stroke-width="4" stroke-linecap="round" />
+</svg>

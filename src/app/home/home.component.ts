@@ -10,9 +10,25 @@ import { ToastrService } from 'ngx-toastr';
 interface CompanyServices {
   title: string;
   description: string;
+  highlights?: string[];
 }
-interface CostumersAndPartners {
-  img: string;
+interface HeroMetric {
+  value: string;
+  label: string;
+}
+
+interface JourneyItem {
+  period: string;
+  role: string;
+  company: string;
+  summary: string;
+  tags?: string[];
+}
+
+interface Spotlight {
+  meta: string;
+  title: string;
+  description: string;
 }
 @Component({
   selector: 'app-home',
@@ -24,8 +40,9 @@ export class HomeComponent implements OnInit {
   isLoading = false;
   texts: string[] = []; // Textos para o efeito de digitação
   services: CompanyServices[] = [];
-  costumers: CostumersAndPartners[] = [];
-  partners: CostumersAndPartners[] = [];
+  heroMetrics: HeroMetric[] = [];
+  journey: JourneyItem[] = [];
+  spotlights: Spotlight[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -38,11 +55,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.templateTextService.templateText$.subscribe((data) => {
+      if (!data?.home) {
+        return;
+      }
+
       this.templateText = data.home;
-      this.texts = this.templateText.typingTexts;
-      this.services = this.templateText.Services.list;
-      this.costumers = this.templateText.Costumers.list;
-      this.partners = this.templateText.Partners.list;
+      this.texts = this.templateText.typingTexts || [];
+      this.services = this.templateText.Services?.list || [];
+      this.heroMetrics = this.templateText.heroMetrics || [];
+      this.journey = this.templateText.journey || [];
+      this.spotlights = this.templateText.spotlights || [];
       this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
     });
 

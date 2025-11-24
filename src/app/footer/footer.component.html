@@ -1,28 +1,41 @@
 <footer>
   <div class="footer-container">
     <div class="footer-contact">
-      <p>{{templateText.email}}</p>
-      <p>{{templateText.telefone }}</p>
+      <h4>{{ templateText.title }}</h4>
+      <p>{{ templateText.description }}</p>
+      <p>{{ templateText.email }}</p>
+      <p>{{ templateText.telefone }}</p>
+      <a
+        *ngIf="templateText.resumeLink"
+        class="resume-link"
+        [href]="templateText.resumeLink"
+        target="_blank"
+        rel="noopener"
+        >Ver Portfólio</a
+      >
     </div>
 
     <div class="footer-info">
-      <h4>{{templateText.divTitle1 }}</h4>
-      <p>{{templateText.endereco}}</p>
-      <p>{{templateText.cnpj }}</p>
+      <h4>{{ templateText.divTitle1 }}</h4>
+      <p>{{ templateText.endereco }}</p>
+      <p>{{ templateText.cnpj }}</p>
     </div>
 
     <div class="footer-social">
       <div class="social-content">
-        <a *ngFor="let rede of templateText.RedesSociais" 
-     [href]="rede.url" 
-     target="_blank">
-    <img [src]="rede.icon" [alt]="rede.nome" class="social-icon" />
+        <a
+          *ngFor="let rede of templateText.RedesSociais || []"
+          [href]="rede.url"
+          target="_blank"
+          rel="noopener"
+        >
+          <img [src]="rede.icon" [alt]="rede.nome" class="social-icon" />
           {{ rede.nome }}
         </a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; {{ currentYear }} {{templateText.footerBottom }} </p>
+    <p>&copy; {{ currentYear }} {{ templateText.footerBottom }}</p>
   </div>
 </footer>

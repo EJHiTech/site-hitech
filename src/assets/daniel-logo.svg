@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Monograma Daniel Sommer</title>
+  <desc>Logotipo minimalista com gradiente roxo e laranja e as letras DZ.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#0f172a" />
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#grad)" opacity="0.2" />
+  <path d="M20 20h8c6 0 10 4 10 12s-4 12-10 12h-8z" fill="none" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round" />
+  <path d="M35 20h11l-11 24h11" fill="none" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round" />
+</svg>
