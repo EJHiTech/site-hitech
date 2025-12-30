@@ -18,24 +18,29 @@
       "bgImage": "assets/binarios.png",
       "list": [
         {
-          "title": "Desenvolvimento e Manutenção Web",
-          "description": "Criamos sites e sistemas web responsivos, modernos e de alta performance. Evoluimos, corrigimos e documentamos sistemas legados. Damos suporte contínuo para garantir estabilidade, segurança e escalabilidade."
+          "title": "Desenvolvimento Web",
+          "subtitle": "Sites e sistemas sob medida",
+          "description": "Criamos e mantemos sites e sistemas web modernos, responsivos e escaláveis, incluindo evolução e suporte contínuo de sistemas legados."
         },
         {
           "title": "Infraestrutura Digital",
-          "description": "Oferecemos a configuração e gerenciamento de e-mails corporativos, domínios e hospedagem, além de monitoramento e suporte técnico especializado."
+          "subtitle": "E-mails, domínios e hospedagem",
+          "description": "Configuramos e gerenciamos e-mails corporativos, domínios e hospedagem com monitoramento ativo e suporte técnico especializado."
         },
         {
-          "title": "Análise e Levantamento de Requisitos para Novos Projetos",
-          "description": "Planejamos e arquitetamos soluções digitais sob medida."
+          "title": "Análise de Requisitos",
+          "subtitle": "Planejamento antes do código",
+          "description": "Mapeamos necessidades, levantamos requisitos e arquitetamos soluções digitais alinhadas aos objetivos do seu negócio."
         },
         {
-          "title": "Inteligência Artificial & Automação",
-          "description": "Construímos e desenvolvemos modelos de IA personalizados e sistemas embarcados para aplicações específicas."
+          "title": "IA & Automação",
+          "subtitle": "Soluções inteligentes",
+          "description": "Desenvolvemos modelos de inteligência artificial e automações personalizadas para otimizar processos e aplicações específicas."
         },
         {
-          "title": "Automatizações de Processos Via WhatsApp e Integrações com APIs",
-          "description": "Criamos e damos manutenção de bots inteligentes para Discord e outras plataformas."
+          "title": "Automações & APIs",
+          "subtitle": "Integrações que escalam",
+          "description": "Criamos automações via WhatsApp, integrações com APIs e bots inteligentes para Discord e outras plataformas."
         }
       ]
     },
