@@ -18,16 +18,29 @@
       "bgImage": "assets/binarios.png",
       "list": [
         {
-          "title": "Consultoria Empresarial",
-          "description": "Desenvolvemos estratégias para o crescimento e sucesso do seu negócio."
+          "title": "Desenvolvimento Web",
+          "subtitle": "Sites e sistemas sob medida",
+          "description": "Criamos e mantemos sites e sistemas web modernos, responsivos e escaláveis, incluindo evolução e suporte contínuo de sistemas legados."
         },
         {
-          "title": "Desenvolvimento de Software",
-          "description": "Criamos soluções personalizadas para suas necessidades tecnológicas."
+          "title": "Infraestrutura Digital",
+          "subtitle": "E-mails, domínios e hospedagem",
+          "description": "Configuramos e gerenciamos e-mails corporativos, domínios e hospedagem com monitoramento ativo e suporte técnico especializado."
         },
         {
-          "title": "Marketing Digital",
-          "description": "Aumente sua presença online com nossas estratégias de marketing digital."
+          "title": "Análise de Requisitos",
+          "subtitle": "Planejamento antes do código",
+          "description": "Mapeamos necessidades, levantamos requisitos e arquitetamos soluções digitais alinhadas aos objetivos do seu negócio."
+        },
+        {
+          "title": "IA & Automação",
+          "subtitle": "Soluções inteligentes",
+          "description": "Desenvolvemos modelos de inteligência artificial e automações personalizadas para otimizar processos e aplicações específicas."
+        },
+        {
+          "title": "Automações & APIs",
+          "subtitle": "Integrações que escalam",
+          "description": "Criamos automações via WhatsApp, integrações com APIs e bots inteligentes para Discord e outras plataformas."
         }
       ]
     },
@@ -41,7 +54,7 @@
     },
     "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
     "subtitle": "Sobre Nós",
-    "description": "Somos uma equipe de estudantes dedicados a fornecer serviços de alta qualidade para nossos clientes.",
+    "description": "Somos a Hï Tech, empresa júnior de tecnologia fundada em novembro de 2024. Constituída por estudantes universitários, temos como propósito promover uma experiência acadêmica enriquecedora, aproximando a vivência universitária da realidade do mercado por meio de um ambiente corporativo seguro e estruturado. Nosso compromisso é desenvolver soluções tecnológicas de qualidade, ao mesmo tempo em que formamos profissionais preparados para atuar com responsabilidade, inovação e excelência.",
     "typingTexts": [
       "Bem-vindo à HÏ TECH",
       "Inovação e Sucesso",
@@ -76,7 +89,7 @@
     "cnpj": "CNPJ: 58.322.883/0001-36",
     "footerBottom": "Hï Tech. Todos os direitos reservados."
   },
-  "whatsapp":{
+  "whatsapp": {
     "whatsappNumberLink": "https://wa.me/5541998505198",
     "whatsappText": "Entre em contato",
     "whatsappLogoPath": "assets/whatsappLogo.svg"

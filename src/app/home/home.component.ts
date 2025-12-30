@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 // Estas interfaces remetem aos tipos de preenchimento da seção de clientes e parceiros no template.json
 interface CompanyServices {
   title: string;
+  subtitle: string;
   description: string;
 }
 interface CostumersAndPartners {
