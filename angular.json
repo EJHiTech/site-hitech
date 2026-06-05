@@ -33,7 +33,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/LogoAzul.ico",
+              "src/Uglee9RE.ico",
               "src/assets"
             ],
             "styles": [

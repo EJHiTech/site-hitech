@@ -1,46 +1,46 @@
 {
   "core": {
     "LogoEmpresa": {
-      "src": "assets/logo_branca.svg",
+      "src": "assets/Uglee9RE.svg",
       "alt": "Logo da empresa Hï Tech"
     }
   },
   "home": {
     "ImagemSecaoSobreNosContato": {
-      "src": "assets/logoAzulClaro.svg",
+      "src": "assets/Uglee9RE.svg",
       "style": {
         "max-width": "400px"
       },
       "alt": "Logo da Hï Tech em azul claro"
     },
     "Services": {
-      "sectionTitle": "Nossos Serviços",
+      "sectionTitle": "Meus Hobbies :)",
       "bgImage": "assets/binarios.png",
       "list": [
         {
-          "title": "Desenvolvimento Web",
-          "subtitle": "Sites e sistemas sob medida",
-          "description": "Criamos e mantemos sites e sistemas web modernos, responsivos e escaláveis, incluindo evolução e suporte contínuo de sistemas legados."
+          "title": "Servidor Doméstico",
+          "subtitle": "Meu notebook como meu próprio servidor",
+          "description": "Hoje tenho 4TB que utilizo como NAS e servidor de mídia para uso em home theater"
         },
         {
-          "title": "Infraestrutura Digital",
-          "subtitle": "E-mails, domínios e hospedagem",
-          "description": "Configuramos e gerenciamos e-mails corporativos, domínios e hospedagem com monitoramento ativo e suporte técnico especializado."
+          "title": "Filmes e Séries",
+          "subtitle": "Assisto, é só isso mesmo",
+          "description": "Assisto filmes e séries aí, só isso mesmo kkkkkk"
         },
         {
-          "title": "Análise de Requisitos",
-          "subtitle": "Planejamento antes do código",
-          "description": "Mapeamos necessidades, levantamos requisitos e arquitetamos soluções digitais alinhadas aos objetivos do seu negócio."
+          "title": "Sofrendo em tecprog",
+          "subtitle": "Que Deus me ajude",
+          "description": "Se Deus quiser eu consigo junto com a minha dupla fazer esse jogo maluco, nesse feriado fiz a implementação de Menu e 2 jogadores"
         },
         {
-          "title": "IA & Automação",
-          "subtitle": "Soluções inteligentes",
-          "description": "Desenvolvemos modelos de inteligência artificial e automações personalizadas para otimizar processos e aplicações específicas."
+          "title": "Aprendendo na EJ",
+          "subtitle": "Sempre tentando me ampliar",
+          "description": "Grande objetivo de amizade e aprender muito na EJ"
         },
         {
-          "title": "Automações & APIs",
-          "subtitle": "Integrações que escalam",
-          "description": "Criamos automações via WhatsApp, integrações com APIs e bots inteligentes para Discord e outras plataformas."
+          "title": "Acabou minha criativade",
+          "subtitle": "É isso aí",
+          "description": "É isso mesmo minha criatividade acabou :)"
         }
       ]
     },
@@ -52,13 +52,13 @@
       "sectionTitle": "Parceiros",
       "list": []
     },
-    "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
-    "subtitle": "Sobre Nós",
-    "description": "Somos a Hï Tech, empresa júnior de tecnologia fundada em novembro de 2024. Constituída por estudantes universitários, temos como propósito promover uma experiência acadêmica enriquecedora, aproximando a vivência universitária da realidade do mercado por meio de um ambiente corporativo seguro e estruturado. Nosso compromisso é desenvolver soluções tecnológicas de qualidade, ao mesmo tempo em que formamos profissionais preparados para atuar com responsabilidade, inovação e excelência.",
+    "title": "Muito bão",
+    "subtitle": "Sobre Mim",
+    "description": "Estudante de Sistemas de Informação na Universidade Tecnológica Federal do Paraná :)",
     "typingTexts": [
-      "Bem-vindo à HÏ TECH",
-      "Inovação e Sucesso",
-      "Sua Solução Ideal"
+      "Bem-vindo ao meu portfólio",
+      "Muito bacana",
+      ":)"
     ]
   },
   "about": {
@@ -70,28 +70,28 @@
   "footer": {
     "RedesSociais": [
       {
-        "nome": "LinkedIn",
-        "url": "https://www.linkedin.com/company/hïtech/",
+        "nome": "Tirei os links",
+        "url": "",
         "icon": "assets/linkedin.webp"
       },
       {
-        "nome": "Instagram",
-        "url": "https://www.instagram.com/hitech.ej/",
+        "nome": "Tirei também",
+        "url": "",
         "icon": "assets/instagram.webp"
       }
     ],
-    "title": "Fale Conosco",
-    "description": "Entre em contato conosco.",
-    "email": "Email: contato@hitech.org.br",
-    "telefone": "Telefone: (41) 99850-5198",
-    "divTitle1": "Hï Tech",
-    "endereco": "Sete de Setembro, 3165, Rebouças, Curitiba - Paraná, CEP 80230-901",
-    "cnpj": "CNPJ: 58.322.883/0001-36",
-    "footerBottom": "Hï Tech. Todos os direitos reservados."
+    "title": "Fale Comigo",
+    "description": "Entre em contato comigo.",
+    "email": "Email: diogo.correa@hitech.org.br",
+    "telefone": "Telefone: (41) números aí",
+    "divTitle1": "Diogo Corrêa do Nascimento",
+    "endereco": "Rua dos Bobos, Número 0",
+    "cnpj": "CPF cancelado",
+    "footerBottom": "Eu mesmo. Todos os direitos reservados."
   },
   "whatsapp": {
-    "whatsappNumberLink": "https://wa.me/5541984088811",
-    "whatsappText": "Entre em contato",
+    "whatsappNumberLink": "",
+    "whatsappText": "Isso aqui não funciona kkkkk",
     "whatsappLogoPath": "assets/whatsappLogo.svg"
   }
 }
