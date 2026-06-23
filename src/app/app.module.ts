@@ -11,7 +11,6 @@ import { ServicesComponent } from './services/services.component';
 import { CoreComponent } from './core/core.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PublishTaskService } from 'shared/publish-task.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,7 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressAnimation: 'increasing',
     }),
   ],
-  providers: [PublishTaskService, provideNgxMask()],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
