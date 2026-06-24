@@ -1,5 +1,5 @@
 // Cor Primária
-$color-primary: #2475ff;
+$color-primary: #3690f7;
 $color-primary-hover: darken($color-primary, 10%);
 $color-primary-border: darken($color-primary, 20%);
 $color-primary-light-1: lighten($color-primary, 10%);
@@ -8,7 +8,7 @@ $color-primary-dark-1: darken($color-primary, 10%);
 $color-primary-dark-2: darken($color-primary, 20%);
 
 // Cor Secundária
-$color-secondary: #dbdbdb;
+$color-secondary: #f1edec;
 $color-secondary-hover: darken($color-secondary, 10%);
 $color-secondary-border: darken($color-secondary, 20%);
 $color-secondary-light-1: lighten($color-secondary, 10%);
@@ -17,7 +17,7 @@ $color-secondary-dark-1: darken($color-secondary, 10%);
 $color-secondary-dark-2: darken($color-secondary, 20%);
 
 // Cor de Suporte
-$color-support: #000000;
+$color-support: #09254d;
 $color-support-hover: lighten($color-support, 60%);
 $color-support-border: lighten($color-support, 20%);
 $color-support-light-1: lighten($color-support, 10%);
@@ -25,3 +25,30 @@ $color-support-light-2: lighten($color-support, 40%);
 $color-support-light-3:lighten($color-support, 20%);
 $color-support-dark-1: $color-support; // Repete a cor original pois não tem mais escuro que #000000
 $color-support-dark-2: $color-support; // Repete a cor original pois não tem mais escuro que #000000
+
+// Cor Terciária
+$color-tertiary: #ffc145;
+$color-tertiary-hover: darken($color-tertiary, 10%);
+$color-tertiary-border: darken($color-tertiary, 20%);
+$color-tertiary-light-1: lighten($color-tertiary, 10%);
+$color-tertiary-light-2: lighten($color-tertiary, 20%);
+$color-tertiary-dark-1: darken($color-tertiary, 10%);
+$color-tertiary-dark-2: darken($color-tertiary, 20%);
+
+// Cor Quaternária
+$color-quaternary: #41c5c6;
+$color-quaternary-hover: darken($color-quaternary, 10%);
+$color-quaternary-border: darken($color-quaternary, 20%);
+$color-quaternary-light-1: lighten($color-quaternary, 10%);
+$color-quaternary-light-2: lighten($color-quaternary, 20%);
+$color-quaternary-dark-1: darken($color-quaternary, 10%);
+$color-quaternary-dark-2: darken($color-quaternary, 20%);
+
+// Cor Quinária
+$color-quinary: #5b01ba;
+$color-quinary-hover: darken($color-quinary, 10%);
+$color-quinary-border: darken($color-quinary, 20%);
+$color-quinary-light-1: lighten($color-quinary, 10%);
+$color-quinary-light-2: lighten($color-quinary, 20%);
+$color-quinary-dark-1: darken($color-quinary, 10%);
+$color-quinary-dark-2: darken($color-quinary, 20%);
