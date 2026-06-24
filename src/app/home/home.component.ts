@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { PublishTaskService } from 'shared/publish-task.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { templateTextService } from '@app/services/templateText.service';
 import { Validators } from '@angular/forms';
@@ -30,7 +29,6 @@ export class HomeComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private publishTaskService: PublishTaskService,
     private templateTextService: templateTextService,
     private toastr: ToastrService
   ) {}
@@ -125,36 +123,5 @@ export class HomeComponent implements OnInit {
     type();
   }
 
-  publishTask() {
-    if (this.form.invalid) {
-      this.form.markAllAsTouched();
-      return;
-    }
-
-    this.isLoading = true;
-    const form = this.form.value;
-
-    const payload = {
-      name: `NOVO CONTATO - ${form.name}`,
-      priority: 2,
-      // description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n CIDADE:${form.city},\n DESCRIÇÃO:${form.description}`,
-      markdown_description: `EMAIL: ${form.email},\n CELULAR: ${form.phone},\n DESCRIÇÃO: ${form.description}`,
-    };
-    this.publishTaskService.publishTask(payload).subscribe({
-      next: () => {
-        this.toastr.success(
-          'Seu formulário foi enviado com sucesso! 🎉',
-          'Sucesso!'
-        );
-      },
-      error: (err) => {
-        console.error(err);
-        this.toastr.error('Ops! Algo deu errado. Tente novamente.', 'Erro!');
-      },
-      complete: () => {
-        this.isLoading = false;
-      }
-    });
-    this.form.reset();
-  }
+  publishTask() {}
 }
