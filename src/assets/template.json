@@ -72,12 +72,12 @@
       {
         "nome": "LinkedIn",
         "url": "https://www.linkedin.com/company/hïtech/",
-        "icon": "assets/linkedin.webp"
+        "icon": "assets/linkedinNovo.svg"
       },
       {
         "nome": "Instagram",
         "url": "https://www.instagram.com/hitech.ej/",
-        "icon": "assets/instagram.webp"
+        "icon": "assets/instagramNovo.svg"
       }
     ],
     "title": "Fale Conosco",
