@@ -52,3 +52,13 @@ $color-quinary-light-1: lighten($color-quinary, 10%);
 $color-quinary-light-2: lighten($color-quinary, 20%);
 $color-quinary-dark-1: darken($color-quinary, 10%);
 $color-quinary-dark-2: darken($color-quinary, 20%);
+
+// Cor Sextenária
+$color-sextenary: #ffffff;
+$color-sextenary-hover: darken($color-sextenary, 10%);
+$color-sextenary-border: darken($color-sextenary, 20%);
+$color-sextenary-light-1: lighten($color-sextenary, 10%);
+$color-sextenary-light-2: lighten($color-sextenary, 20%);
+$color-sextenary-dark-1: darken($color-sextenary, 10%);
+$color-sextenary-dark-2: darken($color-sextenary, 20%);
+
