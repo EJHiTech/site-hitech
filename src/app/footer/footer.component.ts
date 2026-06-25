@@ -7,6 +7,7 @@ import { templateTextService } from '../services/templateText.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  logoAzulClaro = '../assets/logoNova1.svg';
   templateText: any = {}
   currentYear = new Date().getFullYear();
 
