@@ -26,3 +26,5 @@ export class CoreComponent implements OnInit {
     this.router.navigate([route], { fragment: fragment });
   }
 }
+
+
