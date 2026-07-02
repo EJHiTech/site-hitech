@@ -1,14 +1,14 @@
 <header>
   <nav>
-    <div class="logo" (click)="navigateToSection('home', 'hero')">
+    <div class="logo" routerLink="/home">
       <img [src]="templateText.LogoEmpresa.src" 
       [alt]="templateText.LogoEmpresa.alt" />
     </div>
     <ul class="nav-links">
-      <li><a (click)="navigateToSection('home', 'about')">Sobre Nós</a></li>
-      <li><a (click)="navigateToSection('home', 'services')">Serviços</a></li>
+      <li><a routerLink="/about">Sobre Nós</a></li>
+      <li><a routerLink="/services">Serviços</a></li>
       <!--<li><a (click)="navigateToSection('home', 'hero')">Clientes</a></li>-->
-      <li><a (click)="navigateToSection('home', 'contact')">Contato</a></li>
+      <li><a routerLink="/contact">Contato</a></li>
       <!--<li><a (click)="navigateToSection('home', 'hero')">Processo Seletivo</a></li>-->
     </ul>
     <!-- <a href="https://wa.me/5541998505198" target="_blank">
