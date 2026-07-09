@@ -197,8 +197,8 @@ section {
 }
 
 #services {
-  background-color: $color-primary-dark-2;
-  padding: 40px 20px;
+  background-color: $color-sextenary;
+  padding: 441px 205px;
   position: relative;
   z-index: 0;
 
@@ -212,14 +212,27 @@ section {
     opacity: 0.25;
   }
 
-  h2 {
-    text-align: center;
+  h1 {
+    text-align: left;
     width: 100%;
-    color: #fff;
+    color: #09254d;
     margin-bottom: 30px;
-    font-size: 2rem;
+    margin-top: 69px;
+    font-size: 12px;
     position: relative;
     z-index: 1;
+    font-family: "Rubik Mono One", sans-serif;
+  }
+
+  h2 {
+    text-align: left;
+    width: 100%;
+    color: #09254d;
+    margin-bottom: 30px;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+    margin-left: 60px;
   }
 
   .service-list {
@@ -244,7 +257,7 @@ section {
       }
 
       &:hover .card-inner {
-        transform: rotateY(180deg);
+      
       }
 
       .card-front,
@@ -254,14 +267,15 @@ section {
         height: 100%;
         backface-visibility: hidden;
         background-color: #fff;
-        border-radius: 10px;
+        border-radius: 8px;
+        border: 1px solid $color-sectenary-border;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: left;
       }
 
       .card-front {
@@ -277,7 +291,7 @@ section {
       }
 
       .card-back {
-        transform: rotateY(180deg);
+       
 
         p {
           color: $color-support;
