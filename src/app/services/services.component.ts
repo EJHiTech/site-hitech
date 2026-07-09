@@ -10,4 +10,5 @@ export class ServicesComponent {
   card2Flipped = false;
   card3Flipped = false;
   card4Flipped = false;
+  card5Flipped = false;
 }
