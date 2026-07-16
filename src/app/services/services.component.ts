@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
-
+  card1Flipped = false;
+  card2Flipped = false;
+  card3Flipped = false;
+  card4Flipped = false;
 }

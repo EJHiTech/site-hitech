@@ -1,0 +1,106 @@
+.carta-servicos {
+    margin-left: 111px;
+    text-align: left;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #09254D;
+}
+
+.sub-title {
+    color: #5B01BA;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 334px);
+    gap: 24px;
+}
+
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+
+    height: 286px; 
+}
+
+.card h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #09254D;
+
+    flex: 1;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.card p {
+    color: #554949;
+    line-height: 1.6;
+}
+
+.card-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5B01BA;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 24px;
+
+    background: linear-gradient(315deg,#FFFFFF,#D3FCFF);
+    border: 1px solid #09254D;
+    border-radius: 12px;
+
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform .6s;
+    transform-style: preserve-3d;
+    
+ 
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 11px 12px 0px #41C5C6;
+}
