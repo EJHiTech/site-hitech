@@ -1,36 +1,41 @@
 @import "colors.scss";
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+/* Removido o seletor 'body' que travava a altura em 100vh e centralizava os itens */
 
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
+}
+
+.top-bar {
+  background-color: $color-support; /* Ajuste se a cor azul escura for diferente no seu arquivo colors.scss */
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-end; /* Alinha os textos à direita */
+  gap: 40px;
+  padding: 8px 10px;
+  font-size: 10px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  border-top: 1px solid $color-primary; /* Borda cinza clara fina */
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 370px;
-  background-color: $color-primary;
+  width: 100%;
+  background-color: #f4f4f4; /* Cor de fundo cinza claro baseada na imagem */
   padding: 10px 20px;
-  border-radius: 100px;
-  box-shadow: 0 4px 20px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-bottom: 1px solid #dcdcdc; /* Borda cinza clara fina */
 }
 
 .logo {
-  padding: 10px;
   img {
-    width: 60px;
-    height: auto;
+    height: 67px; /* Ajuste a altura para comportar a nova logo vertical */
+    width: auto;
   }
   &:hover {
     cursor: pointer;
@@ -40,39 +45,25 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   padding: 0;
   margin: 0;
+  
   li {
     a {
-      color: $color-secondary;
+      color: $color-support; /* Azul escuro para os links */
       text-decoration: none;
       font-weight: bold;
-      &:hover {
-        color: $color-secondary-hover;
+      font-family: inherit;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      
+      &:hover, &.active {
+        color: $color-primary;
+        border-bottom: 2px solid #9b51e0; /* Linha roxa da imagem (substitua pela sua variável se houver) */
         cursor: pointer;
       }
     }
   }
-}
-
-.cta {
-  background-color: $color-secondary;
-  padding: 5px 15px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  color: $color-support;
-  img {
-    max-width: 40px;
-  }
-}
-
-.cta a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.cta:hover {
-  background-color: $color-secondary-hover;
 }
