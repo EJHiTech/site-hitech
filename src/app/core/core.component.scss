@@ -1,24 +1,27 @@
 @import "colors.scss";
 
-/* Removido o seletor 'body' que travava a altura em 100vh e centralizava os itens */
-
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 10000;
+  box-sizing: border-box;
 }
 
 .top-bar {
-  background-color: $color-support; /* Ajuste se a cor azul escura for diferente no seu arquivo colors.scss */
+  background-color: $color-support;
   color: #ffffff;
   display: flex;
-  justify-content: flex-end; /* Alinha os textos à direita */
+  justify-content: flex-end;
   gap: 40px;
   padding: 8px 10px;
   font-size: 10px;
   font-family: inherit;
   letter-spacing: 0.5px;
-  border-top: 1px solid $color-primary; /* Borda cinza clara fina */
+  border-top: 1px solid $color-primary;
 }
 
 nav {
@@ -26,15 +29,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #f4f4f4; /* Cor de fundo cinza claro baseada na imagem */
+  background-color: #f4f4f4;
   padding: 10px 20px;
   box-sizing: border-box;
-  border-bottom: 1px solid #dcdcdc; /* Borda cinza clara fina */
+  border-bottom: 1px solid #dcdcdc;
 }
 
 .logo {
   img {
-    height: 67px; /* Ajuste a altura para comportar a nova logo vertical */
+    height: 67px;
     width: auto;
   }
   &:hover {
@@ -51,7 +54,7 @@ nav {
   
   li {
     a {
-      color: $color-support; /* Azul escuro para os links */
+      color: $color-support;
       text-decoration: none;
       font-weight: bold;
       font-family: inherit;
@@ -61,7 +64,7 @@ nav {
       
       &:hover, &.active {
         color: $color-primary;
-        border-bottom: 2px solid #9b51e0; /* Linha roxa da imagem (substitua pela sua variável se houver) */
+        border-bottom: 2px solid $color-quinary-hover;
         cursor: pointer;
       }
     }
