@@ -1,21 +1,23 @@
 <header>
+  <!-- Barra Superior -->
+  <div class="top-bar">
+    <span>Universidade Tecnológica Federal do Paraná</span>
+    <!-- Substituído o @ por &#64; para não conflitar com o Angular -->
+    <span>contato&#64;hitech.org.br</span>
+  </div>
+
+  <!-- Navegação Principal -->
   <nav>
     <div class="logo" routerLink="/home">
-      <img [src]="templateText.LogoEmpresa.src" 
-      [alt]="templateText.LogoEmpresa.alt" />
+      <img [src]="templateText.LogoEmpresa.src" [alt]="templateText.LogoEmpresa.alt" />
     </div>
+    
     <ul class="nav-links">
-      <li><a routerLink="/about">Sobre Nós</a></li>
-      <li><a routerLink="/services">Serviços</a></li>
-      <!--<li><a (click)="navigateToSection('home', 'hero')">Clientes</a></li>-->
-      <li><a routerLink="/contact">Contato</a></li>
-      <!--<li><a (click)="navigateToSection('home', 'hero')">Processo Seletivo</a></li>-->
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">Sobre Nós</a></li>
+      <li><a routerLink="/services" routerLinkActive="active">Serviços</a></li>
+      <li><a (click)="navigateToSection('home', 'contato')">Contato</a></li>
     </ul>
-    <!-- <a href="https://wa.me/5541998505198" target="_blank">
-      <button class="cta">
-        <img src="assets/whatsIcon.webp" alt="Contato" />
-      </button>
-    </a> -->
   </nav>
 </header>
 
