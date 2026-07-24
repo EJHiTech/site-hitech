@@ -1,8 +1,52 @@
 <div class="scroll-container">
-  <section id="hero">
-    <h1 id="typed-text"></h1>
-    <p>{{ templateText.title }}</p>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-header">
+        <span class="hero-subtitle">{{ templateText.heroSubtitle }}</span>
+        <h1 id="typed-text" class="hero-title">{{ templateText.heroTitle}}</h1> 
+        <p class="hero-description-fallback">{{ templateText.heroDescription }}</p>
+      </div>
+      
+    <div class="hero-buttons">
+      <button class="btn-primary" > <!-- Adicionar a rota para Serviços -->
+        {{ templateText.btnServicesText }}
+      </button>
+      <button class="btn-secondary"> <!-- Adicionar a rota para Contato -->
+        {{ templateText.btnContactText }}
+      </button> 
+    </div>
+  </div>
+
+  <div class="hero-right">
+      <div class="team-card-wrapper">
+        <div class="team-card">
+          <div class="image-container">
+            <img [src]="templateText.heroImage.src" [alt]="templateText.heroImage.alt" /><!-- Alterar a imagem para a especificada no projeto. Atenção ao tipo de extensão-->
+          </div>
+          <div class="team-caption">
+            <span>{{ templateText.heroImage.caption }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="values-bar">
+      <div class="value-item" *ngFor="let feature of templateText.features">
+        <div class="value-icon-box">
+          <img [src]="feature.icon" [alt]="feature.title" class="value-icon" />
+        </div>
+        <div class="value-text">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+
   </section>
+
   <section id="about-contact">
     <img [src]="templateText.ImagemSecaoSobreNosContato.src" [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
       [alt]="templateText.ImagemSecaoSobreNosContato.alt" />
@@ -78,9 +122,4 @@
       </div>
     </div>
   </section>
-  <!-- 
-  <section class="cta-section">
-    <h2>Pronto para começar?</h2>
-    <button class="cta-button">Entre em contato</button>
-  </section> -->
 </div>

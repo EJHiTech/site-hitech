@@ -38,23 +38,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.templateTextService.templateText$.subscribe((data) => {
       this.templateText = data.home;
-      this.texts = this.templateText.typingTexts;
       this.services = this.templateText.Services.list;
       this.costumers = this.templateText.Costumers.list;
       this.partners = this.templateText.Partners.list;
-      this.startTypingEffect(); // Inicia o efeito de digitação após carregar os textos
-    });
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        const fragment = this.router.parseUrl(this.router.url).fragment;
-        if (fragment) {
-          const element = document.getElementById(fragment);
-          if (element) {
-            this.smoothScroll(element);
-          }
-        }
-      }
     });
 
     this.form = this.formBuilder.group({
@@ -64,63 +50,6 @@ export class HomeComponent implements OnInit {
       city: [null],
       description: [null, [Validators.required, Validators.minLength(10)]],
     });
-  }
-
-  smoothScroll(target: HTMLElement) {
-    const duration = 1000; // duração de 1000ms ou 1 segundo
-    const offset = 150; // Defina o deslocamento de 150 pixels
-    const targetPosition =
-      target.getBoundingClientRect().top + window.pageYOffset - offset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime: number | null = null;
-
-    function animationScroll(currentTime: number) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animationScroll);
-    }
-
-    function easeInOutQuad(t: number, b: number, c: number, d: number) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animationScroll);
-  }
-
-  startTypingEffect(): void {
-    const typedText = document.getElementById('typed-text');
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const type = () => {
-      if (!typedText || this.texts.length === 0) return;
-
-      if (isDeleting) {
-        charIndex--;
-      } else {
-        charIndex++;
-      }
-
-      typedText.textContent = this.texts[index]?.substring(0, charIndex) || '';
-
-      if (!isDeleting && charIndex === this.texts[index].length) {
-        setTimeout(() => (isDeleting = true), 1000);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        index = (index + 1) % this.texts.length;
-      }
-
-      setTimeout(type, isDeleting ? 50 : 100);
-    };
-
-    type();
   }
 
   publishTask() {}

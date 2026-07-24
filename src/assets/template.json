@@ -6,6 +6,33 @@
     }
   },
   "home": {
+    "heroSubtitle": "HI TECH - EMPRESA JÚNIOR",
+    "heroTitle" : "TECNOLOGIA QUE TRANSFORMA IDEIAS EM SISTEMAS REAIS.",
+    "heroDescription" : "Desenvolvemos soluções digitais sob medida para aqueles que querem organizar processos, validar produtos e gerar impacto com tecnologia de verdade.",
+    "btnServicesText": "Conheça nossos serviços",
+    "btnContactText": "Fale com a gente",
+    "heroImage": {
+      "src": "assets/img-home.webp", 
+      "alt": "Equipe Hï Tech reunida segurando a bandeira da empresa",
+      "caption": ">> Times que constroem o futuro"
+    },
+    "features": [
+      {
+        "icon": "assets/feature-1.svg",
+        "title": "Excelência técnica",
+        "description": "Aplicamos boas práticas para entregar soluções seguras, escaláveis e fáceis de evoluir."
+      },
+      {
+        "icon": "assets/feature-2.svg",
+        "title": "Pessoas no centro",
+        "description": "Acreditamos em aprendizado, colaboração e protagonismo em todas as etapas do projeto."
+      },
+      {
+        "icon": "assets/feature-3.svg",
+        "title": "Impacto real",
+        "description": "Geramos valor para empresas, clientes e comunidade por meio de tecnologia aplicada."
+      }
+    ],
     "ImagemSecaoSobreNosContato": {
       "src": "assets/logoAzulClaro.svg",
       "style": {
@@ -51,15 +78,7 @@
     "Partners": {
       "sectionTitle": "Parceiros",
       "list": []
-    },
-    "title": "Estamos aqui para impulsionar seu negócio com soluções de impacto.",
-    "subtitle": "Sobre Nós",
-    "description": "Somos a Hï Tech, empresa júnior de tecnologia fundada em novembro de 2024. Constituída por estudantes universitários, temos como propósito promover uma experiência acadêmica enriquecedora, aproximando a vivência universitária da realidade do mercado por meio de um ambiente corporativo seguro e estruturado. Nosso compromisso é desenvolver soluções tecnológicas de qualidade, ao mesmo tempo em que formamos profissionais preparados para atuar com responsabilidade, inovação e excelência.",
-    "typingTexts": [
-      "Bem-vindo à HÏ TECH",
-      "Inovação e Sucesso",
-      "Sua Solução Ideal"
-    ]
+    }
   },
   "about": {
     "title": "Sobre Nós",
