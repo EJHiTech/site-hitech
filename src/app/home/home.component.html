@@ -7,41 +7,6 @@
     <img [src]="templateText.ImagemSecaoSobreNosContato.src" [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
       [alt]="templateText.ImagemSecaoSobreNosContato.alt" />
     <app-about title="{{templateText.subtitle}}" description="{{templateText.description}}"></app-about>
-    <article id="contact">
-      <h2>Fale Conosco</h2>
-      <form [formGroup]="form" (ngSubmit)="publishTask()">
-        <input type="text" placeholder="Nome" formControlName="name" />
-        <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
-          <small *ngIf="form.get('name')?.errors?.['required']">Nome é obrigatório.</small>
-          <small *ngIf="form.get('name')?.errors?.['minlength']">Nome muito curto.</small>
-        </div>
-
-        <input type="email" placeholder="Email" formControlName="email" />
-        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
-          <small *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</small>
-          <small *ngIf="form.get('email')?.errors?.['email']">Email inválido.</small>
-        </div>
-
-        <input type="tel" placeholder="Telefone" mask="(00) 00000-0000" formControlName="phone" />
-        <div *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
-          <small *ngIf="form.get('phone')?.errors?.['required']">Telefone é obrigatório.</small>
-          <small *ngIf="form.get('phone')?.errors?.['pattern']">Formato inválido.</small>
-        </div>
-
-        <textarea placeholder="Mensagem" formControlName="description"></textarea>
-        <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
-          <small *ngIf="form.get('description')?.errors?.['required']">Mensagem é obrigatória.</small>
-          <small *ngIf="form.get('description')?.errors?.['minlength']">Mensagem muito curta.</small>
-        </div>
-        <button type="submit" [disabled]="form.invalid || isLoading">
-          <ng-container *ngIf="!isLoading">Enviar</ng-container>
-          <ng-container *ngIf="isLoading">
-            <span class="spinner"></span> Enviando...
-          </ng-container>
-        </button>
-      </form>
-    </article>
-    <div id="toast-container"></div>
   </section>
   <section id="services">
     <img [src]="templateText.Services.bgImage" alt="binarios" />
@@ -52,9 +17,7 @@
           <div class="card-front">
             <h3>{{ service.title }}</h3>
             <span>{{ service.subtitle }}</span>
-          </div>
-          <div class="card-back">
-            <p>{{ service.description }}</p>
+            <p class="service-description">{{ service.description }}</p>
           </div>
         </div>
       </div>
@@ -78,9 +41,56 @@
       </div>
     </div>
   </section>
+  <section id="contact">
+    <div class="contact-card">
+      <div class="contact-left">
+        <p class="contact-pretitle">VAMOS CONVERSAR?</p>
+        <h2>Tem um desafio? nós temos a solução.</h2>
+        <p class="contact-description">
+          Fale com a Hï Tech e descubra como podemos transformar sua ideia em um produto digital com impacto.
+        </p>
+      </div>
+      <form class="contact-right" [formGroup]="form" (ngSubmit)="publishTask()">
+        <div class="field-group">
+          <label class="label-nome" for="name">Nome</label>
+          <input id="name" type="text" placeholder="Seu nome" formControlName="name" />
+          <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+            <small *ngIf="form.get('name')?.errors?.['required']">Nome é obrigatório.</small>
+            <small *ngIf="form.get('name')?.errors?.['minlength']">Nome muito curto.</small>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="label-email" for="email">E-mail</label>
+          <input id="email" type="email" placeholder="Seu email" formControlName="email" />
+          <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+            <small *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</small>
+            <small *ngIf="form.get('email')?.errors?.['email']">Email inválido.</small>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="label-mensagem" for="description">Mensagem</label>
+          <textarea id="description" placeholder="Mensagem" formControlName="description"></textarea>
+          <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+            <small *ngIf="form.get('description')?.errors?.['required']">Mensagem é obrigatória.</small>
+            <small *ngIf="form.get('description')?.errors?.['minlength']">Mensagem muito curta.</small>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="form.invalid || isLoading">
+          <ng-container *ngIf="!isLoading">Enviar mensagem</ng-container>
+          <ng-container *ngIf="isLoading">
+            <span class="spinner"></span> Enviando...
+          </ng-container>
+        </button>
+      </form>
+    </div>
+    <div id="toast-container"></div>
+  </section>
   <!-- 
   <section class="cta-section">
     <h2>Pronto para começar?</h2>
-    <button class="cta-button">Entre em contato</button>
+    <button class="cta-button">Entre em contato</button></button>
   </section> -->
 </div>

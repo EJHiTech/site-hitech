@@ -17,19 +17,6 @@ section {
   gap: 20px;
 }
 
-#typed-text {
-  font-size: 3rem;
-  font-weight: bold;
-  color: $color-secondary;
-  overflow: hidden;
-  display: inline-block;
-
-  @media only screen and (min-width: 500px) {
-    white-space: nowrap;
-    border-right: 2px solid $color-primary;
-  }
-}
-
 @keyframes blink-caret {
   0% {
     border-color: transparent;
@@ -38,7 +25,6 @@ section {
   50% {
     border-color: $color-primary;
   }
-
   100% {
     border-color: transparent;
   }
@@ -98,102 +84,204 @@ section {
     max-width: 400px;
     width: 100%;
   }
+}
 
-  #contact {
-    margin: auto;
-    margin-top: 40px;
-    background-color: $color-support-light-1;
-    padding: 40px;
+#contact {
+  width: 100%;
+  margin-top: 45px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  background-color: #F1EDEC;
+
+  .contact-card {
+    margin: 0 auto;
+    background: linear-gradient(180deg, #D9FFFF 0%, #FFFFFF 100%);
+    padding: 18px 40px 40px;
     border-radius: 8px;
     width: 100%;
-    max-width: 600px;
+    max-width: 1821px;
+    height: 486px;
+    box-shadow: 11px 11px 0px #41C5C6;
+    border: 1px solid #000000;
+    display: grid;
+    grid-template-columns: 1fr 669px;
+    align-items: start;
+    gap: 32px;
+    box-sizing: border-box;
+  }
 
-    h2 {
-      font-size: 2rem;
-      color: $color-primary-light-2;
-      margin-bottom: 20px;
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    width: 669px;
+  }
+
+  .contact-pretitle {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: #09254D;
+    margin: 45px 0 0 55px;
+    text-align: left;
+  }
+
+  h2 {
+    color: #09254D;
+    font-family: 'Rubik Mono One', monospace;
+    font-weight: 400;
+    font-size: 54px;
+    margin: 8px 0 0 49px;
+    text-align: left;
+  }
+
+  .contact-description {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: #09254D;
+    margin: 0 0 0 49px;
+    width: 833px;
+    max-width: 833px;
+    text-align: left;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 669px;
+    max-width: 100%;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .field-group label {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    color: #09254D;
+  }
+
+  .label-nome {
+    width: 34px;
+    margin-top: 45px;
+  }
+
+  .label-email {
+    width: 51px;
+  }
+
+  .label-mensagem {
+    width: 68px;
+  }
+
+  input,
+  textarea {
+    width: 669px;
+    max-width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+    color: #09254D;
+    box-sizing: border-box;
+  }
+
+  input {
+    height: 43px;
+  }
+
+  textarea {
+    height: 113px;
+    resize: none;
+  }
+
+  button {
+    width: 669px;
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3690F7;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  button:hover {
+    background-color: darken(#3690F7, 8%);
+  }
+
+  button:disabled {
+    background-color: #3690F7;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #09254D;
+    border-top: 3px solid #FFFFFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 1280px) {
+    .contact-card {
+      padding: 32px;
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    button {
       width: 100%;
-
-      input,
-      textarea {
-        background-color: $color-support-light-3;
-        padding: 15px;
-        border-radius: 5px;
-        border: 3px solid $color-primary;
-        font-size: 1rem;
-        color: #fff;
-        width: 100%;
-        box-sizing: border-box;
-
-        &::placeholder {
-          color: $color-secondary-light-2;
-        }
-
-        &:focus {
-          background-color: $color-primary-dark-2;
-          outline: none;
-          border-color: $color-secondary-light-2;
-          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-      }
-
-      textarea {
-        resize: none;
-        height: 120px;
-      }
-
-      button {
-        padding: 15px;
-        border-radius: 5px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-
-        &:hover {
-          background-color: #0056b3;
-        }
-
-        &:disabled {
-          background-color: $color-secondary;
-          color: #aaa;
-          cursor: default;
-        }
-
-        .spinner {
-          width: 20px;
-          height: 20px;
-          border: 3px solid $color-primary;
-          border-top: 3px solid $color-secondary;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      }
+      grid-column: span 1;
     }
   }
+}
+
+#customersPartners {
+  margin-top: 0;
 }
 
 #services {
@@ -244,8 +332,9 @@ section {
     z-index: 1;
 
     .service {
-      width: 300px;
-      height: 200px;
+      width: 441px;
+      min-width: 441px;
+      height: 205px;
       perspective: 1000px;
 
       .card-inner {
@@ -255,17 +344,15 @@ section {
         transition: transform 0.6s ease;
         transform-style: preserve-3d;
       }
-
-      &:hover .card-inner {
       
-      }
+      /* hover flip removed to keep card static */
 
-      .card-front,
-      .card-back {
-        position: absolute;
+      /* removed duplicate empty hover rule */
+
+      .card-front {
+        position: relative;
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
         background-color: #fff;
         border-radius: 8px;
         border: 1px solid $color-sectenary-border;
@@ -274,33 +361,37 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         text-align: left;
       }
 
       .card-front {
+        z-index: 2;
         h3 {
-          color: $color-primary;
+          color: #09254D;
+          font-family: "Rubik Mono One", sans-serif;
+          font-weight: 400;
+          font-size: 12px;
           margin-bottom: 8px;
         }
 
         span {
           color: $color-support;
-          font-size: 0.95rem;
+          font-family: 'Roboto Mono', monospace;
+          font-weight: 400;
+          font-size: 12px;
         }
       }
 
-      .card-back {
-       
-
-        p {
-          color: $color-support;
-          font-size: 0.95rem;
-        }
+      /* removed .card-back styles since back face was removed */
+      .service-description {
+        color: $color-support;
+        font-size: 0.95rem;
+        margin-top: 8px;
+      }
       }
     }
   }
-}
 
 #customersPartners {
   background-color: $color-support-light-1;
