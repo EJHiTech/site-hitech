@@ -47,46 +47,48 @@
 
   </section>
 
-  <section id="about-contact">
-    <img [src]="templateText.ImagemSecaoSobreNosContato.src" [ngStyle]="templateText.ImagemSecaoSobreNosContato.style"
-      [alt]="templateText.ImagemSecaoSobreNosContato.alt" />
-    <app-about title="{{templateText.subtitle}}" description="{{templateText.description}}"></app-about>
-    <article id="contact">
-      <h2>Fale Conosco</h2>
-      <form [formGroup]="form" (ngSubmit)="publishTask()">
-        <input type="text" placeholder="Nome" formControlName="name" />
-        <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
-          <small *ngIf="form.get('name')?.errors?.['required']">Nome é obrigatório.</small>
-          <small *ngIf="form.get('name')?.errors?.['minlength']">Nome muito curto.</small>
+  <section id="about">
+    <div class="about-content">
+      <div class="about-left">
+        <div class="about-header">
+        <span class="about-subtitle">{{templateText.about.subTitle }}</span>
+        <h1 id="typed-text" class="about-title">{{templateText.about.title}}</h1> 
+        <p class="about-description">{{templateText.about.description}}</p>
+        <a [href]="templateText.about.linkUrl" class="about-link">{{templateText.about.linkText}}</a><!-- Alterar o link para o especificada no projeto.-->
         </div>
-
-        <input type="email" placeholder="Email" formControlName="email" />
-        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
-          <small *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</small>
-          <small *ngIf="form.get('email')?.errors?.['email']">Email inválido.</small>
+      </div>
+      <div class="about-right">
+        <div class="about-card-wrapper">
+          <div class="activity-card">
+            <div class="activity-icon-box">
+              <img [src]="templateText.about.activityIcon" class="activity-icon" /><!-- Alterar a logo para a especificada no projeto.-->
+            </div>
+            <ul>
+              <li *ngFor="let item of templateText.about.activity">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <input type="tel" placeholder="Telefone" mask="(00) 00000-0000" formControlName="phone" />
-        <div *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
-          <small *ngIf="form.get('phone')?.errors?.['required']">Telefone é obrigatório.</small>
-          <small *ngIf="form.get('phone')?.errors?.['pattern']">Formato inválido.</small>
+      </div>
+    </div>
+    <div class="acting-bar">
+      <div class="acting-content">
+        <h3 class="acting-title">{{templateText.about.actingTitle}}</h3>
+        <div class="acting-boxes">
+          <div class="acting-item" *ngFor="let item of templateText.about.acting">
+            <div class="acting-box">
+              <div class="value-text">
+                <h3>{{item.value}}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <textarea placeholder="Mensagem" formControlName="description"></textarea>
-        <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
-          <small *ngIf="form.get('description')?.errors?.['required']">Mensagem é obrigatória.</small>
-          <small *ngIf="form.get('description')?.errors?.['minlength']">Mensagem muito curta.</small>
-        </div>
-        <button type="submit" [disabled]="form.invalid || isLoading">
-          <ng-container *ngIf="!isLoading">Enviar</ng-container>
-          <ng-container *ngIf="isLoading">
-            <span class="spinner"></span> Enviando...
-          </ng-container>
-        </button>
-      </form>
-    </article>
-    <div id="toast-container"></div>
+      </div>
+    </div>
   </section>
+ 
   <section id="services">
     <img [src]="templateText.Services.bgImage" alt="binarios" />
     <h2>{{ templateText.Services.sectionTitle }}</h2>
