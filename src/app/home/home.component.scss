@@ -271,121 +271,217 @@ section {
 }
 
 
-#about-contact {
+#about {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  text-align: center;
-  color: $color-primary-light-2;
-  background-color: $color-support-light-1;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center; 
+  text-align: left; 
+  background: #f4f1eb; 
+  gap: 60px;
 
-  img {
-    margin-left: 60px;
-    margin-top: 20px;
-    max-width: 400px;
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    gap: 40px;
+    padding: 80px 30px; 
   }
 
-  #contact {
+  .about-left {
+    flex: 1; 
+    align-items: left;
+    max-width:  650px;
+  }
+
+  .about-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .about-title{
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 3rem;
+  }
+
+  .about-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $color-support; 
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .about-description{
+    font-size: small;
+    color: grey;
+  }
+
+  .about-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #ffb703;
+;
+  }
+  .about-link:link {
+    color: #0b2545;
+  }
+  .about-link:visited {
+    color: #6B3FD6;
+  }
+  .about-link:hover {
+    color: #284DA5; 
+  }
+
+    .about-card-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #ffb703;
+    border-radius: 16px;
+    padding: 0;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: -6px;
+      bottom: -6px;
+      background-color: #ffb703;
+      z-index: -1;
+      border-radius: 12px;
+    }
+  }
+
+  .activity-card {
+    background-color: white;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 380px;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translate(-4px, -4px);
+  }
+  
+  .activity-icon-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .activity-icon {
+    width: 70px;
+    height: auto;
+  }
+
+  .activity-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .activity-card li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555555;
+  }
+
+  .activity-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #555555;
+  }
+
+  .acting-bar {
+    width: 100%;
+    background-color: #0b2545;
+    border: 3px solid #000000; 
+    border-radius: 16px;      
+    padding: 30px;
+      gap: 30px;
+    box-sizing: border-box;
+  }
+
+  .acting-title {
+    color: #00cccc;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .acting-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
     margin: auto;
-    margin-top: 40px;
-    background-color: $color-support-light-1;
-    padding: 40px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-
-    h2 {
-      font-size: 2rem;
-      color: $color-primary-light-2;
-      margin-bottom: 20px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-
-      input,
-      textarea {
-        background-color: $color-support-light-3;
-        padding: 15px;
-        border-radius: 5px;
-        border: 3px solid $color-primary;
-        font-size: 1rem;
-        color: #fff;
-        width: 100%;
-        box-sizing: border-box;
-
-        &::placeholder {
-          color: $color-secondary-light-2;
-        }
-
-        &:focus {
-          background-color: $color-primary-dark-2;
-          outline: none;
-          border-color: $color-secondary-light-2;
-          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-      }
-
-      textarea {
-        resize: none;
-        height: 120px;
-      }
-
-      button {
-        padding: 15px;
-        border-radius: 5px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-
-        &:hover {
-          background-color: #0056b3;
-        }
-
-        &:disabled {
-          background-color: $color-secondary;
-          color: #aaa;
-          cursor: default;
-        }
-
-        .spinner {
-          width: 20px;
-          height: 20px;
-          border: 3px solid $color-primary;
-          border-top: 3px solid $color-secondary;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      }
-    }
+    margin-bottom: 25px;
+    flex-wrap: wrap;
   }
-}
 
+  .acting-item {
+    flex: 1; 
+    min-width: 280px; 
+    max-width: 420px; 
+  }
+
+  .acting-box {
+    background-color: #1a365d;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 25px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+  
+  .value-text h3 {
+    color: #ffb703; 
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 48px; 
+    font-weight: 100;
+  }
+  
+  .value-text p {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+}
 #services {
   background-color: $color-primary-dark-2;
   padding: 40px 20px;
