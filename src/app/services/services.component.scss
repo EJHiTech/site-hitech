@@ -131,3 +131,83 @@
     flex-direction: column;
     box-shadow: 8px 10px 0px $color-quaternary;
 }
+
+.hero-servicos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 75px; /* Espaçamento entre a logo e o texto */
+  max-width: 1200px;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  
+  /* Responsividade: empilha a seção em telas menores */
+  @media (max-width: 960px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+}
+
+.hero-left {
+  display: flex;
+  justify-content: flex-end;
+  
+  .logo-box {
+    background-color: #ffffff;
+    border: 1px solid $color-support; /* Borda azul escuro */
+    border-radius: 8px;
+    padding: 30px 60px;
+    
+    /* Efeito de sombra sólida amarela - Substitua o #FDCF41 pela variável da sua paleta, se houver */
+    box-shadow: 8px 8px 0px $color-tertiary; 
+    
+    img {
+      max-width: 380px; /* Ajuste conforme o tamanho real da imagem da logo */
+      height: auto;
+    }
+  }
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaço entre o subtítulo, título e parágrafo */
+
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-support;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: inherit; /* Puxa a mesma fonte do body (como a Roboto Mono) */
+  }
+
+  .headline {
+    font-size: 3.5rem;
+    font-family: "Rubik Mono One", sans-serif;
+    line-height: 1.1;
+    font-weight: 400;
+    color: $color-support; /* Se a cor for muito escura, cheque a variável exata no seu colors.scss */
+    margin: 0;
+    text-transform: uppercase;
+    
+    @media (max-width: 768px) {
+      font-size: 2.5rem; /* Diminui a fonte no celular para não quebrar a tela */
+    }
+  }
+
+  .description {
+    font-size: 14px;
+    color: #554949; /* Mesma cor que você usou no card-back */
+    line-height: 1.5;
+    margin: 0;
+    
+    @media (max-width: 960px) {
+      margin: 0 auto;
+    }
+  }
+}
