@@ -5,17 +5,17 @@
     <div class="hero-left">
       <div class="hero-header">
         <span class="hero-subtitle">{{ templateText.heroSubtitle }}</span>
-        <h1 id="typed-text" class="hero-title">{{ templateText.heroTitle}}</h1> 
+        <h1 id="typed-text" class="hero-title">{{ templateText.heroTitle}}</h1>
         <p class="hero-description-fallback">{{ templateText.heroDescription }}</p>
       </div>
-      
+
     <div class="hero-buttons">
       <button class="btn-primary" > <!-- Adicionar a rota para Serviços -->
         {{ templateText.btnServicesText }}
       </button>
       <button class="btn-secondary"> <!-- Adicionar a rota para Contato -->
         {{ templateText.btnContactText }}
-      </button> 
+      </button>
     </div>
   </div>
 
@@ -33,17 +33,18 @@
     </div>
   </div>
 
-    <div class="values-bar">
-      <div class="value-item" *ngFor="let feature of templateText.features">
-        <div class="value-icon-box">
-          <img [src]="feature.icon" [alt]="feature.title" class="value-icon" />
-        </div>
-        <div class="value-text">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </div>
+  <div class="values-bar">
+   <img src="assets/padrao-azul-escuro-ciano.svg" alt="" class="pattern-overlay" aria-hidden="true" />
+    <div class="value-item" *ngFor="let feature of templateText.features; let i = index">
+      <div class="value-icon-box">
+        <img [src]="feature.icon" [alt]="feature.title" class="value-icon" />
+      </div>
+      <div class="value-text">
+        <h3 [appTypewriter]="feature.title" [delay]="i * 300" [speed]="75"></h3>
+        <p [appTypewriter]="feature.description" [delay]="i * 300 + 500" [speed]="25"></p>
       </div>
     </div>
+  </div>
 
   </section>
 
@@ -52,7 +53,7 @@
       <div class="about-left">
         <div class="about-header">
         <span class="about-subtitle">{{templateText.about.subTitle }}</span>
-        <h1 id="typed-text" class="about-title">{{templateText.about.title}}</h1> 
+        <h1 id="typed-text" class="about-title">{{templateText.about.title}}</h1>
         <p class="about-description">{{templateText.about.description}}</p>
         <a [href]="templateText.about.linkUrl" class="about-link">{{templateText.about.linkText}}</a><!-- Alterar o link para o especificada no projeto.-->
         </div>
@@ -76,11 +77,11 @@
       <div class="acting-content">
         <h3 class="acting-title">{{templateText.about.actingTitle}}</h3>
         <div class="acting-boxes">
-          <div class="acting-item" *ngFor="let item of templateText.about.acting">
+          <div class="acting-item" *ngFor="let item of templateText.about.acting; let i = index">
             <div class="acting-box">
               <div class="value-text">
-                <h3>{{item.value}}</h3>
-                <p>{{ item.description }}</p>
+                <h3 [appTypewriter]="item.value" [delay]="i * 500" [speed]="60"></h3>
+                <p [appTypewriter]="item.description" [delay]="i * 500 + 400" [speed]="20"></p>
               </div>
             </div>
           </div>
@@ -88,7 +89,7 @@
       </div>
     </div>
   </section>
- 
+
   <section id="services">
     <img [src]="templateText.Services.bgImage" alt="binarios" />
     <h2>{{ templateText.Services.sectionTitle }}</h2>

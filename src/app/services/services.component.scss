@@ -15,7 +15,7 @@
 
 .sub-title {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: $color-quinary-dark-1;
   margin-bottom: 50px;
 
@@ -46,11 +46,11 @@
     perspective: 1000px;
     cursor: pointer;
     height: 286px;
-    transition :transform 0.8s ease, all 0.8s ease;
+    transition :transform 0.7s ease, all 0.7s ease;
     &:hover
     {
       cursor: pointer;
-      transform: translateY(-10px);
+      transform: translateY(-30px);
       h2 {
         color:  $color-quinary;
       }
@@ -96,7 +96,7 @@
 
     padding: 24px;
 
-    background: linear-gradient(315deg,$color-primary,#D3FCFF);
+    background: linear-gradient(225deg,$color-primary,#D3FCFF);
     border: 1px solid $color-support;
     border-radius: 12px;
 
@@ -143,7 +143,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
-  
+
   /* Responsividade: empilha a seção em telas menores */
   @media (max-width: 960px) {
     flex-direction: column;
@@ -155,16 +155,16 @@
 .hero-left {
   display: flex;
   justify-content: flex-end;
-  
+
   .logo-box {
     background-color: #ffffff;
     border: 1px solid $color-support; /* Borda azul escuro */
     border-radius: 8px;
     padding: 30px 60px;
-    
-    /* Efeito de sombra sólida amarela - Substitua o #FDCF41 pela variável da sua paleta, se houver */
-    box-shadow: 8px 8px 0px $color-tertiary; 
-    
+
+
+    box-shadow: 8px 8px 0px $color-tertiary;
+
     img {
       max-width: 380px; /* Ajuste conforme o tamanho real da imagem da logo */
       height: auto;
@@ -194,7 +194,7 @@
     color: $color-support; /* Se a cor for muito escura, cheque a variável exata no seu colors.scss */
     margin: 0;
     text-transform: uppercase;
-    
+
     @media (max-width: 768px) {
       font-size: 2.5rem; /* Diminui a fonte no celular para não quebrar a tela */
     }
@@ -205,7 +205,7 @@
     color: #554949; /* Mesma cor que você usou no card-back */
     line-height: 1.5;
     margin: 0;
-    
+
     @media (max-width: 960px) {
       margin: 0 auto;
     }

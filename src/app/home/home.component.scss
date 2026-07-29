@@ -51,11 +51,11 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
-  text-align: left; 
-  padding: 80px 30px; 
-  background: #f4f1eb; 
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 80px 30px;
+  background: #f4f1eb;
   gap: 60px;
 
   .hero-content {
@@ -68,7 +68,7 @@ section {
   }
 
   .hero-left {
-    flex: 0.4; 
+    flex: 0.4;
     align-items: left;
     max-width: 500px;
   }
@@ -90,7 +90,7 @@ section {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: $color-support; 
+    color: $color-support;
     text-transform: uppercase;
     margin-bottom: 16px;
     display: block;
@@ -116,7 +116,7 @@ section {
     }
 
     .btn-primary {
-      background-color: #2b7fff; 
+      background-color: #2b7fff;
       color: #ffffff;
       border: 2px solid #0046b3;
       box-shadow: 4px 4px 0px #0046b3;
@@ -134,7 +134,7 @@ section {
 
     .btn-secondary {
       background-color: #ffffff;
-      color: #0b2545; 
+      color: #0b2545;
       border: 2px solid #00f2fe;
       box-shadow: 4px 4px 0px #00f2fe;
 
@@ -155,7 +155,7 @@ section {
     background-color: #6200ee;
     border-radius: 16px;
     padding: 0;
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -201,7 +201,7 @@ section {
     border: 2px solid #ffffff;
     border-radius: 6px;
     padding: 10px 16px;
-    
+
     span {
       font-family: "Courier New", Courier, monospace;
       font-size: 13px;
@@ -212,19 +212,34 @@ section {
   }
 
   .values-bar {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     background-color: #0b2545;
-    border: 3px solid #000000; 
-    border-radius: 16px;      
+    border: 3px solid #000000;
+    border-radius: 16px;
     padding: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 30px;
     box-sizing: border-box;
+
+    .pattern-overlay {
+      position: absolute;
+      top: -20px;
+      right: 10px;
+      width: 220px;
+      height: auto;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
   }
 
   .value-item {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -243,6 +258,11 @@ section {
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 0px #000000;
+    transition :transform 0.6s ease, all 0.6s ease;
+    &:hover
+    {
+      transform: translateY(-7px);
+    }
 
     .value-icon {
       // Para alterar a cor modificar o valor de fill para #0b2545 no próprio SVG;
@@ -278,10 +298,10 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
-  text-align: left; 
-  background: #f4f1eb; 
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background: #f4f1eb;
   gap: 60px;
 
   .about-content {
@@ -291,11 +311,11 @@ section {
     align-items: center;
     width: 100%;
     gap: 40px;
-    padding: 80px 30px; 
+    padding: 80px 30px;
   }
 
   .about-left {
-    flex: 1; 
+    flex: 1;
     align-items: left;
     max-width:  650px;
   }
@@ -318,7 +338,7 @@ section {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: $color-support; 
+    color: $color-support;
     text-transform: uppercase;
     margin-bottom: 16px;
     display: block;
@@ -345,16 +365,16 @@ section {
     color: #6B3FD6;
   }
   .about-link:hover {
-    color: #284DA5; 
+    color: #284DA5;
   }
 
-    .about-card-wrapper {
+  .about-card-wrapper {
     position: relative;
     width: 100%;
     background-color: #ffb703;
     border-radius: 16px;
     padding: 0;
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -366,8 +386,21 @@ section {
       z-index: -1;
       border-radius: 12px;
     }
-  }
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: -32px;
+      right: -12px;
+      width: 390px;
+      height: 130px;
+      background-image: url('/assets/retangulo-cortado.svg');
+      background-repeat: repeat-x;
+      background-size: 130px 65px;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
   .activity-card {
     background-color: white;
     border: 2px solid #000000;
@@ -381,7 +414,7 @@ section {
     box-sizing: border-box;
     transform: translate(-4px, -4px);
   }
-  
+
   .activity-icon-box {
     display: flex;
     align-items: center;
@@ -421,13 +454,27 @@ section {
   }
 
   .acting-bar {
+    position: relative;
+    overflow: hidden;
     width: 100%;
     background-color: #0b2545;
-    border: 3px solid #000000; 
-    border-radius: 16px;      
+    border: 3px solid #000000;
+    border-radius: 16px;
     padding: 30px;
-      gap: 30px;
+    gap: 30px;
     box-sizing: border-box;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/padrao-azul-escuro-ciano.svg');
+      background-repeat: repeat;
+      background-size: 200px auto;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
   }
 
   .acting-title {
@@ -439,19 +486,21 @@ section {
   }
 
   .acting-boxes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    margin: auto;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+    position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      margin: auto;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
   }
 
   .acting-item {
-    flex: 1; 
-    min-width: 280px; 
-    max-width: 420px; 
+    flex: 1;
+      min-width: 280px;
+      max-width: 420px;
   }
 
   .acting-box {
@@ -465,14 +514,14 @@ section {
     display: flex;
     align-items: center;
   }
-  
+
   .value-text h3 {
-    color: #ffb703; 
+    color: #ffb703;
     font-family: "Rubik Mono One", sans-serif;
-    font-size: 48px; 
+    font-size: 48px;
     font-weight: 100;
   }
-  
+
   .value-text p {
     color: #ffffff;
     text-transform: uppercase;
@@ -616,4 +665,11 @@ section {
       }
     }
   }
+}
+.typewriter-cursor::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  color: $color-primary;
+  animation: blink-caret 0.75s step-end infinite;
 }
