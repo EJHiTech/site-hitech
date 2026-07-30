@@ -1,0 +1,159 @@
+/* Importação das fontes exatas do Figma */
+@import url('https://googleapis.com');
+
+.contato-wrapper {
+    background-color: #F1EDEC; /* Fundo cinza claro da seção */
+    padding: 60px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contato-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    
+    /* Gradiente e Borda do Figma */
+    background: linear-gradient(180deg, #D9FFFF 0%, #FFFFFF 100%);
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 11px 11px 0px 0px #41C5C6; /* Sombra projetada colorida */
+    
+    /* Dimensões do Card */
+    width: 100%;
+    max-width: 1821px;
+    height: 486px;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+.contato-texto {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitulo-topo {
+    color: #41C5C6; /* Mantido o azul da borda para destaque */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.contato-texto h2 {
+    color: #09254D; /* Azul escuro do título */
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.descricao {
+    color: #09254D; /* Mantendo o contraste com o azul escuro */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contato-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Ajuste fino de proximidade dos blocos */
+    align-items: flex-end; /* Alinha o formulário à direita */
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px; /* Distância exata entre a label e o input (ex: superior 3378 - 3351 - 18 de altura = 9px) */
+}
+
+.campo label {
+    color: #09254D;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    height: 18px;
+}
+
+/* Tamanhos específicos das Labels */
+.label-nome { width: 34px; }
+.label-email { width: 51px; }
+.label-mensagem { width: 68px; }
+
+/* Configurações base das caixas de texto */
+.campo input, .campo textarea {
+    width: 669px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+
+    &:focus {
+        border-color: #41C5C6;
+    }
+}
+
+/* Alturas exatas do Figma */
+.input-nome { height: 43px; }
+.input-email { height: 43px; }
+.input-mensagem { 
+    height: 113px; 
+    resize: none;
+}
+
+/* Botão de Envio casado com o layout */
+.btn-enviar {
+    width: 669px;
+    height: 45px;
+    background-color: #3690F7; /* Azul claro igual à imagem */
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 5px;
+
+    &:hover {
+        background-color: darken(#3690F7, 10%);
+    }
+}
+
+/* Responsividade para evitar que o layout quebre em telas de notebook menores que 1800px */
+@media (max-width: 1440px) {
+    .contato-container {
+        height: auto;
+        flex-direction: column;
+        padding: 40px;
+        align-items: stretch;
+    }
+    .contato-texto {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .contato-texto h2 {
+        font-size: 40px;
+    }
+    .contato-formulario {
+        align-items: flex-start;
+    }
+    .campo input, .campo textarea, .btn-enviar {
+        width: 100%; /* Em telas menores, as caixas ficam responsivas */
+    }
+}

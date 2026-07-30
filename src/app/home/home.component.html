@@ -88,24 +88,82 @@
       </div>
     </div>
   </section>
- 
-  <section id="services">
-    <img [src]="templateText.Services.bgImage" alt="binarios" />
-    <h2>{{ templateText.Services.sectionTitle }}</h2>
-    <div class="service-list">
-      <div class="service" *ngFor="let service of services">
-        <div class="card-inner">
-          <div class="card-front">
-            <h3>{{ service.title }}</h3>
-            <span>{{ service.subtitle }}</span>
-          </div>
-          <div class="card-back">
-            <p>{{ service.description }}</p>
-          </div>
-        </div>
+
+  <section id="services-cards">
+    <h2 class="services-title">Soluções digitais para impulsionar seu negócio.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>DESENVOLVIMENTO WEB</h3>
+        <span>Sites e Sistemas sob medida</span>
+        <p>Criamos e mantemos sites e sistemas web modernos, responsivos e escaláveis, incluindo evolução e suporte contínuo de sistemas legados.</p>
+      </div>
+      <div class="service-card">
+        <h3>INFRAESTRUTURA DIGITAL</h3>
+        <span>E-mails, Domínios e Hospedagem</span>
+        <p>Configuramos e gerenciamos e-mails corporativos, domínios e hospedagem com monitoramento ativo e suporte técnico especializado.</p>
+      </div>
+      <div class="service-card">
+        <h3>ANÁLISE DE REQUISITOS</h3>
+        <span>Planejamento antes do Código</span>
+        <p>Mapeamos necessidades, levantamos requisitos e arquitetamos soluções digitais alinhadas aos objetivos do seu negócio.</p>
+      </div>
+      <div class="service-card">
+        <h3>IA E AUTOMAÇÃO</h3>
+        <span>Soluções inteligentes</span>
+        <p>Desenvolvemos modelos de inteligência artificial e automações personalizadas para otimizar processos e aplicações específicas.</p>
+      </div>
+      <div class="service-card">
+        <h3>AUTOMAÇÕES & APIS</h3>
+        <span>Integrações que escalam</span>
+        <p>Criamos automações via WhatsApp, integrações com APIs e bots inteligentes para Discord e outras plataformas.</p>
       </div>
     </div>
   </section>
+
+  <section id="contact">
+    <div class="contact-card">
+      <div class="contact-left">
+        <p class="contact-pretitle">VAMOS CONVERSAR?</p>
+        <h2>TEM UM DESAFIO? NÓS TEMOS A SOLUÇÃO.</h2>
+        <p class="contact-description">
+          Fale com a Hï Tech e descubra como podemos transformar sua ideia em um produto digital com impacto.
+        </p>
+      </div>
+      <form class="contact-right" [formGroup]="form" (ngSubmit)="publishTask()">
+        <div class="field-group">
+          <label class="label-nome" for="name">Nome</label>
+          <input id="name" type="text" placeholder="Seu nome" formControlName="name" />
+          <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+            <small *ngIf="form.get('name')?.errors?.['required']">Nome é obrigatório.</small>
+            <small *ngIf="form.get('name')?.errors?.['minlength']">Nome muito curto.</small>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="label-email" for="email">E-mail</label>
+          <input id="email" type="email" placeholder="voce@email.com" formControlName="email" />
+          <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+            <small *ngIf="form.get('email')?.errors?.['required']">Email é obrigatório.</small>
+            <small *ngIf="form.get('email')?.errors?.['email']">Email inválido.</small>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="label-mensagem" for="description">Mensagem</label>
+          <textarea id="description" placeholder="Conte rapidamente o que você precisa" formControlName="description"></textarea>
+          <div *ngIf="form.get('description')?.touched && form.get('description')?.invalid">
+            <small *ngIf="form.get('description')?.errors?.['required']">Mensagem é obrigatória.</small>
+            <small *ngIf="form.get('description')?.errors?.['minlength']">Mensagem muito curta.</small>
+          </div>
+        </div>
+        <button type="submit" [disabled]="form.invalid || isLoading">
+          <ng-container *ngIf="!isLoading">Enviar mensagem</ng-container>
+          <ng-container *ngIf="isLoading">
+            <span class="spinner"></span> Enviando...
+          </ng-container>
+        </button>
+      </form>
+    </div>
+  </section>
+
   <section *ngIf="costumers.length || partners.length" id="customersPartners">
     <div *ngIf="costumers.length" id="customers">
       <h3>{{ templateText.Costumers.sectionTitle }}</h3>
