@@ -52,34 +52,7 @@
         ]
       },
     "Services": {
-      "sectionTitle": "Nossos Serviços",
-      "bgImage": "assets/binarios.png",
       "list": [
-        {
-          "title": "Desenvolvimento Web",
-          "subtitle": "Sites e sistemas sob medida",
-          "description": "Criamos e mantemos sites e sistemas web modernos, responsivos e escaláveis, incluindo evolução e suporte contínuo de sistemas legados."
-        },
-        {
-          "title": "Infraestrutura Digital",
-          "subtitle": "E-mails, domínios e hospedagem",
-          "description": "Configuramos e gerenciamos e-mails corporativos, domínios e hospedagem com monitoramento ativo e suporte técnico especializado."
-        },
-        {
-          "title": "Análise de Requisitos",
-          "subtitle": "Planejamento antes do código",
-          "description": "Mapeamos necessidades, levantamos requisitos e arquitetamos soluções digitais alinhadas aos objetivos do seu negócio."
-        },
-        {
-          "title": "IA & Automação",
-          "subtitle": "Soluções inteligentes",
-          "description": "Desenvolvemos modelos de inteligência artificial e automações personalizadas para otimizar processos e aplicações específicas."
-        },
-        {
-          "title": "Automações & APIs",
-          "subtitle": "Integrações que escalam",
-          "description": "Criamos automações via WhatsApp, integrações com APIs e bots inteligentes para Discord e outras plataformas."
-        }
       ]
     },
     "Costumers": {
