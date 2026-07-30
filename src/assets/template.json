@@ -12,7 +12,7 @@
     "btnServicesText": "Conheça nossos serviços",
     "btnContactText": "Fale com a gente",
     "heroImage": {
-      "src": "assets/img-home.webp", 
+      "src": "assets/img-home.webp",
       "alt": "Equipe Hï Tech reunida segurando a bandeira da empresa",
       "caption": ">> Times que constroem o futuro"
     },
@@ -39,11 +39,11 @@
         "description":"Somos uma empresa júnior de tecnologia formada por estudantes que vivem projetos reais desde o primeiro contato com o cliente até a entrega final. Nosso trabalho combina método, comunicação e energia jovem para resoltver problemas com clareza.",
         "linkText": "Conheça a empresa",
         "linkUrl": "https://hitech.org.br/#/home",
-        "activityIcon" : "assets/logoAzulClaro.svg",
+        "activityIcon" : "assets/logoNova1.svg",
         "activity":["Atuação prática em desenvolvimento, design e gestão.", "Projetos pensados para resolver dores reais do cliente.","Formação de profissionais preparados para o mercado."],
         "actingTitle" : "Nossa atuação",
         "acting" : [
-          { "value": "+20" ,
+          { "value": "+10" ,
             "description": "projetos entregues" },
           { "value": "+30" ,
             "description": "membros formados" },

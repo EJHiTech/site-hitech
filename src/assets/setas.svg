@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1287.97 499.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #09254d;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #5b01ba;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        fill: #ffc145;
+      }
+
+      .cls-5 {
+        fill: #41c5c6;
+      }
+
+      .cls-6 {
+        fill: #3690f7;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="1287.97" height="499.08"/>
+    </clipPath>
+  </defs>
+  <g class="cls-7">
+    <polygon class="cls-1" points="63.96 0 0 58.47 190.12 249.54 0 433.83 63.96 499.08 308.58 249.54 63.96 0"/>
+    <polygon class="cls-3" points="309.83 0 245.87 58.47 435.98 249.54 245.87 433.83 309.83 499.08 554.44 249.54 309.83 0"/>
+    <polygon class="cls-4" points="1043.36 0 979.4 58.47 1169.51 249.54 979.4 433.83 1043.36 499.08 1287.97 249.54 1043.36 0"/>
+    <polygon class="cls-6" points="553.66 0 489.7 58.47 679.82 249.54 489.7 433.83 553.66 499.08 798.27 249.54 553.66 0"/>
+    <polygon class="cls-5" points="798.79 0 734.83 58.47 924.95 249.54 734.83 433.83 798.79 499.08 1043.41 249.54 798.79 0"/>
+  </g>
+</svg>

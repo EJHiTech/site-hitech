@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { TypewriterDirective } from './typewriter.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     ContactComponent,
     ServicesComponent,
     FooterComponent,
-    WhatsappButtonComponent ,
+    WhatsappButtonComponent,
+    TypewriterDirective,
   ],
   imports: [
     BrowserModule,
