@@ -631,3 +631,272 @@ section {
     }
   }
 }
+
+
+// Seção de Contato
+#contact {
+  background-color: $color-secondary;
+  padding: 60px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+
+  .contact-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    
+    background: linear-gradient(180deg, #D9FFFF 0%, $color-sextenary 100%);
+    border: 1px solid $color-sectenary;
+    border-radius: 8px;
+    box-shadow: 11px 11px 0px 0px $color-quaternary;
+    
+    width: 100%;
+    max-width: 1821px;
+    min-height: 486px;
+    box-sizing: border-box;
+    gap: 40px;
+
+    @media (max-width: 1440px) {
+      flex-direction: column;
+      padding: 40px;
+      align-items: stretch;
+    }
+  }
+
+  .contact-left {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 1440px) {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .contact-pretitle {
+    color: $color-quaternary;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+
+  .contact-left h2 {
+    color: $color-support;
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+
+    @media (max-width: 1440px) {
+      font-size: 40px;
+    }
+  }
+
+  .contact-description {
+    color: $color-support;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+
+    @media (max-width: 1440px) {
+      align-items: flex-start;
+    }
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .field-group label {
+    color: $color-support;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    height: 18px;
+  }
+
+  .label-nome { width: 34px; }
+  .label-email { width: 51px; }
+  .label-mensagem { width: 68px; }
+
+  .field-group input,
+  .field-group textarea {
+    width: 669px;
+    background-color: $color-sextenary;
+    border: 1px solid $color-sectenary;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+
+    &:focus {
+      border-color: $color-quaternary;
+    }
+
+    @media (max-width: 1440px) {
+      width: 100%;
+    }
+  }
+
+  .field-group input {
+    height: 43px;
+  }
+
+  .field-group textarea {
+    height: 113px;
+    resize: none;
+  }
+
+  .field-group small {
+    color: #d32f2f;
+    font-size: 12px;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .contact-right button[type="submit"] {
+    width: 669px;
+    height: 45px;
+    background-color: $color-support;
+    color: $color-sextenary;
+    border: 1px solid $color-sectenary;
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 5px;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 1440px) {
+      width: 100%;
+    }
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: $color-sextenary;
+    animation: spin 0.6s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+}
+
+
+// Seção de Services Cards (com títulos)
+#services-cards {
+  width: 100%;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  .services-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-support;
+    margin-bottom: 10px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .services-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-support;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 620px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-card {
+    background-color: $color-sextenary;
+    border: 1px solid $color-sectenary;
+    border-radius: 8px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 205px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      margin: 0;
+      font-family: 'Rubik Mono One', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: $color-support;
+      text-transform: uppercase;
+    }
+
+    span {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: $color-quinary;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: $color-sectenary;
+      font-weight: 400;
+      font-family: 'Roboto Mono', monospace;
+    }
+  }
+}

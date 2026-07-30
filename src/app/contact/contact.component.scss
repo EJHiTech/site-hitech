@@ -119,7 +119,7 @@
 .btn-enviar {
     width: 669px;
     height: 45px;
-    background-color: #09254D; /* Usando o azul escuro principal */
+    background-color: #3690F7; /* Azul claro igual à imagem */
     color: #ffffff;
     border: 1px solid #000000;
     border-radius: 8px;
@@ -127,11 +127,11 @@
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
     margin-top: 5px;
 
     &:hover {
-        opacity: 0.9;
+        background-color: darken(#3690F7, 10%);
     }
 }
 
