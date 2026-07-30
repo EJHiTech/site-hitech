@@ -636,7 +636,7 @@ section {
 // Seção de Contato
 #contact {
   background-color: $color-secondary;
-  padding: 60px 20px;
+  padding: 60px 20px 40px 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -841,6 +841,7 @@ section {
     color: $color-support;
     margin-bottom: 40px;
     text-align: left;
+    font-family: 'Rubik Mono One', sans-serif;
   }
 
   .services-grid {
