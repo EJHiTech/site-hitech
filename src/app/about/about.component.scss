@@ -1,16 +1,126 @@
+@import url('https://googleapis.com');
+
 #about {
-  text-align: justify;
   margin: auto;
-  display: flex;
-  flex-direction: column;
+  padding: 80px 111px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.form-card {
+    width: 48%;
+    min-width: 450px;
+    max-width: 700px;
+
+    margin-top: 120px;
+    padding: 40px;
+
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 16px;
+
+    box-shadow: 11px 12px 0 #4EBBC0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #09254D;
+}
+
+input,
+textarea,
+select {
+    padding: 12px 16px;
+    color: #5B5B5B;
+    background-color: #EDEDED;
+    border: 1px solid #898989;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00f2fe;
+}
+
+button {
+    width: 100%;
+    padding: 12px 24px;
+    border: 1px solid #09254D;
+    border-radius: 8px;
+    background: #3690F7;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 4px 0 #09254D;
+}
+
+button:hover {
+    border-color: #0b2545;
+}
+
+select,
+select option {
+    color: #5B5B5B;
+}
+
+.main-title {
   h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 64px;
+    color: #09254D;
   }
 
-  p {
-    font-size: 1rem;
-    line-height: 1.8;
-    max-width: 600px;
-  }
+}
+
+.subtitle {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 14px;
+    color: #09254D;
+    font-weight: 600;
+}
+
+.description {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 14px;
+    color: #554949;
+    font-weight: 400;
+}
+
+.background-shape {
+    position: absolute;
+    right: -90px;
+    top: 73%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.text {
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 17px;
+    color: #09254D;
+    font-weight: 600;
 }
