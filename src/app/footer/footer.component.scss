@@ -3,9 +3,10 @@
 footer {
   background-color: $color-sextenary;
   color: $color-secondary;
-  min-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
 
-  padding: 20px 0;
+  padding: 12px 0;
   text-align: center;
 
   .footer-container {
@@ -17,13 +18,13 @@ footer {
       width: 100%;
       padding: 0 40px;
       box-sizing: border-box;
- 
+
     }
 
     .footer-info,
     .footer-contact {
-      margin: 10px;
-      padding: 40px 0;
+      margin: 6px;
+      padding: 16px 0;
     }
 
     h4 {
@@ -75,7 +76,7 @@ footer {
     }
   }
 
-  .footer-logo 
+  .footer-logo
   {
     width: 60px;
     height: auto;

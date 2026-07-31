@@ -51,7 +51,7 @@ nav {
   gap: 30px;
   padding: 0;
   margin: 0;
-  
+
   li {
     a {
       color: $color-support;
@@ -61,12 +61,58 @@ nav {
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
-      
+
       &:hover, &.active {
         color: $color-primary;
         border-bottom: 2px solid $color-quinary-hover;
         cursor: pointer;
       }
+    }
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - Header
+   ===================================================== */
+
+/* Tablets e celulares */
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 16px;
+    padding: 12px 16px;
+  }
+
+  .logo img {
+    height: 56px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px 20px;
+  }
+}
+
+/* Celulares menores */
+@media (max-width: 480px) {
+  .logo img {
+    height: 48px;
+  }
+
+  .nav-links {
+    gap: 12px 18px;
+
+    li a {
+      font-size: 14px;
     }
   }
 }
