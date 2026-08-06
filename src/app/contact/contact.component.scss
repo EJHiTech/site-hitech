@@ -157,3 +157,159 @@
         width: 100%; /* Em telas menores, as caixas ficam responsivas */
     }
 }
+
+.contato-text {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+
+    .contact-title {
+        margin-left:61px;
+
+        .contato {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #09254D;
+            margin-top: 100px;
+        }
+
+        h2 {
+            font-family: "Rubik Mono One", sans-serif;
+            font-size: 64px;
+            color: #09254D;
+            margin-bottom: 10px;
+        }
+
+        .mini-text {
+            font-family: "Roboto Mono", sans-serif;
+            font-size: 15px;
+            color: #554949;
+            word-spacing: 4px;
+        }
+    }
+}
+
+.contact-card {
+    width: 781px;
+    height: 160px;
+    padding: 16px;
+    margin-top: 190px;
+    margin-right: 100px;
+
+    background: linear-gradient(160deg, #D3FCFF, #FFFFFF);
+    border: 1px solid #09254D;
+    border-radius: 16px;
+
+    box-shadow: 11px 12px 0 #FFC145;
+}
+
+.card-header {
+    width: 126px;
+    height: 31px;
+    margin-left: 25px;
+    
+    padding: 5px 25px;
+
+    background: #09254D;
+    border: 1px solid #09254D;
+    border-radius: 12px;
+
+    margin-bottom: 10px;
+    h3 {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 13px;
+        color: #FFFFFF;
+        font-weight: 600;
+    }
+}
+
+.card-body {
+    margin-left: 25px;
+    .sub-title {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 15px;
+        color: #000000;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 15px;
+        color: #554949;
+        word-spacing: 4px;
+    }
+
+}
+
+.contact-cards {
+    margin-left: 61px;
+    margin-top: 60px;
+    p {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 14px;
+        color: #5B01BA;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-family: "Rubik Mono One", sans-serif;
+        font-size: 52px;
+        color: #09254D;
+        font-weight: 600;
+    }
+}
+
+.cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 578px);
+
+    gap: 24px;
+    height: 205px;
+    margin-bottom: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background: #FFFFFF;
+ 
+    h3 {
+        font-family: "Rubik Mono One", sans-serif;
+        font-size: 12px;
+        color: #09254D;
+        font-weight: 400;
+        margin-top: 70px;
+    }
+
+    p {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 12px;
+        color: #5B01BA;
+        font-weight: 700;
+        margin-top: 25px;
+
+        display: inline-block; 
+        padding-bottom: 2px;
+        align-self: flex-start;
+        border-bottom: 2px solid #FFD600;
+        word-spacing: 4px;
+    }
+
+    .body {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 12px;
+        color: #786B6B;
+        border-bottom: 0px solid #FFD600;
+        font-weight: 400;
+    }
+}
