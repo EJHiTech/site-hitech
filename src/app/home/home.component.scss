@@ -6,6 +6,7 @@
   overflow-x: hidden;
   // font-family: "Overpass", sans-serif;
   color: $color-support;
+  background-color: $color-secondary;
 }
 
 section {
@@ -56,7 +57,7 @@ section {
   align-items: center;
   text-align: left;
   padding: 80px 30px;
-  background: #f4f1eb;
+  background-color: $color-secondary;
   gap: 60px;
 
   .hero-content {
@@ -302,7 +303,7 @@ section {
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  background: #f4f1eb;
+  background:$color-secondary;
   gap: 60px;
 
   .about-content {
@@ -458,6 +459,7 @@ section {
     position: relative;
     overflow: hidden;
     width: 100%;
+    height: 307px;
     background-color: #0b2545;
     border: 3px solid #000000;
     border-radius: 16px;
@@ -533,7 +535,7 @@ section {
 
 }
 #services {
-  background-color: $color-sextenary;
+  background-color: $color-secondary;
   padding: 441px 205px;
   position: relative;
   z-index: 0;
@@ -602,7 +604,7 @@ section {
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-        background-color: #fff;
+        background-color: $color-secondary;
         border-radius: 8px;
         border: 1px solid $color-sectenary-border;
         padding: 20px;
@@ -639,7 +641,7 @@ section {
 }
 
 #customersPartners {
-  background-color: $color-support-light-1;
+  background-color: $color-secondary;
   padding: 40px 20px;
 
   #customers,
@@ -661,7 +663,7 @@ section {
       z-index: 1;
 
       .item {
-        background-color: #fff;
+        background-color: $color-secondary;
         height: 135px;
         padding: 10px;
         border-radius: 10px;
@@ -880,6 +882,7 @@ section {
   display: block;
   width: 100%;
   max-width: 1400px;
+  background-color: $color-secondary;
   /* alinhado mais à esquerda: margem esquerda menor, direita absorve o restante */
   margin: 80px auto 80px max(20px, 4%);
   padding: 0 20px;
@@ -939,7 +942,7 @@ section {
   .service-card {
     position: relative;
     overflow: hidden;
-    background-color: $color-sextenary;
+    background-color: $color-secondary;
     border: 1px solid $color-sectenary;
     border-radius: 8px;
     padding: 24px;
