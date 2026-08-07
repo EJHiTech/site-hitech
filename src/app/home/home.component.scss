@@ -732,19 +732,23 @@ section {
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
+    text-align: left;
+    margin-top: 40px;
 
     @media (max-width: 1440px) {
       max-width: 100%;
+      margin-top: 0;
       margin-bottom: 20px;
     }
   }
 
   .contact-pretitle {
-    color:  $color-support;
+    color: #4EBBC0;
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
     font-size: 14px;
     margin: 0 0 10px 0;
+    text-align: left;
   }
 
   .contact-left h2 {
@@ -754,6 +758,7 @@ section {
     font-weight: 400;
     line-height: 1.2;
     margin: 0 0 20px 0;
+    text-align: left;
 
     @media (max-width: 1440px) {
       font-size: 40px;
@@ -767,6 +772,7 @@ section {
     font-size: 14px;
     line-height: 1.6;
     margin: 0;
+    text-align: left;
   }
 
   .contact-right {
@@ -792,11 +798,12 @@ section {
   }
 
   .field-group label {
-    color: $color-support;
+    color: #09254D;
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
     font-size: 14px;
     height: 18px;
+    text-align: left;
   }
 
   .label-nome { width: 34px; }
@@ -806,8 +813,9 @@ section {
   .field-group input,
   .field-group textarea {
     width: 100%;
-    background-color: $color-sextenary;
-    border: 1px solid $color-sectenary;
+    color: #5B5B5B;
+    background-color: #EDEDED;
+    border: 1px solid #898989;
     border-radius: 8px;
     padding: 12px 16px;
     font-family: 'Roboto Mono', monospace;
@@ -816,7 +824,7 @@ section {
     outline: none;
 
     &:focus {
-      border-color: $color-quaternary;
+      border-color: #00f2fe;
     }
   }
 
@@ -838,9 +846,9 @@ section {
   .contact-right button[type="submit"] {
     width: 100%;
     height: 50px;
-    background-color: $color-support;
-    color: $color-sextenary;
-    border: 1px solid $color-sectenary;
+    background-color: #2b7fff;
+    color: #ffffff;
+    border: 1px solid #09254D;
     border-radius: 8px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
@@ -865,7 +873,7 @@ section {
     height: 14px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    border-top-color: $color-sextenary;
+    border-top-color: #ffffff;
     animation: spin 0.6s linear infinite;
   }
 
