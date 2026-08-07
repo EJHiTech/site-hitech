@@ -2,7 +2,8 @@
 
 footer {
   background-color: $color-sextenary;
-  color: $color-secondary;
+  color: $color-sectenary;
+  text-color: $color-sectenary;
   width: 100%;
   box-sizing: border-box;
 
@@ -34,8 +35,9 @@ footer {
 
     p {
       margin: 5px 0;
-      font-size: 0.9rem;
-      color: $color-secondary;
+      margin-right: 40px;
+      font-size: 13px;
+      color: $color-sectenary-dark-1;
     }
   }
 

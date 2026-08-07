@@ -1,9 +1,17 @@
 @import "../../colors.scss";
 
+:host {
+  display: block;
+  background-color: $color-secondary;
+  padding-top: 1px;
+  border-top: 1px solid transparent;
+}
+
 .carta-servicos {
     max-width: 1400px;
     margin: 30px auto;
     padding: 0 20px;
+    background-color: $color-secondary;
 }
 
 .title {
@@ -142,18 +150,9 @@
   justify-content: center;
   gap: 75px; /* Espaçamento entre a logo e o texto */
   max-width: 1200px;
-  margin-top: 150px;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-
-  /* Responsividade: empilha a seção em telas menores */
-  @media (max-width: 960px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
+  margin: 0 auto;
+  padding: 70px 20px 0 20px;
+  background-color: $color-secondary;
 }
 
 .hero-left {

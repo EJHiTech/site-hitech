@@ -1,6 +1,11 @@
 <div class="whatsapp-section">
-  <a [href]="templateText.whatsapp?.whatsappNumberLink" target="_blank" class="whatsapp-icon">
-    <span class="whatsapp-text">{{templateText.whatsapp?.whatsappText}}</span>
+  <a
+    [href]="templateText.whatsapp?.whatsappNumberLink"
+    target="_blank"
+    class="whatsapp-icon"
+    [attr.aria-label]="templateText.whatsapp?.whatsappText"
+    title="{{ templateText.whatsapp?.whatsappText }}"
+  >
     <img [src]="templateText.whatsapp?.whatsappLogoPath" alt="WhatsApp" />
   </a>
 </div>
