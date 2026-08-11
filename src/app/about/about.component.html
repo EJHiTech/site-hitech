@@ -52,5 +52,75 @@
       <button type="submit">Quero ser Avisado</button>
     </form>
     </div>
-</div>
+  </div>
+  
+  <section id="aboutUs">
+    <div class="aboutUs-content">
+      <div class="aboutUs-left">
+        <div class="aboutUs-header">
+        <span class="aboutUs-subtitle">SOBRE NÓS</span>
+        <h1 id="typed-text" class="aboutUs-title">somos uma empresa júnior que cria soluções digitais enquanto forma profissionais melhores.</h1>
+        <p class="aboutUs-description">Unimos desenvolvimento, design, gestão e cultura de comunidade
+                                     para entregar demandas em sistemas úteis. Nosso foco é
+                                     entregar valor para clientes e criar uma experiência intensa
+                                     de aprendizado para membros.</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+  
+  <section id="review-cards">
+    <div class="review-header">
+      <span class="review-subtitle">QUEM PASSOU POR AQUI</span>
+      <h2 class="review-title">review de membros antigos</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <p>“Aprendi a lidar com cliente, prazo e equipe antes mesmo do estágio. A Hï Tech virou meu laboratório profissional.” </p>
+        <div class="author-info">
+          <span class="author-name">Marina Alves</span>
+          <span class="author-role">Ex-diretora de Projetos</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="review-text">“Foi onde eu entendi que tecnologia também é comunicação. Cada projeto me deixou mais preparado para o mercado.” </p>
+        <div class="author-info">
+          <span class="author-name">Lucas Ferreira</span>
+          <span class="author-role">Ex-desenvolvedor</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <p>“Entrei para aprender código e saí sabendo fazer reuniões, estimar esforço e colaborar de verdade.” </p>
+        <div class="author-info">
+          <span class="author-name">Ana Beatriz</span>
+          <span class="author-role">Ex-assessora de Produto</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-section">
+  <div class="events-header">
+    <span class="events-subtitle">EVENTOS</span>
+    <h2 class="events-title">FOTOS DE EVENTOS</h2>
+  </div>
+
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev-btn" (click)="scrollCarousel(-1)" aria-label="Anterior">
+      &#10094;
+    </button>
+      <div class="carousel-container" #carousel>
+      <div class="event-card" *ngFor="let photo of eventPhotos">
+        <img [src]="photo.url" [alt]="photo.title" />
+        <div class="event-card-caption" *ngIf="photo.title">
+          <span>{{ photo.title }}</span>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-btn next-btn" (click)="scrollCarousel(1)" aria-label="Próximo">
+      &#10095;
+    </button>
+  </div>
+</section>
+
 </article>
