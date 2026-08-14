@@ -1,6 +1,11 @@
 /* Importação das fontes exatas do Figma */
 @import url('https://googleapis.com');
 
+:host {
+  display: block;
+  background-color: #f1edec;
+}
+
 .contato-text {
 
     display: flex;
@@ -169,7 +174,7 @@
         border: 1px solid #000000;
         border-radius: 8px;
         background: #1C3353;
-    
+
         width: auto;
         margin: 130px 30px 0 61px;
         height: 557px;
@@ -266,8 +271,8 @@
         gap: 16px;
     }
 
-    #nome, 
-    #email, 
+    #nome,
+    #email,
     #mensagem {
         border-radius: 8px;
         padding: 12px;

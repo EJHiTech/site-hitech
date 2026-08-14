@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TypewriterDirective } from './typewriter.directive';
+import { SuccessCasesComponent } from './success-cases/success-cases.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TypewriterDirective } from './typewriter.directive';
     FooterComponent,
     WhatsappButtonComponent,
     TypewriterDirective,
+    SuccessCasesComponent,
   ],
   imports: [
     BrowserModule,
