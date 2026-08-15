@@ -914,13 +914,7 @@ section {
     margin-bottom: 16px;
     text-transform: uppercase;
 
-    &::before {
-      content: "";
-      width: 32px;
-      height: 3px;
-      border-radius: 2px;
-      background-color: $color-quinary;
-    }
+
   }
 
   .services-title {
@@ -950,7 +944,7 @@ section {
   .service-card {
     position: relative;
     overflow: hidden;
-    background-color: $color-secondary;
+    background-color: #ffffff;
     border: 1px solid $color-sectenary;
     border-radius: 8px;
     padding: 24px;

@@ -1,0 +1,31 @@
+<section class="success-cases">
+  <div class="header">
+    <div class="titles">
+      <p class="subtitle">IMPACTO EM PROJETO</p>
+      <h2>CASES DE SUCESSO</h2>
+    </div>
+
+    <div class="nav-arrows">
+      <button (click)="prev()" [disabled]="currentIndex === 0" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button (click)="next()" [disabled]="currentIndex + 3 >= cases.length" aria-label="Próximo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="case-card" *ngFor="let item of visibleCases">
+        <span class="tag">{{ item.tag }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
