@@ -11,14 +11,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
-  margin: none;
+  margin: 0;
 }
 
 
 .toast-success {
-  background-color: #28a745; 
+  background-color: #28a745;
   color: white ;
   font-size: 16px;
   border-radius: 8px;
@@ -27,7 +32,7 @@ body {
 }
 
 .toast-error {
-  background-color: #dc3545 ; 
+  background-color: #dc3545 ;
   color: white;
   font-size: 16px;
   border-radius: 8px;
@@ -40,7 +45,7 @@ body {
   top: 80%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;            
+  z-index: 9999;
 }
 .toast-title {
   font-family: "Rubik Mono One", sans-serif;

@@ -194,23 +194,80 @@
     font-family: "Rubik Mono One", sans-serif;
     line-height: 1.1;
     font-weight: 400;
-    color: $color-support; /* Se a cor for muito escura, cheque a variável exata no seu colors.scss */
+    color: $color-support;
     margin: 0;
     text-transform: uppercase;
 
     @media (max-width: 768px) {
-      font-size: 2.5rem; /* Diminui a fonte no celular para não quebrar a tela */
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.6rem;
     }
   }
 
   .description {
     font-size: 14px;
-    color: #554949; /* Mesma cor que você usou no card-back */
+    color: #554949;
     line-height: 1.5;
     margin: 0;
 
     @media (max-width: 960px) {
       margin: 0 auto;
     }
+  }
+}
+
+/* =====================================================
+   RESPONSIVIDADE - Services
+   ===================================================== */
+
+@media (max-width: 960px) {
+  .hero-servicos {
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 20px 0 20px;
+    text-align: center;
+  }
+
+  .hero-left .logo-box {
+    padding: 20px 40px;
+
+    img {
+      max-width: 260px;
+    }
+  }
+
+  .hero-right {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-servicos {
+    gap: 24px;
+    padding: 36px 12px 0 12px;
+  }
+
+  .hero-left .logo-box {
+    padding: 16px 24px;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .carta-servicos {
+    padding: 0 12px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
   }
 }

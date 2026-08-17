@@ -91,3 +91,51 @@ footer {
     color: $color-secondary-dark-1;
   }
 }
+
+/* =====================================================
+   RESPONSIVIDADE - Footer
+   ===================================================== */
+
+@media (max-width: 768px) {
+  footer {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+
+      p {
+        margin-right: 0;
+      }
+    }
+
+    .footer-social {
+      flex-direction: column;
+      gap: 16px;
+      padding-left: 0;
+      align-items: center;
+
+      .social-content {
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 16px 0;
+
+    .footer-social {
+      gap: 12px;
+
+      .social-content {
+        gap: 16px;
+      }
+    }
+
+    .footer-logo {
+      width: 48px;
+    }
+  }
+}

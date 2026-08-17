@@ -7,14 +7,15 @@
 }
 
 .contato-text {
-
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 80px;
+    gap: 40px;
+    padding: 0 20px;
 
     .contact-title {
-        margin-left:61px;
+        margin-left: 40px;
+        flex: 1;
 
         .contato {
             font-family: "Roboto Mono", sans-serif;
@@ -26,7 +27,7 @@
 
         h2 {
             font-family: "Rubik Mono One", sans-serif;
-            font-size: 64px;
+            font-size: clamp(2rem, 5vw, 4rem);
             color: #09254D;
             margin-bottom: 10px;
         }
@@ -41,11 +42,13 @@
 }
 
 .contact-card {
-    width: 781px;
-    height: 160px;
+    width: 100%;
+    max-width: 781px;
+    min-width: 0;
     padding: 16px;
     margin-top: 190px;
-    margin-right: 100px;
+    margin-right: 40px;
+    flex-shrink: 1;
 
     background: linear-gradient(160deg, #D3FCFF, #FFFFFF);
     border: 1px solid #09254D;
@@ -55,8 +58,7 @@
 }
 
 .card-header {
-    width: 126px;
-    height: 31px;
+    width: fit-content;
     margin-left: 25px;
 
     padding: 5px 25px;
@@ -89,13 +91,13 @@
         font-size: 15px;
         color: #554949;
         word-spacing: 4px;
-        width: 500px;
+        max-width: 500px;
     }
-
 }
 
 .contact-cards {
-    margin-left: 61px;
+    margin-left: 40px;
+    margin-right: 20px;
     margin-top: 60px;
     p {
         font-family: "Roboto Mono", sans-serif;
@@ -106,7 +108,7 @@
 
     h2 {
         font-family: "Rubik Mono One", sans-serif;
-        font-size: 52px;
+        font-size: clamp(1.5rem, 4vw, 3.2rem);
         color: #09254D;
         font-weight: 600;
     }
@@ -115,29 +117,26 @@
 .cards {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(3, 578px);
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
-    height: 205px;
     margin-bottom: 50px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-
     padding: 24px;
-
     border: 1px solid #000000;
     border-radius: 8px;
     background: #FFFFFF;
+    min-height: 200px;
 
     h3 {
         font-family: "Rubik Mono One", sans-serif;
         font-size: 12px;
         color: #09254D;
         font-weight: 400;
-        margin-top: 70px;
+        margin-top: 40px;
     }
 
     p {
@@ -166,20 +165,21 @@
 .form {
     display: flex;
     align-items: flex-start;
+    padding: 0 20px;
 
     .main-block {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         border: 1px solid #000000;
         border-radius: 8px;
         background: #1C3353;
 
-        width: auto;
-        margin: 130px 30px 0 61px;
-        height: 557px;
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 100%;
+        margin: 130px auto 0 40px;
+        padding: 40px;
+        gap: 40px;
 
         h3 {
             margin-top: 0px;
@@ -192,7 +192,7 @@
         h2 {
             margin-top: 10px;
             font-family: "Rubik Mono One", sans-serif;
-            font-size: 54px;
+            font-size: clamp(1.8rem, 4vw, 3.4rem);
             color: #FFFFFF;
             font-weight: 400;
         }
@@ -201,6 +201,7 @@
 
 .briefing-content {
     flex: 1;
+    min-width: 0;
 
     >p {
         font-family: "Roboto Mono", sans-serif;
@@ -220,13 +221,14 @@
     gap: 16px;
 
     .block {
-        width: 887px;
-        height: 47px;
+        width: 100%;
+        max-width: 887px;
+        min-height: 47px;
 
         display: flex;
         align-items: center;
 
-        padding: 0 20px;
+        padding: 12px 20px;
 
         border: 1px solid #274063;
         border-radius: 8px;
@@ -237,6 +239,7 @@
             font-size: 13px;
             font-weight: 700;
             margin-right: 20px;
+            flex-shrink: 0;
         }
 
         p {
@@ -252,12 +255,12 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-
-    width: 732px;
-    height: 465px;
+    width: 100%;
+    max-width: 732px;
+    flex: 1;
+    min-width: 0;
 
     padding: 30px;
-    margin-left: 100px;
 
     border: 1px solid #09254D;
     border-radius: 8px;
@@ -276,6 +279,8 @@
     #mensagem {
         border-radius: 8px;
         padding: 12px;
+        width: 100%;
+        box-sizing: border-box;
 
         font-family: "Roboto Mono", sans-serif;
         font-size: 14px;
@@ -286,18 +291,17 @@
 
     #nome,
     #email {
-        width: 669px;
         height: 43px;
     }
 
     #mensagem {
-        width: 669px;
         height: 113px;
+        resize: vertical;
     }
 
     .enviar {
         border-radius: 8px;
-        width: 669px;
+        width: 100%;
         height: 46px;
         background: #3690F7;
         box-shadow: 5px 4px 0 #09254D;
@@ -308,6 +312,7 @@
         color: #FFFFFF;
         font-weight: 700;
         word-spacing: 4px;
+        cursor: pointer;
     }
 
     label {
@@ -319,6 +324,129 @@
 }
 
 
+/* =====================================================
+   RESPONSIVIDADE - Contact
+   ===================================================== */
 
+@media (max-width: 1024px) {
+  .contato-text {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
 
+    .contact-title {
+      margin-left: 20px;
 
+      .contato {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  .contact-card {
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .contact-cards {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .form {
+    .main-block {
+      flex-direction: column;
+      margin: 80px 20px 0 20px;
+      height: auto;
+      padding: 30px;
+    }
+  }
+
+  .contact-form {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contato-text {
+    padding: 0 16px;
+
+    .contact-title {
+      margin-left: 0;
+
+      .contato {
+        margin-top: 40px;
+      }
+
+      h2 {
+        font-size: clamp(1.6rem, 6vw, 2.5rem);
+      }
+    }
+  }
+
+  .contact-card {
+    margin-right: 0;
+    box-shadow: 6px 8px 0 #FFC145;
+  }
+
+  .contact-cards {
+    margin-left: 0;
+    margin-right: 0;
+
+    h2 {
+      font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+  }
+
+  .form {
+    padding: 0 12px;
+
+    .main-block {
+      margin: 60px 0 0 0;
+      padding: 24px 16px;
+
+      h2 {
+        font-size: clamp(1.4rem, 5vw, 2.5rem);
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 20px;
+    box-shadow: 6px 8px 0 #41C5C6;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato-text {
+    padding: 0 12px;
+
+    .contact-title {
+      .contato {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .card-body {
+    margin-left: 12px;
+  }
+
+  .card-header {
+    margin-left: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form .main-block {
+    margin-top: 40px;
+    padding: 20px 12px;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+}
