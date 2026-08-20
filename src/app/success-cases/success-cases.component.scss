@@ -71,6 +71,7 @@
 }
 
 .case-card {
+  position: relative;
   background: #FFFFFF;
   border: 1px solid #09254D;
   border-radius: 12px;
@@ -78,11 +79,12 @@
   min-height: 220px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    transform: translateY(-4px);
+    z-index: 2;
     box-shadow: 8px 8px 0 #FFC145;
+    border-color: #FFC145;
   }
 
   .tag {
