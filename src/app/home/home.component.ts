@@ -46,11 +46,42 @@ export class HomeComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [null, [Validators.required, Validators.minLength(3)]],
       email: [null, [Validators.required, Validators.email]],
-      phone: [null, [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      city: [null],
       description: [null, [Validators.required, Validators.minLength(10)]],
     });
   }
 
-  publishTask() {}
+  private apiUrl = "https://script.google.com/macros/s/AKfycbwSrUCO9dx6bTOBEjaUHYMgQ0i6nblIku5bquQoOYDmioYzmjCd1PNG_Io__eYXsn-i7Q/exec";
+  
+  async publishTask() {
+
+  if (this.form.invalid) {
+    console.log('FORM INVÁLIDO', this.form.value);
+    this.form.markAllAsTouched();
+    return;
+  }
+
+  console.log('FORM VÁLIDO', this.form.value);
+
+  const dados = {
+    name: this.form.value.name,
+    email: this.form.value.email,
+    description: this.form.value.description,
+    date: new Date().toISOString()
+  };
+
+  try {
+    await fetch(this.apiUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(dados)
+    });
+
+    console.log('POST enviado');
+  } catch (error) {
+    console.error('ERRO NO POST:', error);
+  }
+}
 }
