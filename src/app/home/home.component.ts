@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
   private apiUrl = "https://script.google.com/macros/s/AKfycbwSrUCO9dx6bTOBEjaUHYMgQ0i6nblIku5bquQoOYDmioYzmjCd1PNG_Io__eYXsn-i7Q/exec";
   
   async publishTask() {
+  console.log('CLIQUE NO ENVIAR');
 
   if (this.form.invalid) {
     console.log('FORM INVÁLIDO', this.form.value);
@@ -61,6 +62,8 @@ export class HomeComponent implements OnInit {
   }
 
   console.log('FORM VÁLIDO', this.form.value);
+
+  this.isLoading = true;
 
   const dados = {
     name: this.form.value.name,
@@ -80,8 +83,16 @@ export class HomeComponent implements OnInit {
     });
 
     console.log('POST enviado');
+
+    this.toastr.success('Mensagem enviada com sucesso!');
+    this.form.reset();
+
   } catch (error) {
     console.error('ERRO NO POST:', error);
+    this.toastr.error('Erro ao enviar mensagem.');
+
+  } finally {
+    this.isLoading = false;
   }
 }
 }

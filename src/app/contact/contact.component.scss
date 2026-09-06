@@ -308,6 +308,12 @@
         color: #FFFFFF;
         font-weight: 700;
         word-spacing: 4px;
+
+        cursor: pointer;
+
+        &:active {
+            transform: translateY(1px);
+        }
     }
 
     label {
