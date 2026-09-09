@@ -1,8 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Mono+One&display=swap");
 @import "colors.scss";
 
+@font-face {
+  font-family: 'Rubik Mono One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('assets/fonts/RubikMonoOne-Regular.woff2') format('woff2');
+}
 
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('assets/fonts/RobotoMono-Variable.woff2') format('woff2');
+}
 
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('assets/fonts/RobotoMono-Variable-Italic.woff2') format('woff2');
+}
 
 
 * {
@@ -11,14 +31,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
-  margin: none;
+  margin: 0;
 }
 
 
 .toast-success {
-  background-color: #28a745; 
+  background-color: #28a745;
   color: white ;
   font-size: 16px;
   border-radius: 8px;
@@ -27,7 +52,7 @@ body {
 }
 
 .toast-error {
-  background-color: #dc3545 ; 
+  background-color: #dc3545 ;
   color: white;
   font-size: 16px;
   border-radius: 8px;
@@ -40,7 +65,7 @@ body {
   top: 80%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;            
+  z-index: 9999;
 }
 .toast-title {
   font-family: "Rubik Mono One", sans-serif;
