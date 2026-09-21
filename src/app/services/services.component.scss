@@ -1,5 +1,4 @@
 @import "../../colors.scss";
-@import url('https://googleapis.com');
 
 :host {
   display: block;
@@ -21,7 +20,7 @@
     margin-bottom: 27px;
     margin-left: 45px;
     color: $color-support;
-    font-family: "Rubik Mono One", sans-serif; 
+    font-family: "Rubik Mono One", sans-serif;
 }
 
 .sub-title {
@@ -31,7 +30,7 @@
   margin-left: 45px;
   margin-bottom: 5px;
   margin-top: 15px;
-  font-family: "Roboto Mono", sans-serif; 
+  font-family: "Roboto Mono", sans-serif;
 }
 
 .section-title {

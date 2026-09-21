@@ -160,6 +160,7 @@ select option {
   .aboutUs-title{
     font-family: "Rubik Mono One", sans-serif;
     font-size: clamp(1.4rem, 3vw, 2rem);
+    color: $color-support;
   }
 
   .aboutUs-subtitle {
@@ -169,6 +170,7 @@ select option {
     text-transform: uppercase;
     margin-bottom: 16px;
     display: block;
+    color: $color-quinary;
   }
 
   .aboutUs-description{
