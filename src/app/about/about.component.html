@@ -4,7 +4,7 @@
   <div class="main-title">
   <p class="subtitle">PROCESSO SELETIVO</p>
   <h2>FAÇA<br>PARTE DA<br>HÏ-TECH</h2>
-  <p class="description">A Hï Tech é um espaço para aprender fazendo: projetos 
+  <p class="description">A Hï Tech é um espaço para aprender fazendo: projetos
   reais,<br>tecnologia aplicada e gente disposta a crescer junto.</p>
   </div>
 
@@ -46,8 +46,10 @@
             <option value="4">4º Período</option>
             <option value="5">5º Período</option>
             <option value="6">6º Período</option>
-            <option value="7">7º Período</option>                
+            <option value="7">7º Período</option>
             <option value="8">8º Período</option>
+            <option value="9">9º Período</option>
+            <option value="10">10º Período</option>
           </select>
       </div>
 
@@ -55,7 +57,7 @@
     </form>
     </div>
   </div>
-  
+
   <section id="aboutUs">
     <div class="aboutUs-content">
       <div class="aboutUs-left">
@@ -69,8 +71,8 @@
         </div>
       </div>
     </div>
-  </section> 
-  
+  </section>
+
   <section id="review-cards">
     <div class="review-header">
       <span class="review-subtitle">QUEM PASSOU POR AQUI</span>
@@ -113,7 +115,7 @@
     </button>
       <div class="carousel-container" #carousel>
       <div class="event-card" *ngFor="let photo of eventPhotos">
-        <img [src]="photo.url" [alt]="photo.title" />
+        <img [src]="photo.url" [alt]="photo.title" loading="lazy" decoding="async" />
         <div class="event-card-caption" *ngIf="photo.title">
           <span>{{ photo.title }}</span>
         </div>

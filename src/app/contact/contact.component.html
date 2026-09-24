@@ -99,7 +99,9 @@
                 <label for="mensagem">Mensagem</label>
                 <textarea id="mensagem"placeholder="Conte rapidamente o que você precisa" formControlName="description"> </textarea>
 
-                <button type="submit" class="enviar">Enviar briefing</button>
+                <button type="submit" class="enviar" [disabled]="form.invalid || isLoading">
+                    {{ isLoading ? 'Enviando...' : 'Enviar briefing' }}
+                </button>
             </form>
         </section>
     </div>

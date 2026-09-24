@@ -1,24 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import templateData from '../../assets/template.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class templateTextService {
-  private templateTextSubject = new BehaviorSubject<any>({}); // Comportamento inicial vazio
+  private templateTextSubject = new BehaviorSubject<any>(templateData); // Conteúdo já disponível no bundle
   templateText$ = this.templateTextSubject.asObservable(); // Expor como Observable para os componentes
 
-  constructor(private http: HttpClient) { }
-
-  // Método para carregar o conteúdo do JSON
+  // O conteúdo é importado diretamente do bundle, então está disponível de
+  // imediato — tanto no navegador quanto no prerender/SSR — sem requisição HTTP.
   async loadtemplateText() {
-    try {
-      const data = await firstValueFrom(this.http.get<any>('assets/template.json'));
-      this.templateTextSubject.next(data); // Atualiza o conteúdo
-    } catch (error) {
-      console.error('Erro ao carregar conteúdo', error);
-      this.templateTextSubject.next({}); // No caso de erro, mantemos um conteúdo vazio
-    }
+    this.templateTextSubject.next(templateData);
   }
 }

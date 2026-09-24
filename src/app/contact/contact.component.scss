@@ -163,7 +163,7 @@
 .form {
     display: flex;
     align-items: flex-start;
-    padding: 0 20px;
+    padding: 0 20px 120px 20px;
 
     .main-block {
         display: flex;
@@ -312,9 +312,22 @@
         word-spacing: 4px;
 
         cursor: pointer;
+        transition: background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 
         &:active {
             transform: translateY(1px);
+        }
+
+        &:disabled {
+            background: #9DB4CE;
+            box-shadow: 5px 4px 0 #6C7C90;
+            border-color: #6C7C90;
+            cursor: not-allowed;
+            opacity: 0.8;
+
+            &:active {
+                transform: none;
+            }
         }
     }
 
@@ -403,7 +416,7 @@
   }
 
   .form {
-    padding: 0 12px;
+    padding: 0 12px 80px 12px;
 
     .main-block {
       margin: 60px 0 0 0;

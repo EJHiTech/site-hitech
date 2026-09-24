@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { templateTextService } from './services/templateText.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { WhatsappButtonComponent } from './whatsapp-button/whatsapp-button.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -48,7 +49,18 @@ import { SuccessCasesComponent } from './success-cases/success-cases.component';
       progressAnimation: 'increasing',
     }),
   ],
-  providers: [provideNgxMask()],
+  providers: [
+    provideNgxMask(),
+    provideClientHydration(),
+    {
+      // Carrega o conteúdo do template.json antes do app renderizar,
+      // garantindo que o prerender/SSR já tenha os dados no HTML.
+      provide: APP_INITIALIZER,
+      useFactory: (service: templateTextService) => () => service.loadtemplateText(),
+      deps: [templateTextService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

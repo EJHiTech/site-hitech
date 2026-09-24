@@ -126,9 +126,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: auto;
     p {
       font-family: "Roboto Mono", sans-serif;
-      font-size: 20px;
+      font-size: clamp(13px, 1.4vw, 16px);
+      line-height: 1.4;
+      margin: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
 }
 

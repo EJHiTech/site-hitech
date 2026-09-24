@@ -23,7 +23,13 @@
       <div class="team-card-wrapper">
         <div class="team-card">
           <div class="image-container">
-            <img [src]="templateText.heroImage.src" [alt]="templateText.heroImage.alt" /><!-- Alterar a imagem para a especificada no projeto. Atenção ao tipo de extensão-->
+            <img
+              [src]="templateText.heroImage.src"
+              [alt]="templateText.heroImage.alt"
+              width="600"
+              height="400"
+              fetchpriority="high"
+              decoding="async" />
           </div>
           <div class="team-caption">
             <span>{{ templateText.heroImage.caption }}</span>
@@ -37,7 +43,7 @@
    <img src="assets/padrao-azul-escuro-ciano.svg" alt="" class="pattern-overlay" aria-hidden="true" />
     <div class="value-item" *ngFor="let feature of templateText.features; let i = index">
       <div class="value-icon-box">
-        <img [src]="feature.icon" [alt]="feature.title" class="value-icon" />
+        <img [src]="feature.icon" [alt]="feature.title" class="value-icon" loading="lazy" decoding="async" />
       </div>
       <div class="value-text">
         <h3 [appTypewriter]="feature.title" [delay]="i * 300" [speed]="75"></h3>
@@ -62,7 +68,7 @@
         <div class="about-card-wrapper">
           <div class="activity-card">
             <div class="activity-icon-box">
-              <img [src]="templateText.about.activityIcon" class="activity-icon" /><!-- Alterar a logo para a especificada no projeto.-->
+              <img [src]="templateText.about.activityIcon" alt="Atividades da Hï Tech" class="activity-icon" loading="lazy" decoding="async" />
             </div>
             <ul>
               <li *ngFor="let item of templateText.about.activity">
@@ -178,7 +184,7 @@
       <h3>{{ templateText.Costumers.sectionTitle }}</h3>
       <div class="list">
         <div class="item" *ngFor="let costumer of costumers">
-          <img [src]="costumer.img" />
+          <img [src]="costumer.img" alt="Logotipo de cliente da Hï Tech" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -186,7 +192,7 @@
       <h3>{{ templateText.Partners.sectionTitle }}</h3>
       <div class="list">
         <div class="item" *ngFor="let partner of partners">
-          <img [src]="partner.img" />
+          <img [src]="partner.img" alt="Logotipo de parceiro da Hï Tech" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
