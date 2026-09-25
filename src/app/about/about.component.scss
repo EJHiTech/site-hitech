@@ -147,7 +147,8 @@ select option {
     align-items: center;
     width: 100%;
     gap: 40px;
-    padding: 50px 30px;
+    padding: 50px 20px;
+    box-sizing: border-box;
   }
 
   .aboutUs-left {
@@ -185,6 +186,7 @@ select option {
   display: block;
   width: 100%;
   max-width: 1400px;
+  margin: 0;
   padding: 0 20px;
   box-sizing: border-box;
   text-align: left;
@@ -219,12 +221,9 @@ select option {
 
   .review-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     gap: 48px;
-
-    @media (max-width: 1100px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
 
     @media (max-width: 620px) {
       grid-template-columns: 1fr;
@@ -241,7 +240,8 @@ select option {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-height: 190px;
+  height: 100%;
+  min-height: 260px;
   transition: transform 0.35s ease, box-shadow 0.35s ease,
   border-color 0.35s ease;
   }
@@ -458,7 +458,7 @@ select option {
   #aboutUs {
     .aboutUs-content {
       flex-direction: column;
-      padding: 30px 16px;
+      padding: 30px 20px;
       gap: 24px;
     }
 
@@ -516,6 +516,12 @@ select option {
 
     .review-grid {
       gap: 24px;
+    }
+  }
+
+  #aboutUs {
+    .aboutUs-content {
+      padding: 24px 12px;
     }
   }
 }
