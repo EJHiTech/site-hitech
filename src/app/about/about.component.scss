@@ -2,15 +2,17 @@
 
 #about {
   margin: auto;
-  padding: 80px 40px;
+  /* Sem padding inferior: a .events-section é o último elemento e seu gradiente
+     precisa encostar direto no rodapé, sem faixa bege de fundo no meio. */
+  padding: 80px 40px 0;
   background-color: $color-secondary;
   overflow-x: clip;
 }
 
 .about-content {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     gap: 60px;
 
     /* Empilha de forma previsível em telas médias/pequenas,
@@ -20,7 +22,7 @@
       align-items: stretch;
 
       /* No modo coluna o flex-basis passa a valer como ALTURA. Sem este reset,
-         o flex-basis pensado para a largura (340px / 772px) criava um espaço
+         o flex-basis pensado para a largura (490px / 772px) criava um espaço
          vazio grande entre o título e o formulário. */
       > .main-title,
       > .form-wrapper {
@@ -30,7 +32,9 @@
 }
 
 .main-title {
-    flex: 1 1 340px;
+    /* Largura conforme o Figma (490px) */
+    flex: 0 1 490px;
+    max-width: 490px;
     min-width: 0;
 }
 
@@ -41,8 +45,6 @@
     max-width: 772px;
     min-width: 0;
     margin-top: 120px;
-    /* Espaço à direita para a shape transbordar, como no Figma */
-    margin-right: 60px;
 }
 
 .form-card {
@@ -159,6 +161,12 @@ select option {
     object-fit: contain;
     pointer-events: none;
     user-select: none;
+
+    /* Abaixo desta largura a shape invade o texto do título e
+       prejudica a leitura, então deixa de ser exibida. */
+    @media (max-width: 1200px) {
+      display: none;
+    }
 }
 
 .text {
@@ -522,7 +530,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
 @media (max-width: 1024px) {
   #about {
-    padding: 60px 24px;
+    padding: 60px 24px 0;
   }
 
   .about-content {
@@ -531,7 +539,6 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
   .form-wrapper {
     margin-top: 40px;
-    margin-right: 0;
     max-width: 100%;
   }
 
@@ -540,11 +547,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
     max-width: 100%;
   }
 
-  .background-shape {
-    /* Escala proporcional em telas menores para não gerar rolagem lateral */
-    width: 115%;
-    height: auto;
-  }
+
 
   .events-section {
     margin-top: 80px;
@@ -554,12 +557,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
 @media (max-width: 768px) {
   #about {
-    padding: 48px 16px;
-  }
-
-  /* No mobile a shape de fundo não aparece */
-  .background-shape {
-    display: none;
+    padding: 48px 16px 0;
   }
 
   .form-card {
@@ -594,7 +592,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
 @media (max-width: 480px) {
   #about {
-    padding: 36px 12px;
+    padding: 36px 12px 0;
   }
 
   .main-title h2 {
