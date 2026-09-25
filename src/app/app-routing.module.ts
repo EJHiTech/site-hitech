@@ -14,7 +14,7 @@ const routes: Routes = [
       seo: {
         title: 'Empresa Júnior de Tecnologia e Soluções Digitais',
         description:
-          'A Hï Tech cria sites, sistemas web, automações e design de produto. Tire seu projeto do papel com uma empresa júnior de tecnologia.',
+          'A Hï Tech cria sites, sistemas web, aplicativos mobile e automações. Tire seu projeto do papel com uma empresa júnior de tecnologia.',
       },
     },
   },
@@ -36,7 +36,7 @@ const routes: Routes = [
       seo: {
         title: 'Serviços: Sites, Sistemas Web e Automações',
         description:
-          'Sites institucionais, sistemas web sob medida, automações com APIs e IA, design de produto e arquitetura de soluções.',
+          'Sites e sistemas web, sistemas legados, apps mobile, e-commerce, automações, análise de dados, autoatendimento e configuração de e-mail, domínio e hospedagem.',
       },
     },
   },

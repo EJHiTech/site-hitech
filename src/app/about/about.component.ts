@@ -27,7 +27,7 @@ export class AboutComponent {
     { url: 'assets/events/foto3.jpg', title: 'Mas na maioria das vezes é!' },
     { url: 'assets/events/foto4.jpg', title: 'Noiz de novo' },
     { url: 'assets/events/foto5.jpg', title: 'Habemus fogo! (e carne)' },
-    { url: 'assets/events/foto6.jpg', title: '"Tá me tirando?"' } 
+    { url: 'assets/events/foto6.jpg', title: 'Palco Ouro, é noiz!' }
   ];
 
   constructor(

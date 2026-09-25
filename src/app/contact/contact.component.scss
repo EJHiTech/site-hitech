@@ -129,12 +129,33 @@
     background: #FFFFFF;
     min-height: 200px;
 
+    .channel-icon {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        box-sizing: border-box;
+        border-radius: 6px;
+        background: rgba(65, 197, 198, 0.2);
+        color: #09254D;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+    }
+
     h3 {
         font-family: "Rubik Mono One", sans-serif;
         font-size: 12px;
         color: #09254D;
         font-weight: 400;
-        margin-top: 40px;
+        /* era 40px, que servia para empurrar o titulo para baixo do vazio no
+           topo do card; agora o icone ocupa esse espaco */
+        margin-top: 16px;
     }
 
     p {
@@ -362,6 +383,8 @@
   .contact-card {
     margin-top: 0;
     margin-right: 0;
+    /* acompanha o recuo do .contact-title quando as colunas empilham */
+    margin-left: 20px;
   }
 
   .contact-cards {
@@ -372,6 +395,9 @@
   .form {
     .main-block {
       flex-direction: column;
+      /* stretch e não center: empilhados, o texto e o formulário precisam
+         ocupar a mesma largura */
+      align-items: stretch;
       margin: 80px 20px 0 20px;
       height: auto;
       padding: 30px;
@@ -403,12 +429,24 @@
 
   .contact-card {
     margin-right: 0;
+    margin-left: 0;
     box-shadow: 6px 8px 0 #FFC145;
   }
 
+  /* as quebras fixas do desktop picotam o texto corrido no mobile;
+     os <br> dos títulos continuam valendo */
+  .mini-text br,
+  .card-body .text br,
+  .card .body br,
+  .briefing-content > p br {
+    display: none;
+  }
+
   .contact-cards {
-    margin-left: 0;
-    margin-right: 0;
+    /* margem e não 0: sem isso a seção inteira encosta nas bordas da tela,
+       já que .contact-cards não tem padding próprio */
+    margin-left: 16px;
+    margin-right: 16px;
 
     h2 {
       font-size: clamp(1.2rem, 5vw, 2rem);
@@ -451,6 +489,11 @@
 
   .card-header {
     margin-left: 12px;
+  }
+
+  .contact-cards {
+    margin-left: 12px;
+    margin-right: 12px;
   }
 
   .cards {

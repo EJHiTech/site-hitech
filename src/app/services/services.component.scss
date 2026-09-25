@@ -41,8 +41,10 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 300px));
-  transform: translateX(50px);
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  /* margin em vez de translateX: transform não entra no cálculo de layout e
+     fazia o grid vazar para fora do container em telas estreitas */
+  margin-left: 50px;
   gap: 30px;
 
   @media (max-width: 1400px) {
@@ -54,7 +56,8 @@
   }
 
   @media (max-width: 620px) {
-    grid-template-columns: minmax(0, 300px);
+    /* 1fr e não 300px fixo: em celulares estreitos o card precisa encolher */
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -157,8 +160,11 @@
     box-shadow: 8px 10px 0px $color-quaternary;
     h2 {
       font-family: "Rubik Mono One", sans-serif;
-      font-size: 20px;
+      font-size: clamp(16px, 1.6vw, 20px);
       font-weight: 400;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
     p {
       font-family: "Roboto Mono", sans-serif;
@@ -284,6 +290,10 @@
 
   .carta-servicos {
     padding: 0 12px;
+  }
+
+  .cards-container {
+    margin-left: 0;
   }
 
   .title {
