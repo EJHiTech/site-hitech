@@ -12,7 +12,9 @@
     "btnServicesText": "Conheça nossos serviços",
     "btnContactText": "Fale com a gente",
     "heroImage": {
-      "src": "assets/img-home.jpeg",
+      "src": "assets/img-home-1200.jpg",
+      "srcset": "assets/img-home-800.jpg 800w, assets/img-home-1200.jpg 1200w, assets/img-home-1600.jpg 1600w, assets/img-home-2000.jpg 2000w",
+      "sizes": "(max-width: 768px) calc(100vw - 68px), (max-width: 1400px) 50vw, 864px",
       "alt": "Equipe Hï Tech reunida segurando a bandeira da empresa",
       "caption": ">> Times que constroem o futuro"
     },

@@ -19,7 +19,7 @@ section {
   gap: 20px;
 }
 
-#typed-text {
+.typed-text {
   font-size: 3.5rem;
   font-weight: 900;
   color: #0b2545;
@@ -338,7 +338,9 @@ section {
 
   .about-title{
     font-family: "Rubik Mono One", sans-serif;
-    font-size: 3rem;
+    /* O tamanho vem de .typed-text, compartilhado com o titulo do hero.
+       Antes o seletor era #typed-text e, por ser id, vencia estes font-size
+       de classe em todos os breakpoints — eles nunca chegaram a valer. */
   }
 
   .about-subtitle {
@@ -542,112 +544,6 @@ section {
   }
 
 }
-#services {
-  background-color: $color-secondary;
-  padding: 441px 205px;
-  position: relative;
-  z-index: 0;
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    z-index: -1;
-    opacity: 0.25;
-  }
-
-  h1 {
-    text-align: left;
-    width: 100%;
-    color: #09254d;
-    margin-bottom: 30px;
-    margin-top: 69px;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
-    font-family: "Rubik Mono One", sans-serif;
-  }
-
-  h2 {
-    text-align: left;
-    width: 100%;
-    color: #09254d;
-    margin-bottom: 30px;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
-    margin-left: 60px;
-  }
-
-  .service-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-
-    .service {
-      width: 300px;
-      height: 200px;
-      perspective: 1000px;
-
-      .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s ease;
-        transform-style: preserve-3d;
-      }
-
-      &:hover .card-inner {
-
-      }
-
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        background-color: $color-secondary;
-        border-radius: 8px;
-        border: 1px solid $color-sectenary-border;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-      }
-
-      .card-front {
-        h3 {
-          color: $color-primary;
-          margin-bottom: 8px;
-        }
-
-        span {
-          color: $color-support;
-          font-size: 0.95rem;
-        }
-      }
-
-      .card-back {
-
-
-        p {
-          color: $color-support;
-          font-size: 0.95rem;
-        }
-      }
-    }
-  }
-}
-
 #customersPartners {
   background-color: $color-secondary;
   padding: 40px 20px;
@@ -1108,7 +1004,7 @@ section {
     padding: 60px 20px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 2.6rem;
   }
 
@@ -1126,10 +1022,6 @@ section {
     .about-content {
       padding: 60px 24px;
       gap: 30px;
-    }
-
-    .about-title {
-      font-size: 2.4rem;
     }
 
     .value-text h3 {
@@ -1153,7 +1045,7 @@ section {
     padding: 48px 16px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 2rem;
   }
 
@@ -1231,10 +1123,6 @@ section {
       max-width: 100%;
     }
 
-    .about-title {
-      font-size: 2rem;
-    }
-
     .activity-card {
       min-height: auto;
     }
@@ -1280,7 +1168,7 @@ section {
     padding: 36px 12px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 1.6rem;
   }
 
@@ -1316,10 +1204,6 @@ section {
   #about {
     .about-content {
       padding: 36px 12px;
-    }
-
-    .about-title {
-      font-size: 1.6rem;
     }
 
     .activity-card li {

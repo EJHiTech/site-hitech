@@ -17,7 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TypewriterDirective } from './typewriter.directive';
-import { SuccessCasesComponent } from './success-cases/success-cases.component';
+// SuccessCasesComponent fica de fora do bundle por enquanto: enquanto estiver
+// declarado aqui, o Angular o embute no main.js mesmo sem ninguem usar.
+// Os arquivos continuam em src/app/success-cases/. Para reativar, basta
+// restaurar este import, a linha em declarations e descomentar a tag em
+// services.component.html.
+// import { SuccessCasesComponent } from './success-cases/success-cases.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,7 @@ import { SuccessCasesComponent } from './success-cases/success-cases.component';
     FooterComponent,
     WhatsappButtonComponent,
     TypewriterDirective,
-    SuccessCasesComponent,
+    // SuccessCasesComponent,  <- ver comentario no import acima
   ],
   imports: [
     BrowserModule,

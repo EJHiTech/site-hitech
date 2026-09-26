@@ -5,7 +5,7 @@
     <div class="hero-left">
       <div class="hero-header">
         <span class="hero-subtitle">{{ templateText.heroSubtitle }}</span>
-        <h1 id="typed-text" class="hero-title">{{ templateText.heroTitle}}</h1>
+        <h1 class="typed-text hero-title">{{ templateText.heroTitle}}</h1>
         <p class="hero-description-fallback">{{ templateText.heroDescription }}</p>
       </div>
 
@@ -23,11 +23,16 @@
       <div class="team-card-wrapper">
         <div class="team-card">
           <div class="image-container">
+            <!-- srcset/sizes: o navegador baixa so o tamanho que a tela usa.
+                 width/height refletem a proporcao real (16:9) para reservar
+                 o espaco antes da imagem chegar. -->
             <img
               [src]="templateText.heroImage.src"
+              [attr.srcset]="templateText.heroImage.srcset"
+              [attr.sizes]="templateText.heroImage.sizes"
               [alt]="templateText.heroImage.alt"
-              width="600"
-              height="400"
+              width="1600"
+              height="900"
               fetchpriority="high"
               decoding="async" />
           </div>
@@ -59,7 +64,8 @@
       <div class="about-left">
         <div class="about-header">
         <span class="about-subtitle">{{templateText.about.subTitle }}</span>
-        <h1 id="typed-text" class="about-title">{{templateText.about.title}}</h1>
+        <!-- h2 e nao h1: o h1 da pagina e o titulo do hero -->
+        <h2 class="typed-text about-title">{{templateText.about.title}}</h2>
         <p class="about-description">{{templateText.about.description}}</p>
         <a routerLink="/about" class="about-link">{{templateText.about.linkText}}</a>
         </div>

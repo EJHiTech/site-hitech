@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- /home serve a mesma pagina que a raiz e aponta o canonical para ela,
+       entao nao entra aqui: listar as duas dividiria o sinal entre URLs
+       duplicadas. -->
   <url>
     <loc>https://hitech.org.br/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://hitech.org.br/home</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hitech.org.br/about</loc>
