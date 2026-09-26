@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <title>Hï Tech</title>
+    <title>Hï Tech | Empresa Júnior de Tecnologia e Soluções Digitais</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO básico -->
+    <meta
+      name="description"
+      content="A Hï Tech é uma empresa júnior de tecnologia que cria sites, sistemas web, automações e design de produto. Solicite um briefing e tire seu projeto do papel."
+    />
+    <meta
+      name="keywords"
+      content="empresa júnior, tecnologia, desenvolvimento de sites, sistemas web, automação, design de produto, soluções digitais, Curitiba, UTFPR"
+    />
+    <meta name="author" content="Hï Tech" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://hitech.org.br/" />
+
+    <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hï Tech" />
+    <meta property="og:title" content="Hï Tech | Empresa Júnior de Tecnologia e Soluções Digitais" />
+    <meta
+      property="og:description"
+      content="Criamos sites, sistemas web, automações e design de produto. Solicite um briefing e tire seu projeto do papel."
+    />
+    <meta property="og:url" content="https://hitech.org.br/" />
+    <!-- Imagem da prévia ao compartilhar o link (WhatsApp, LinkedIn etc).
+         O ideal é uma arte em 1200x630; a logo atual é 229x316 e sai como
+         miniatura pequena. Ao trocar, declarar também og:image:width/height
+         e usar twitter:card="summary_large_image". -->
+    <meta property="og:image" content="https://hitech.org.br/assets/logo.png" />
+    <meta property="og:locale" content="pt_BR" />
+
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="shortcut icon" href="assets/logo.png" />
+
+    <!-- Preload das fontes principais para reduzir o tempo de renderização do texto -->
+    <link
+      rel="preload"
+      href="assets/fonts/RubikMonoOne-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/RobotoMono-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Dados estruturados (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hï Tech",
+        "url": "https://hitech.org.br/",
+        "logo": "https://hitech.org.br/assets/logo.png",
+        "description": "Empresa júnior de tecnologia que cria sites, sistemas web, automações e design de produto.",
+        "email": "contato@hitech.org.br",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Curitiba",
+          "addressRegion": "PR",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
   </head>
   <body>
     <app-root></app-root>

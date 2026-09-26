@@ -5,17 +5,17 @@
     <div class="hero-left">
       <div class="hero-header">
         <span class="hero-subtitle">{{ templateText.heroSubtitle }}</span>
-        <h1 id="typed-text" class="hero-title">{{ templateText.heroTitle}}</h1>
+        <h1 class="typed-text hero-title">{{ templateText.heroTitle}}</h1>
         <p class="hero-description-fallback">{{ templateText.heroDescription }}</p>
       </div>
 
     <div class="hero-buttons">
-      <button class="btn-primary" > <!-- Adicionar a rota para Serviços -->
+      <a class="btn-primary" routerLink="/services">
         {{ templateText.btnServicesText }}
-      </button>
-      <button class="btn-secondary"> <!-- Adicionar a rota para Contato -->
+      </a>
+      <a class="btn-secondary" routerLink="/contact">
         {{ templateText.btnContactText }}
-      </button>
+      </a>
     </div>
   </div>
 
@@ -23,7 +23,18 @@
       <div class="team-card-wrapper">
         <div class="team-card">
           <div class="image-container">
-            <img [src]="templateText.heroImage.src" [alt]="templateText.heroImage.alt" /><!-- Alterar a imagem para a especificada no projeto. Atenção ao tipo de extensão-->
+            <!-- srcset/sizes: o navegador baixa so o tamanho que a tela usa.
+                 width/height refletem a proporcao real (16:9) para reservar
+                 o espaco antes da imagem chegar. -->
+            <img
+              [src]="templateText.heroImage.src"
+              [attr.srcset]="templateText.heroImage.srcset"
+              [attr.sizes]="templateText.heroImage.sizes"
+              [alt]="templateText.heroImage.alt"
+              width="1600"
+              height="900"
+              fetchpriority="high"
+              decoding="async" />
           </div>
           <div class="team-caption">
             <span>{{ templateText.heroImage.caption }}</span>
@@ -37,7 +48,7 @@
    <img src="assets/padrao-azul-escuro-ciano.svg" alt="" class="pattern-overlay" aria-hidden="true" />
     <div class="value-item" *ngFor="let feature of templateText.features; let i = index">
       <div class="value-icon-box">
-        <img [src]="feature.icon" [alt]="feature.title" class="value-icon" />
+        <img [src]="feature.icon" [alt]="feature.title" class="value-icon" loading="lazy" decoding="async" />
       </div>
       <div class="value-text">
         <h3 [appTypewriter]="feature.title" [delay]="i * 300" [speed]="75"></h3>
@@ -53,16 +64,17 @@
       <div class="about-left">
         <div class="about-header">
         <span class="about-subtitle">{{templateText.about.subTitle }}</span>
-        <h1 id="typed-text" class="about-title">{{templateText.about.title}}</h1>
+        <!-- h2 e nao h1: o h1 da pagina e o titulo do hero -->
+        <h2 class="typed-text about-title">{{templateText.about.title}}</h2>
         <p class="about-description">{{templateText.about.description}}</p>
-        <a [href]="templateText.about.linkUrl" class="about-link">{{templateText.about.linkText}}</a><!-- Alterar o link para o especificada no projeto.-->
+        <a routerLink="/about" class="about-link">{{templateText.about.linkText}}</a>
         </div>
       </div>
       <div class="about-right">
         <div class="about-card-wrapper">
           <div class="activity-card">
             <div class="activity-icon-box">
-              <img [src]="templateText.about.activityIcon" class="activity-icon" /><!-- Alterar a logo para a especificada no projeto.-->
+              <img [src]="templateText.about.activityIcon" alt="Atividades da Hï Tech" class="activity-icon" loading="lazy" decoding="async" />
             </div>
             <ul>
               <li *ngFor="let item of templateText.about.activity">
@@ -97,33 +109,50 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 18L22 12L16 6"/>
+            <path d="M8 6L2 12L8 18"/>
+          </svg>
+        </div>
         <h3>DESENVOLVIMENTO WEB</h3>
-        <span>Sites e Sistemas sob medida</span>
-        <p>Sites e sistemas modernos, responsivos e sob suporte contínuo.</p>
+        <p>Sites, sistemas web, e-commerce e melhoria de sistemas legados.</p>
         <a class="service-link" routerLink="/services">Saiba mais</a>
       </div>
       <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="2" width="12" height="20" rx="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+        </div>
+        <h3>APPS E AUTOATENDIMENTO</h3>
+        <p>Apps mobile e sistemas de autoatendimento para o seu cliente.</p>
+        <a class="service-link" routerLink="/services">Saiba mais</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="20" x2="6" y2="14"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="18" y1="20" x2="18" y2="10"/>
+          </svg>
+        </div>
+        <h3>DADOS E AUTOMAÇÕES</h3>
+        <p>Coleta e análise de dados e automação de tarefas repetitivas.</p>
+        <a class="service-link" routerLink="/services">Saiba mais</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="8" rx="2"/>
+            <rect x="2" y="13" width="20" height="8" rx="2"/>
+            <line x1="6" y1="7" x2="6.01" y2="7"/>
+            <line x1="6" y1="17" x2="6.01" y2="17"/>
+          </svg>
+        </div>
         <h3>INFRAESTRUTURA DIGITAL</h3>
-        <span>E-mails, Domínios e Hospedagem</span>
-        <p>E-mails, domínios e hospedagem com monitoramento e suporte especializado.</p>
-        <a class="service-link" routerLink="/services">Saiba mais</a>
-      </div>
-      <div class="service-card">
-        <h3>ANÁLISE DE REQUISITOS</h3>
-        <span>Planejamento antes do Código</span>
-        <p>Levantamos requisitos e arquitetamos a solução ideal para seu negócio.</p>
-        <a class="service-link" routerLink="/services">Saiba mais</a>
-      </div>
-      <div class="service-card">
-        <h3>IA E AUTOMAÇÃO</h3>
-        <span>Soluções inteligentes</span>
-        <p>Modelos de IA e automações sob medida para otimizar seus processos.</p>
-        <a class="service-link" routerLink="/services">Saiba mais</a>
-      </div>
-      <div class="service-card">
-        <h3>AUTOMAÇÕES & APIS</h3>
-        <span>Integrações que escalam</span>
-        <p>Automações via WhatsApp, APIs e bots inteligentes para suas plataformas.</p>
+        <p>Configuração de e-mail, domínio e hospedagem do seu negócio.</p>
         <a class="service-link" routerLink="/services">Saiba mais</a>
       </div>
     </div>
@@ -178,7 +207,7 @@
       <h3>{{ templateText.Costumers.sectionTitle }}</h3>
       <div class="list">
         <div class="item" *ngFor="let costumer of costumers">
-          <img [src]="costumer.img" />
+          <img [src]="costumer.img" alt="Logotipo de cliente da Hï Tech" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
@@ -186,7 +215,7 @@
       <h3>{{ templateText.Partners.sectionTitle }}</h3>
       <div class="list">
         <div class="item" *ngFor="let partner of partners">
-          <img [src]="partner.img" />
+          <img [src]="partner.img" alt="Logotipo de parceiro da Hï Tech" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>

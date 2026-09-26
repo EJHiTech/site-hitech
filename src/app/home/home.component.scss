@@ -19,7 +19,7 @@ section {
   gap: 20px;
 }
 
-#typed-text {
+.typed-text {
   font-size: 3.5rem;
   font-weight: 900;
   color: #0b2545;
@@ -104,7 +104,10 @@ section {
     margin-top: 32px;
     flex-wrap: wrap;
 
-    button {
+    /* viraram <a routerLink> para navegar de verdade (e para o crawler seguir),
+       por isso o seletor nao e mais `button` */
+    .btn-primary,
+    .btn-secondary {
       font-family: "Roboto Mono", sans-serif;
       font-size: 14px;
       font-weight: 700;
@@ -115,6 +118,8 @@ section {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      text-decoration: none;
     }
 
     .btn-primary {
@@ -333,7 +338,9 @@ section {
 
   .about-title{
     font-family: "Rubik Mono One", sans-serif;
-    font-size: 3rem;
+    /* O tamanho vem de .typed-text, compartilhado com o titulo do hero.
+       Antes o seletor era #typed-text e, por ser id, vencia estes font-size
+       de classe em todos os breakpoints — eles nunca chegaram a valer. */
   }
 
   .about-subtitle {
@@ -351,23 +358,23 @@ section {
     color: grey;
   }
 
-  .about-link{
+  .about-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-weight: 700;
+    /* o roxo estava so no :visited, entao o link nascia azul-escuro e so virava
+       roxo depois de clicado; agora e roxo em qualquer estado */
+    color: $color-quinary;
     text-decoration: underline;
     text-decoration-color: #ffb703;
-;
-  }
-  .about-link:link {
-    color: #0b2545;
+    text-underline-offset: 3px;
   }
   .about-link:visited {
-    color: #6B3FD6;
+    color: $color-quinary;
   }
   .about-link:hover {
-    color: #284DA5;
+    color: $color-quinary-dark-1;
   }
 
   .about-card-wrapper {
@@ -459,7 +466,10 @@ section {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 307px;
+    /* min-height e não height: quando os cards quebram de linha ou empilham,
+       a barra precisa crescer — com altura fixa o overflow: hidden cortava o
+       último card */
+    min-height: 307px;
     background-color: #0b2545;
     border: 3px solid #000000;
     border-radius: 16px;
@@ -534,112 +544,6 @@ section {
   }
 
 }
-#services {
-  background-color: $color-secondary;
-  padding: 441px 205px;
-  position: relative;
-  z-index: 0;
-
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    z-index: -1;
-    opacity: 0.25;
-  }
-
-  h1 {
-    text-align: left;
-    width: 100%;
-    color: #09254d;
-    margin-bottom: 30px;
-    margin-top: 69px;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
-    font-family: "Rubik Mono One", sans-serif;
-  }
-
-  h2 {
-    text-align: left;
-    width: 100%;
-    color: #09254d;
-    margin-bottom: 30px;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
-    margin-left: 60px;
-  }
-
-  .service-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
-
-    .service {
-      width: 300px;
-      height: 200px;
-      perspective: 1000px;
-
-      .card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s ease;
-        transform-style: preserve-3d;
-      }
-
-      &:hover .card-inner {
-
-      }
-
-      .card-front,
-      .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        background-color: $color-secondary;
-        border-radius: 8px;
-        border: 1px solid $color-sectenary-border;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-      }
-
-      .card-front {
-        h3 {
-          color: $color-primary;
-          margin-bottom: 8px;
-        }
-
-        span {
-          color: $color-support;
-          font-size: 0.95rem;
-        }
-      }
-
-      .card-back {
-
-
-        p {
-          color: $color-support;
-          font-size: 0.95rem;
-        }
-      }
-    }
-  }
-}
-
 #customersPartners {
   background-color: $color-secondary;
   padding: 40px 20px;
@@ -888,12 +792,12 @@ section {
 // Seção de Services Cards (com títulos)
 #services-cards {
   display: block;
-  width: 100%;
-  max-width: 1400px;
+  max-width: 1720px;
   background-color: $color-secondary;
-  /* alinhado mais à esquerda: margem esquerda menor, direita absorve o restante */
-  margin: 80px auto 80px max(20px, 4%);
-  padding: 0 20px;
+  /* Alinhado à esquerda, com um recuo um pouco maior para deslocar
+     levemente a seção para a direita. */
+  margin: 80px 0;
+  padding: 0 20px 0 60px;
   box-sizing: border-box;
   text-align: left;
 
@@ -929,10 +833,11 @@ section {
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 
-    @media (max-width: 1100px) {
+    /* abaixo disso as 4 colunas ficariam estreitas demais para os títulos */
+    @media (max-width: 1180px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -993,6 +898,30 @@ section {
       h3 {
         color: $color-quinary;
       }
+
+      .service-icon {
+        background: rgba($color-quaternary, 0.38);
+      }
+    }
+
+    .service-icon {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      background: rgba($color-quaternary, 0.2);
+      color: $color-support;
+      transition: background 0.35s ease, color 0.35s ease;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+      }
     }
 
     h3 {
@@ -1002,14 +931,8 @@ section {
       font-weight: 400;
       color: $color-support;
       text-transform: uppercase;
+      overflow-wrap: break-word;
       transition: color 0.35s ease;
-    }
-
-    span {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 12px;
-      font-weight: 600;
-      color: $color-quinary;
     }
 
     p {
@@ -1081,7 +1004,7 @@ section {
     padding: 60px 20px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 2.6rem;
   }
 
@@ -1101,17 +1024,14 @@ section {
       gap: 30px;
     }
 
-    .about-title {
-      font-size: 2.4rem;
-    }
-
     .value-text h3 {
       font-size: 38px;
     }
   }
 
   #services-cards {
-    margin: 60px auto;
+    margin: 60px 0;
+    padding: 0 20px 0 40px;
 
     .services-title {
       font-size: 1.6rem;
@@ -1125,7 +1045,7 @@ section {
     padding: 48px 16px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 2rem;
   }
 
@@ -1136,24 +1056,44 @@ section {
     .hero-content {
       flex-direction: column;
       align-items: stretch;
-      gap: 32px;
+      /* a coluna passa a ter 5 itens (ver display: contents abaixo), então o
+         espaçamento é dado por margem em cada um, e não por um gap único */
+      gap: 0;
     }
 
-    .hero-left {
-      flex: 1;
-      max-width: 100%;
+    /* promove os filhos de .hero-left/.hero-header a itens do flex da coluna,
+       o que permite encaixar a foto entre o subtítulo e o título via order */
+    .hero-left,
+    .hero-header {
+      display: contents;
+    }
+
+    .hero-subtitle {
+      order: 1;
+      /* o margin-bottom de 16px vem da regra base */
     }
 
     .hero-right {
+      order: 2;
       max-width: 100%;
+      margin-bottom: 24px;
     }
 
     .hero-title {
+      order: 3;
       font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-description-fallback {
+      order: 4;
     }
 
     .hero-buttons {
-      button {
+      order: 5;
+
+      .btn-primary,
+      .btn-secondary {
         flex: 1;
         min-width: 140px;
       }
@@ -1181,10 +1121,6 @@ section {
     .about-right {
       flex: 1;
       max-width: 100%;
-    }
-
-    .about-title {
-      font-size: 2rem;
     }
 
     .activity-card {
@@ -1232,7 +1168,7 @@ section {
     padding: 36px 12px;
   }
 
-  #typed-text {
+  .typed-text {
     font-size: 1.6rem;
   }
 
@@ -1250,7 +1186,8 @@ section {
     .hero-buttons {
       flex-direction: column;
 
-      button {
+      .btn-primary,
+      .btn-secondary {
         width: 100%;
       }
     }
@@ -1269,10 +1206,6 @@ section {
       padding: 36px 12px;
     }
 
-    .about-title {
-      font-size: 1.6rem;
-    }
-
     .activity-card li {
       font-size: 16px;
     }
@@ -1283,7 +1216,8 @@ section {
   }
 
   #services-cards {
-    margin: 40px auto;
+    margin: 40px 0;
+    padding: 0 16px 0 24px;
 
     .services-title {
       font-size: 1.3rem;

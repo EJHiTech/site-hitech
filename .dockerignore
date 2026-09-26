@@ -1,0 +1,11 @@
+# O Dockerfile roda "npm install" e depois "COPY . .". Sem este arquivo, o
+# node_modules da máquina local (Windows) sobrescreveria o instalado no
+# container, e binários nativos como o do esbuild não rodam no Linux.
+node_modules
+dist
+.angular
+.git
+.vscode
+.idea
+scripts
+*.log

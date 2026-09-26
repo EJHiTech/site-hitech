@@ -12,7 +12,9 @@
     "btnServicesText": "Conheça nossos serviços",
     "btnContactText": "Fale com a gente",
     "heroImage": {
-      "src": "assets/img-home.jpeg",
+      "src": "assets/img-home-1200.jpg",
+      "srcset": "assets/img-home-800.jpg 800w, assets/img-home-1200.jpg 1200w, assets/img-home-1600.jpg 1600w, assets/img-home-2000.jpg 2000w",
+      "sizes": "(max-width: 768px) calc(100vw - 68px), (max-width: 1400px) 50vw, 864px",
       "alt": "Equipe Hï Tech reunida segurando a bandeira da empresa",
       "caption": ">> Times que constroem o futuro"
     },
@@ -38,16 +40,15 @@
         "title": "A hï tech conecta talento universitário e mercado para desenvolver soluções digitais de impacto.",
         "description":"Somos uma empresa júnior de tecnologia formada por estudantes que vivem projetos reais desde o primeiro contato com o cliente até a entrega final. Nosso trabalho combina método, comunicação e energia jovem para resoltver problemas com clareza.",
         "linkText": "Conheça a empresa",
-        "linkUrl": "https://hitech.org.br/#/home",
         "activityIcon" : "assets/logoNova1.svg",
         "activity":["Atuação prática em desenvolvimento, design e gestão.", "Projetos pensados para resolver dores reais do cliente.","Formação de profissionais preparados para o mercado."],
         "actingTitle" : "Nossa atuação",
         "acting" : [
           { "value": "+10" ,
             "description": "projetos entregues" },
-          { "value": "+30" ,
+          { "value": "+10" ,
             "description": "membros formados" },
-          { "value": "4" ,
+          { "value": "8" ,
             "description": "frentes de serviço" }
         ]
       },

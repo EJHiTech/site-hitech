@@ -1,7 +1,7 @@
 <section class="contato-text">
     <div class="contact-title">
         <p class="contato">CONTATO</p>
-        <h2>VAMOS CRIAR<Br>SUA SOLUÇÃO<Br>DIGITAL</h2>
+        <h1>VAMOS CRIAR<Br>SUA SOLUÇÃO<Br>DIGITAL</h1>
         <p class="mini-text">
             Conte para a Hï Tech o que sua empresa precisa. A partir<Br>
             disso, entendemos o problema, avaliamos possibilidades e<Br>
@@ -33,27 +33,46 @@
 
     <div class="cards">
         <div class="card">
+            <div class="channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 6L12 13L2 6"/>
+                </svg>
+            </div>
             <h3>EMAIL</h3>
             <p class="body">
-                Envie uma mensagem com contexto do projeto, prazo desejado e principais<Br>
+                Envie uma mensagem com contexto do projeto, prazo desejado e principais
                 necessidades.
             </p>
             <p>contato&#64;hitech.org.br</p>
         </div>
 
         <div class="card">
-            <h3>SITE OFICIAL</h3>
+            <div class="channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+            </div>
+            <h3>INSTAGRAM OFICIAL</h3>
             <p class="body">
-                Acesse os canais institucionais atuais da empresa para acompanhar novidades<Br>
-                e projetos.
+                Acompanhe os bastidores, os projetos e as novidades da empresa
+                no nosso perfil.
             </p>
-            <p>hitech.org.br</p>
+            <p>&#64;hitech.ej</p>
         </div>
 
         <div class="card">
+            <div class="channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10C21 17 12 23 12 23S3 17 3 10A9 9 0 0 1 21 10Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+            </div>
             <h3>LOCALIZAÇÃO</h3>
             <p class="body">
-                Atuação ligada à Universidade Tecnológica Federal do Paraná, com atendimento<Br>
+                Atuação ligada à Universidade Tecnológica Federal do Paraná, com atendimento
                 remoto ou combinado.
             </p>
             <p>Curitiba, PR</p>
@@ -99,7 +118,9 @@
                 <label for="mensagem">Mensagem</label>
                 <textarea id="mensagem"placeholder="Conte rapidamente o que você precisa" formControlName="description"> </textarea>
 
-                <button type="submit" class="enviar">Enviar briefing</button>
+                <button type="submit" class="enviar" [disabled]="form.invalid || isLoading">
+                    {{ isLoading ? 'Enviando...' : 'Enviar briefing' }}
+                </button>
             </form>
         </section>
     </div>
