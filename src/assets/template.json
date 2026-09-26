@@ -44,9 +44,9 @@
         "acting" : [
           { "value": "+10" ,
             "description": "projetos entregues" },
-          { "value": "+30" ,
+          { "value": "+10" ,
             "description": "membros formados" },
-          { "value": "4" ,
+          { "value": "8" ,
             "description": "frentes de serviço" }
         ]
       },

@@ -124,7 +124,7 @@
     <button class="carousel-btn prev-btn" (click)="scrollCarousel(-1)" aria-label="Anterior">
       &#10094;
     </button>
-      <div class="carousel-container" #carousel>
+      <div class="carousel-container" #carousel (touchstart)="pauseAutoplay()">
       <div class="event-card" *ngFor="let photo of eventPhotos">
         <img [src]="photo.url" [alt]="photo.title" loading="lazy" decoding="async" />
         <div class="event-card-caption" *ngIf="photo.title">

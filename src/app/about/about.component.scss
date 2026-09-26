@@ -436,6 +436,9 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
       gap: 24px;
       overflow-x: auto;
       scroll-behavior: smooth;
+      /* o arrasto (e as setas) param sempre em cima de uma foto, nunca no
+         meio de duas */
+      scroll-snap-type: x mandatory;
       padding: 10px 4px 20px 4px;
       width: 100%;
 
@@ -446,6 +449,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
       .event-card {
         flex: 0 0 min(680px, 85vw);
+        scroll-snap-align: start;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -456,8 +460,12 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
 
         img {
           width: 100%;
+          /* proporcao fixa em vez de max-height: com height auto a altura do
+             card vinha das dimensoes do arquivo, entao foto 16:9 ficava mais
+             baixa que foto 3:2 e os cards saiam desalinhados. 3:2 e a
+             proporcao da maioria das fotos, entao e a que menos corta */
+          aspect-ratio: 3 / 2;
           height: auto;
-          max-height: 420px;
           object-fit: cover;
           border: 2.5px solid #000000;
           border-radius: 12px;
@@ -560,8 +568,19 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
     padding: 48px 16px 0;
   }
 
+  /* O vao entre o titulo e o formulario vinha de tres regras somadas
+     (gap 30 + margin do wrapper 40 + margin do card 24 = 94px). Aqui as duas
+     margens zeram e o espacamento fica so no gap, num numero unico. */
+  .about-content {
+    gap: 36px;
+  }
+
+  .form-wrapper {
+    margin-top: 0;
+  }
+
   .form-card {
-    margin-top: 24px;
+    margin-top: 0;
     padding: 24px;
     box-shadow: 6px 8px 0 #4EBBC0;
   }
@@ -583,6 +602,12 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
   .events-section {
     margin-top: 60px;
     padding: 48px 4%;
+
+    /* no toque o arrasto ja navega, entao as setas so roubariam 88px de
+       largura do carrossel */
+    .carousel-wrapper .carousel-btn {
+      display: none;
+    }
 
     .carousel-wrapper .carousel-container .event-card {
       flex: 0 0 min(480px, 80vw);
@@ -612,11 +637,7 @@ $review-accents: $color-tertiary, $color-quaternary, $color-primary, $color-quin
     }
 
     .carousel-wrapper {
-      .carousel-btn {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-      }
+      /* as setas ja saem em 768px, nao ha o que redimensionar aqui */
 
       .carousel-container .event-card {
         flex: 0 0 min(320px, 85vw);

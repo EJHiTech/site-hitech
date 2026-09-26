@@ -5,6 +5,13 @@
   background-color: $color-secondary;
   padding-top: 1px;
   border-top: 1px solid transparent;
+
+  /* Respiro antes do rodape. Vinha do <app-success-cases>, que era a ultima
+     secao da pagina; sem ele os cards encostavam no rodape.
+     Fica no :host e nao na ultima secao para continuar valendo quando os
+     casos de sucesso voltarem. Tambem impede que a margin-bottom de
+     .carta-servicos vaze por colapso de margem, em vez de virar espaco. */
+  padding-bottom: 80px;
 }
 
 .carta-servicos {
@@ -274,7 +281,41 @@
   }
 }
 
+@media (max-width: 768px) {
+  /* No celular tudo encosta a esquerda: o bloco de 960px centraliza o hero e
+     os titulos carregam um recuo de 45px que foi pensado para o desktop. */
+  .hero-servicos {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  /* a logo sai para o texto comecar no topo e sobrar tela */
+  .hero-left {
+    display: none;
+  }
+
+  .hero-right {
+    align-items: flex-start;
+    text-align: left;
+
+    /* o margin: 0 auto herdado de 960px recentralizaria este paragrafo */
+    .description {
+      margin: 0;
+    }
+  }
+
+  .title,
+  .sub-title,
+  .cards-container {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 480px) {
+  :host {
+    padding-bottom: 48px;
+  }
+
   .hero-servicos {
     gap: 24px;
     padding: 36px 12px 0 12px;
@@ -301,6 +342,9 @@
   }
 
   .sub-title {
-    font-size: 1.5rem;
+    /* estava 1.5rem, igual ao .title: deixava o rotulo "CARTAS DE SERVICO"
+       do mesmo tamanho do titulo "SERVICOS" e quebrava a hierarquia.
+       14px e o valor usado no desktop. */
+    font-size: 14px;
   }
 }
