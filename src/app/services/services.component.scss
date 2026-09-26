@@ -1,11 +1,17 @@
 @import "../../colors.scss";
-@import url('https://googleapis.com');
 
 :host {
   display: block;
   background-color: $color-secondary;
   padding-top: 1px;
   border-top: 1px solid transparent;
+
+  /* Respiro antes do rodape. Vinha do <app-success-cases>, que era a ultima
+     secao da pagina; sem ele os cards encostavam no rodape.
+     Fica no :host e nao na ultima secao para continuar valendo quando os
+     casos de sucesso voltarem. Tambem impede que a margin-bottom de
+     .carta-servicos vaze por colapso de margem, em vez de virar espaco. */
+  padding-bottom: 80px;
 }
 
 .carta-servicos {
@@ -21,7 +27,7 @@
     margin-bottom: 27px;
     margin-left: 45px;
     color: $color-support;
-    font-family: "Rubik Mono One", sans-serif; 
+    font-family: "Rubik Mono One", sans-serif;
 }
 
 .sub-title {
@@ -31,7 +37,7 @@
   margin-left: 45px;
   margin-bottom: 5px;
   margin-top: 15px;
-  font-family: "Roboto Mono", sans-serif; 
+  font-family: "Roboto Mono", sans-serif;
 }
 
 .section-title {
@@ -42,8 +48,10 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 300px));
-  transform: translateX(50px);
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  /* margin em vez de translateX: transform não entra no cálculo de layout e
+     fazia o grid vazar para fora do container em telas estreitas */
+  margin-left: 50px;
   gap: 30px;
 
   @media (max-width: 1400px) {
@@ -55,7 +63,8 @@
   }
 
   @media (max-width: 620px) {
-    grid-template-columns: minmax(0, 300px);
+    /* 1fr e não 300px fixo: em celulares estreitos o card precisa encolher */
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -127,9 +136,15 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: auto;
     p {
       font-family: "Roboto Mono", sans-serif;
-      font-size: 20px;
+      font-size: clamp(13px, 1.4vw, 16px);
+      line-height: 1.4;
+      margin: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
 }
 
@@ -152,8 +167,11 @@
     box-shadow: 8px 10px 0px $color-quaternary;
     h2 {
       font-family: "Rubik Mono One", sans-serif;
-      font-size: 20px;
+      font-size: clamp(16px, 1.6vw, 20px);
       font-weight: 400;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
     p {
       font-family: "Roboto Mono", sans-serif;
@@ -263,7 +281,41 @@
   }
 }
 
+@media (max-width: 768px) {
+  /* No celular tudo encosta a esquerda: o bloco de 960px centraliza o hero e
+     os titulos carregam um recuo de 45px que foi pensado para o desktop. */
+  .hero-servicos {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  /* a logo sai para o texto comecar no topo e sobrar tela */
+  .hero-left {
+    display: none;
+  }
+
+  .hero-right {
+    align-items: flex-start;
+    text-align: left;
+
+    /* o margin: 0 auto herdado de 960px recentralizaria este paragrafo */
+    .description {
+      margin: 0;
+    }
+  }
+
+  .title,
+  .sub-title,
+  .cards-container {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 480px) {
+  :host {
+    padding-bottom: 48px;
+  }
+
   .hero-servicos {
     gap: 24px;
     padding: 36px 12px 0 12px;
@@ -281,11 +333,18 @@
     padding: 0 12px;
   }
 
+  .cards-container {
+    margin-left: 0;
+  }
+
   .title {
     font-size: 1.5rem;
   }
 
   .sub-title {
-    font-size: 1.5rem;
+    /* estava 1.5rem, igual ao .title: deixava o rotulo "CARTAS DE SERVICO"
+       do mesmo tamanho do titulo "SERVICOS" e quebrava a hierarquia.
+       14px e o valor usado no desktop. */
+    font-size: 14px;
   }
 }

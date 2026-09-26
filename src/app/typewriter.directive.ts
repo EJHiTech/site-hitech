@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Inject, Input, OnInit, OnDestroy, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appTypewriter]'
@@ -13,9 +14,20 @@ export class TypewriterDirective implements OnInit, OnDestroy {
   private timeoutId: any;
   private observer!: IntersectionObserver;
 
-  constructor(private el: ElementRef<HTMLElement>, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef<HTMLElement>,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
+    // No servidor (prerender/SSR) mostramos o texto completo, sem animação,
+    // para o Google indexar o conteúdo e evitar APIs de browser.
+    if (!isPlatformBrowser(this.platformId)) {
+      this.renderer.setProperty(this.el.nativeElement, 'textContent', this.text);
+      return;
+    }
+
     this.renderer.setProperty(this.el.nativeElement, 'textContent', '');
 
     this.observer = new IntersectionObserver(

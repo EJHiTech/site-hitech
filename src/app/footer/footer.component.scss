@@ -66,8 +66,11 @@ footer {
       }
 
       .social-icon {
-        width: 24px;
-        height: 24px;
+        /* altura fixa e largura automatica: os dois SVGs tem proporcoes
+           diferentes (LinkedIn 17x20, Instagram 19x19), entao forcar um
+           quadrado deixava um deles menor que o outro */
+        height: 22px;
+        width: auto;
         margin-right: 8px;
         transition: transform 0.4s ease;
 
@@ -98,10 +101,14 @@ footer {
 
 @media (max-width: 768px) {
   footer {
+    text-align: left;
+
+    /* no celular fica so a marca: o texto institucional sai */
+    .footer-contact {
+      display: none;
+    }
+
     .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
       padding: 0 16px;
 
       p {
@@ -109,14 +116,28 @@ footer {
       }
     }
 
+    /* logo e redes lado a lado, encostados na esquerda */
     .footer-social {
-      flex-direction: column;
-      gap: 16px;
-      padding-left: 0;
+      flex-direction: row;
+      justify-content: flex-start;
       align-items: center;
+      /* respiro maior entre a logo e o bloco de redes... */
+      gap: 32px;
+      padding-left: 0;
 
+      /* ...e menor entre os dois icones, para lerem como um grupo so */
       .social-content {
-        gap: 20px;
+        gap: 12px;
+      }
+
+      /* zerados para o icone alinhar pelo centro com a logo e o espacamento
+         ficar so por conta do gap */
+      a {
+        margin-bottom: 0;
+      }
+
+      .social-icon {
+        margin-right: 0;
       }
     }
   }
@@ -127,10 +148,10 @@ footer {
     padding: 16px 0;
 
     .footer-social {
-      gap: 12px;
+      gap: 24px;
 
       .social-content {
-        gap: 16px;
+        gap: 10px;
       }
     }
 
